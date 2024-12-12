@@ -1,0 +1,730 @@
+/* styles.css */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 10px 20px;
+    color: rgb(9, 9, 122);
+    height: 50px;
+    border: 1px solid rgba(0, 0, 0, 0.145);
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    font-family: Orbitron;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 25px;
+}
+
+
+.nav-links a {
+    text-decoration: none;
+    color: rgb(7, 7, 132);
+    transition: color 0.3s;
+    display: inline-flex;
+    align-items: center;
+}
+
+.nav-links a:hover {
+    color: #00bcd4;
+    background-color: #0b7d8c14;
+}
+
+.arrow {
+    font-size: 12px;
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.nav-block {
+    position: absolute; /* Stack all blocks on top of each other */
+    top: 72px;
+    left: 0;
+    width: 0; 
+    height: 400px; 
+    overflow: hidden; /* Prevent content overflow */
+    background-color: #007BFF;
+    color: white;
+    font-size: 16px;
+    padding: 20px;
+    opacity: 0; 
+    visibility: hidden; 
+    transition: width 0.5s ease, opacity 0.5s ease, visibility 0s 0.5s; 
+}
+
+.nav-block.show {
+    width: 97.4%; 
+    opacity: 1; 
+    visibility: visible; /* Make the content visible */
+    transition: width 0.6s ease, opacity 0.6s ease; 
+    z-index: 15000;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    color: blue;
+}
+
+.search-input {
+    padding: 5px 10px;
+    font-size: 1rem;
+    border: 1px solid #008c9e;
+    border-radius: 0px;
+    outline: none;
+    color: #000;
+}
+
+.search-btn {
+    padding: 5px 10px;
+    background-color: #00bcd4;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    color: white;
+    font-size: 1rem;
+    margin-left: 5px;
+    transition: background-color 0.3s;
+}
+
+.search-btn:hover {
+    background-color: #008c9e;
+}
+
+
+
+.display{
+    background-color: rgb(2, 1, 57);
+    width: 100%;
+    height: 600px;
+    margin-top: 1px;
+    position: relative; 
+}
+
+
+.display img{
+    display: block;
+    width: 100%;
+    height: 85%;
+}
+
+
+.text-overlay {
+    position: absolute; 
+    top: 50%; 
+    left: 25%; 
+    transform: translate(-50%, -50%); 
+    color: white; 
+    background-color: transparent; /* Optional: Add background for better visibility */
+    padding: 10px; 
+    border-radius: 0px; 
+    font-size: 45px; 
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.rotating-container {
+    position: absolute;
+    top: 65%;
+    width: 100%; /* Full width */
+    text-align: left; 
+}
+
+/* Rotating text styles */
+.rotating-overlay {
+    color: white;
+    background-color: transparent;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    margin-left: 50px;
+    padding: 10px 0;
+    width: 100%; /* Full width */
+    display: inline-block; 
+    overflow: hidden;
+    text-overflow: ellipsis; /* Prevent long text from overflowing */
+    white-space: nowrap; 
+}
+
+
+/* Button styles */
+.action-button {
+    margin-top: 10px; 
+    background-color: #dae7f4; 
+    color: rgb(5, 10, 62); 
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 22px;
+    margin-left: 90px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.action-button:hover {
+    background-color: #2671c1; /* Darker shade on hover */
+}
+
+
+.container {
+    display: flex;
+    justify-content: space-between; /* Ensures the left and right sections are spaced apart */
+    margin: 0;
+    height: 700px;
+    width: 100%;
+    background-color: #044a994d;
+}
+
+.left-section {
+    width: 45%; /* Take up 45% of the container width */
+    background-color: transparent;
+    background-image: url('peoplg.jpg'); /* Replace 'your-image.jpg' with your image path */
+    background-size: cover; /* Ensures the image covers the full container */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat;
+}
+
+.left-section h3{
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: white;
+    margin-top: 540px;
+    margin-left: 15px;
+}
+
+.right-section {
+    width: 55%; 
+    display: flex;
+    flex-direction: column; /* Align the elements vertically */
+    background-color: transparent;
+}
+
+.top-class {
+    width: 100%; 
+    margin-bottom: 0px; 
+    background-color: transparent;
+    height: 30%;
+}
+
+.top-class h1 {
+    text-align: center;
+    font-size: 3.0rem;
+    font-weight: bolder;
+    color: #0f0461;
+}
+
+.top-class P{
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 60px;
+    margin-right: 60px;
+    line-height: 1.4rem;
+}
+
+.bottom-classes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    background-color: transparent;
+    height: 70%;
+    margin-left: 70px;
+    margin-top: 25px;
+    margin-right: 70px;
+}
+
+.bottom-class {
+    width: 49%; 
+    margin-bottom: 25px; /* Optional bottom margin for spacing */
+}
+
+.bottom-class.left {
+    height: 210px;
+    text-align: left; 
+    background-color: transparent;
+    width: 300px;
+    background-image: url('w.jpg'); 
+    background-size: 200px 160px; /* Ensures the image covers the full container */
+    background-position: center 40px; /* Centers the image */
+    background-repeat: no-repeat;
+}
+
+
+.bottom-class.left p{
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    margin-top: 0px;
+} 
+
+.bottom-class.leftt {
+    height: 210px;
+    width: 300px;
+    text-align: left; 
+    background-color: transparent;
+    background-image: url('des.jpg'); /* Replace 'your-image.jpg' with your image path */
+    background-size: 200px 160px;
+    background-position: center 40px; /* Centers the image */
+    background-repeat: no-repeat;
+}
+
+.bottom-class.leftt p{
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    margin-top: 0px;
+} 
+
+.bottom-class.right {
+    text-align: right; /* Align content to the right for the right side */
+    background-color: transparent;
+    height: 210px;
+    width: 300px;
+    background-image: url('ap.jpg'); 
+    background-size: 200px 160px;
+    background-position: center 40px; /* Centers the image */
+    background-repeat: no-repeat;
+}
+
+.bottom-class.right p{
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    margin-top: 0px;
+}
+
+
+.bottom-class.rightt {
+    text-align: right; /* Align content to the right for the right side */
+    background-color: transparent;
+    height: 160px;
+    width: 220px;
+    border: 20px solid rgba(1, 1, 63, 0.349);
+}
+
+.bottom-class.rightt p{
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+
+/* Service Section Styling */
+.services-section {
+    padding: 10px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.7rem;
+    margin-bottom: 40px;
+    color: #141313;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.service-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: left;
+}
+
+.service-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.service-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #0078d7;
+}
+
+.service-card p {
+    font-size: 1.1rem;
+    color: #1e1d1d;
+    line-height: 1.6;
+}
+
+/* Explore Button Styling */
+.explore-button {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background-color: #0078d7;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.explore-button:hover {
+    background-color: #005bb5;
+}
+
+
+
+/* Portfolio Section Styling */
+.portfolio-section {
+    padding: 20px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+    height: 830px;
+}
+
+.section-title {
+    font-size: 2.7rem;
+    margin-bottom: 20px;
+    color: #100f0f;
+}
+
+.portfolio-description {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    color: #121111;
+    max-width: 800px;
+    margin-left: auto;
+    line-height: 1.4rem;
+    margin-right: auto;
+}
+
+.imgg {
+    width: 100%;
+    background-color: transparent;
+    height: 720px;
+    background-image: url('corporate.jpg'); /* Replace 'your-image.jpg' with your image path */
+    background-size: 88% 560px;
+    background-position: center 40px; /* Centers the image */
+    background-repeat: no-repeat;
+}
+
+.portfolio-container {
+    position: relative; 
+    left: 50%;/* This moves the container to the right side */
+    margin-right: 20px; 
+    background-color: transparent;
+    width: 50%;
+    top: 30%;
+}
+
+
+.portfolio-category {
+    width: 100%;
+    max-width: 700px;
+    margin-bottom: 40px;
+}
+
+.project-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: left;
+    overflow: hidden;
+    width: 80%;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-card h3 {
+    font-size: 1.8rem;
+    margin: 10px;
+    color: #0078d7;
+}
+
+.project-card h4 {
+    font-size: 1.2rem;
+    margin: 10px;
+    color: #0078d7;
+}
+
+.project-card p {
+    font-size: 1.1rem;
+    margin: 10px;
+    line-height: 1.4rem;
+    color: #171717;
+}
+
+.project-button {
+    padding: 10px 20px;
+    background-color: #0078d7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+
+.project-button:hover {
+    background-color: #005bb5;
+}
+
+
+
+
+.journey {
+    display: flex;
+    width: 100%;
+    height: 800px;
+    border: none;
+    border-radius: 0px;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+.vid {
+    width: 65%;
+    display: flex;
+    justify-content: center;
+    position: relative; 
+}
+
+.vid-container {
+    position: relative; /* Acts as a positioning context for vid1 and vid2 */
+    width: 600px;
+    height: 520px;
+}
+
+.vid1 {
+    width: 100%;
+    height: 100%;
+    background-color: #201d74;
+    position: absolute; 
+    top: 100px;
+    left: 70px;
+    z-index: 10; /* Lower z-index to ensure it's below vid2 */
+}
+
+.vid2 {
+    width: 100%;
+    height: 100%;
+    background-color: #2b90cb;
+    position: absolute; /* Stacked on top of vid1 */
+    top: 70px;
+    left: 40px;
+    z-index: 20; /* Higher z-index to appear on top */
+}
+.vid3 {
+    width: 100%;
+    height: 100%;
+    background-color: #dbe3de;
+    position: absolute; /* Stacked on top of vid1 */
+    top: 40px;
+    left: 15px;
+    z-index: 30; /* Higher z-index to appear on top */
+}
+
+.hidden {
+    display: none;
+}
+
+.vid3 video {
+    width: 600px;
+    height: 400px;
+}
+
+
+.description-container {
+    width: 35%;
+    height: 350px;
+    margin-top: 100px;
+    margin-right: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 0px;
+    background-color: #ffffff;
+}
+
+.description-header {
+    font-size: 14px;
+    font-weight: bold;
+    color: #007BFF;
+    margin-bottom: 10px;
+}
+
+
+.description-content h2 {
+    font-size: 30px;
+    margin: 0 0 10px;
+    color: #151414;
+    font-weight: bolder;
+}
+
+.description-content p {
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.5;
+    color: #0f0e0e;
+}
+
+.scroll-container {
+    overflow: hidden;
+    height: 290px;
+}
+
+.description-content {
+    display: none;
+}
+
+.description-content.active {
+    display: block;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the buttons and text together */
+    gap: 22px;
+    margin-top: 20px;
+}
+
+.navigation button {
+    background-color: transparent;
+    color: #020911;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.navigation button:hover {
+    color: #007BFF;
+}
+
+.navigation span {
+    font-size: 16px;
+    color: #333333;
+}
+
+
+
+
+
+
+
+/* Contact Section */
+#contact {
+    padding: 50px 0;
+    background-color: #fff;
+}
+
+#contact .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#contact h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form input, form textarea {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #02013a;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #333;
+}
+
+/* Footer Section */
+footer {
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+
+footer .footer-links {
+    margin-bottom: 10px;
+}
+
+footer .footer-links a {
+    text-decoration: none;
+    color: white;
+    margin: 0 10px;
+}
+
+footer .footer-links a:hover {
+    text-decoration: underline;
+}
