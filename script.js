@@ -158,13 +158,25 @@ document.querySelectorAll('.direc .link').forEach(link => {
     link.addEventListener('click', function() {
         const targetClass = this.getAttribute('data-target');  // Get the target class from data attribute
 
-        // Hide all content sections
-        document.querySelectorAll('.showd .content').forEach(content => {
-            content.classList.remove('active');
-        });
-
-        // Show the corresponding content
+        // Find the corresponding content element
         const targetContent = document.querySelector(`.${targetClass}`);
-        targetContent.classList.add('active');
+        
+        // Check if the target content is already active
+        if (targetContent.classList.contains('active')) {
+            // If active, remove the active class to hide it
+            targetContent.classList.remove('active');
+        } else {
+            // If not active, hide all content sections first
+            document.querySelectorAll('.showd .content').forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Show the corresponding content with transition
+            targetContent.classList.add('active');
+        }
     });
 });
+
+
+
+
