@@ -108,3 +108,29 @@ descriptions[0].classList.add('active');
 videos[0].classList.remove('hidden');
 
 
+
+
+
+const blogGrid = document.querySelector('.blog-grid');
+const paginationDots = document.querySelectorAll('.pagination span');
+const prevArrow = document.getElementById('prev-arrow');
+const nextArrow = document.getElementById('next-arrow');
+let currentIndexc = 0;
+const cardsToShow = 4; // Number of cards to show per scroll
+
+const updateGrid = () => {
+    blogGrid.style.transform = `translateX(-${currentIndexc * 25}%)`; // 25% per page scroll (4 cards)
+    paginationDots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentIndexc);
+    });
+};
+
+prevArrow.addEventListener('click', () => {
+    if (currentIndexc > 0) currentIndexc--; // Move to previous 4 cards
+    updateGrid();
+});
+
+nextArrow.addEventListener('click', () => {
+    if (currentIndexc < paginationDots.length - 1) currentIndexc++; // Move to next 4 cards
+    updateGrid();
+});
