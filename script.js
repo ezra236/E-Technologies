@@ -148,3 +148,23 @@ document.addEventListener("DOMContentLoaded", () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
     });
 });
+
+
+
+
+
+
+document.querySelectorAll('.direc .link').forEach(link => {
+    link.addEventListener('click', function() {
+        const targetClass = this.getAttribute('data-target');  // Get the target class from data attribute
+
+        // Hide all content sections
+        document.querySelectorAll('.showd .content').forEach(content => {
+            content.classList.remove('active');
+        });
+
+        // Show the corresponding content
+        const targetContent = document.querySelector(`.${targetClass}`);
+        targetContent.classList.add('active');
+    });
+});
