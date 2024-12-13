@@ -1,29 +1,27 @@
 document.querySelectorAll('.nav-item').forEach(item => {
-    item.addEventListener('click', function(event) {
-        // Toggle arrow direction
-        const arrow = item.querySelector('.arrow');
+    item.addEventListener('click', function (event) {
+        const arrow = item.querySelector('.arrow'); // Find the arrow inside the clicked nav-item
         const blockId = item.getAttribute('href').substring(1) + '-block'; // Get the block id
         const block = document.getElementById(blockId);
 
-        // Toggle the arrow direction
-        if (arrow.textContent === '▼') {
-            arrow.textContent = '▲'; // Change to up arrow
-        } else {
-            arrow.textContent = '▼'; // Change to down arrow
-        }
-
-        // Collapse all other blocks
-        document.querySelectorAll('.nav-block').forEach(otherBlock => {
-            if (otherBlock !== block && otherBlock.classList.contains('show')) {
-                otherBlock.classList.remove('show'); // Collapse other blocks
-            }
-        });
-
-        // Toggle current block visibility with transition effect
+        // Toggle the current block visibility
         if (block.classList.contains('show')) {
             block.classList.remove('show'); // Collapse the block
+            arrow.textContent = '▼'; // Change to down arrow
         } else {
-            block.classList.add('show'); // Expand the block
+            // Collapse all other blocks
+            document.querySelectorAll('.nav-block').forEach(otherBlock => {
+                otherBlock.classList.remove('show');
+            });
+
+            // Reset all other arrows
+            document.querySelectorAll('.arrow').forEach(otherArrow => {
+                otherArrow.textContent = '▼';
+            });
+
+            // Expand the current block
+            block.classList.add('show');
+            arrow.textContent = '▲'; // Change to up arrow
         }
 
         // Prevent the default anchor link behavior
@@ -32,16 +30,21 @@ document.querySelectorAll('.nav-item').forEach(item => {
 });
 
 // Close the block when clicking outside the block
-document.addEventListener('click', function(event) {
+document.addEventListener('click', function (event) {
     const blocks = document.querySelectorAll('.nav-block');
     const navLinks = document.querySelectorAll('.nav-item');
 
-    // If the click is outside both the blocks and nav items, close all blocks
+    // If the click is outside both the blocks and nav items
     if (![...blocks].some(block => block.contains(event.target)) && 
         ![...navLinks].some(link => link.contains(event.target))) {
-        blocks.forEach(block => block.classList.remove('show'));
+        blocks.forEach(block => block.classList.remove('show')); // Collapse all blocks
+        document.querySelectorAll('.arrow').forEach(arrow => {
+            arrow.textContent = '▼'; // Reset all arrows to down
+        });
     }
 });
+
+
 
 
 
@@ -133,4 +136,15 @@ prevArrow.addEventListener('click', () => {
 nextArrow.addEventListener('click', () => {
     if (currentIndexc < paginationDots.length - 1) currentIndexc++; // Move to next 4 cards
     updateGrid();
+});
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const logoSection = document.querySelector(".footer-logo");
+    logoSection.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
 });
