@@ -12,9 +12,16 @@ body {
     background-color: white;
     padding: 10px 20px;
     color: rgb(9, 9, 122);
-    height: 50px;
+    height: 72px;
     border: 1px solid rgba(0, 0, 0, 0.145);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+    z-index: 1000;
 }
+
 
 .logo {
     font-size: 1.6rem;
@@ -55,27 +62,108 @@ body {
 
 .nav-block {
     position: absolute; /* Stack all blocks on top of each other */
-    top: 72px;
+    top: 0px;
     left: 0;
     width: 0; 
     height: 400px; 
     overflow: hidden; /* Prevent content overflow */
-    background-color: #007BFF;
+    background-color: #f9f9f9;
     color: white;
     font-size: 16px;
-    padding: 20px;
+    padding: 0px;
     opacity: 0; 
+    display: flex;  /* Use flexbox for layout */
+    flex-direction: row;
     visibility: hidden; 
     transition: width 0.5s ease, opacity 0.5s ease, visibility 0s 0.5s; 
 }
 
 .nav-block.show {
-    width: 97.4%; 
+    width: 100%; 
     opacity: 1; 
     visibility: visible; /* Make the content visible */
     transition: width 0.6s ease, opacity 0.6s ease; 
     z-index: 15000;
 }
+
+.direc {
+    width: 30%;  /* Adjust width as needed */
+    background-color: #f9f9f9;
+    height: 100%;
+    padding-left: 40px;
+}
+
+.showd {
+    width: 70%;  
+    background-color: #730041;
+    height: 100%;
+    padding: 0px;
+    position: relative;
+}
+
+.content {
+    position: absolute;
+    top: 0;
+    left: 0; /* Start at the left edge of showd */
+    width: 0%; 
+    height: 100%;
+    background-color: #ffffff;
+    padding-top: 35px;
+    border-left: 1px solid black;
+    visibility: hidden;
+    transition: width 0.6s ease; 
+}
+
+.content.active {
+    width: 50%; /* Slide content to occupy 50% width of showd */
+    visibility: visible; 
+    transition: width 0.6s ease, visibility 0s 0s;
+}
+
+.link {
+    cursor: pointer; /* Make links clickable */
+}
+
+.link:hover {
+    color: #fff; /* Optional: add hover effect on links */
+}
+    
+.direc p {
+    margin: 35px 0;  /* Space between paragraphs */
+    color: #000;
+    padding: 10px;  
+    transition: background-color 0.6s ease, box-shadow 0.3s ease;  
+    width: 300px;
+    border-radius: 5px;
+}
+
+.direc p:hover {
+    text-decoration: none;  
+    background-color: rgba(138, 164, 234, 0.647);  
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);  
+    cursor: pointer;  
+}
+
+.styled-p {
+    margin: 0px 0;  /* Space between paragraphs */
+    color: #000;
+    padding: 10px;  
+    transition: background-color 0.6s ease, box-shadow 0.3s ease;  
+    width: 300px;
+    border-radius: 5px;
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+.styled-p:hover {
+    text-decoration: none;  
+    background-color: rgba(138, 164, 234, 0.647);  
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);  
+    cursor: pointer;  
+}
+
+
+
 
 .search-container {
     display: flex;
@@ -108,16 +196,24 @@ body {
     background-color: #008c9e;
 }
 
-
-
-.display{
+.display {
     background-color: rgb(2, 1, 57);
     width: 100%;
     height: 600px;
-    margin-top: 1px;
+    margin-top: 72px;
     position: relative; 
+    z-index: 1; 
 }
 
+.mchez {
+    height: 440px;
+    width: 100%; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    z-index: 2; 
+    background-color: transparent;
+}
 
 .display img{
     display: block;
@@ -430,24 +526,53 @@ body {
     margin-bottom: 1.5rem;
   }
   
-  .column {
+.column {
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
   }
   
-  .solutions-links a {
+
+.solutions-links a {
     text-decoration: none;
     color: #005eb8;
     font-size: 1rem;
+    position: relative;
+    display: inline-flex; 
+    align-items: center;
+    gap: 4px; 
     transition: color 0.3s;
-  }
-  
-  .solutions-links a:hover {
+}
+
+.solutions-links a .text {
+    position: relative;
+}
+
+.solutions-links a .text::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px; 
+    width: 0;
+    height: 2px;
+    background-color: #002d73;
+    transition: width 0.3s ease;
+}
+
+.solutions-links a:hover .text::after {
+    width: 100%; 
+}
+
+.solutions-links a:hover {
     color: #002d73;
-  }
+}
+
+.solutions-links a span {
+    text-decoration: none; /* Ensure no underline on the span */
+}
+    
   
-  .contact-button {
+.contact-button {
     background-color: #005eb8;
     color: white;
     border: none;
@@ -1038,4 +1163,3 @@ body {
 .social-icons a:hover {
     background-color: #555;
 }
-
