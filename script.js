@@ -180,3 +180,27 @@ document.querySelectorAll('.direc .link').forEach(link => {
 
 
 
+
+// Add event listeners for 'styled-p' elements
+document.querySelectorAll('.content .styled-p').forEach(styledP => {
+    styledP.addEventListener('click', function () {
+        const targetClass = this.getAttribute('data-target'); // Get the target class from data attribute
+
+        // Hide all detail sections
+        document.querySelectorAll('.showd .detail').forEach(detail => {
+            detail.classList.remove('active');
+        });
+
+        // Show the corresponding detail section with transition
+        const targetDetail = document.querySelector(`.${targetClass}`);
+        targetDetail.classList.add('active');
+    });
+});
+
+
+
+
+
+
+
+

@@ -162,6 +162,29 @@ body {
     cursor: pointer;  
 }
 
+.detail {
+    position: absolute;
+    top: 0;
+    left: 50%; /* Start at the end of the content section */
+    width: 0; /* Start collapsed */
+    height: 100%;
+    background-color: #eaeaea; /* Adjust background color */
+    visibility: hidden;
+    transition: width 0.6s ease, visibility 0s 0.6s; /* Visibility delay ensures smooth effect */
+    z-index: 2;
+}
+
+.detail.active {
+    width: 50%; /* Occupy the remaining 50% of .showd when active */
+    visibility: visible; /* Make visible immediately */
+    transition: width 0.6s ease, visibility 0s 0s; /* Visibility becomes instant on activation */
+}
+
+
+
+
+
+
 
 
 
