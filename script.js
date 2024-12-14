@@ -160,11 +160,15 @@ document.querySelectorAll('.direc .link').forEach(link => {
 
         // Find the corresponding content element
         const targetContent = document.querySelector(`.${targetClass}`);
-        
+        const targetDetail = document.querySelector(`.${targetClass}-detail`); // Corresponding detail section
+
         // Check if the target content is already active
         if (targetContent.classList.contains('active')) {
             // If active, remove the active class to hide it
             targetContent.classList.remove('active');
+            if (targetDetail) {
+                targetDetail.classList.remove('active'); // Close corresponding detail section when closing content
+            }
         } else {
             // If not active, hide all content sections first
             document.querySelectorAll('.showd .content').forEach(content => {
@@ -177,11 +181,7 @@ document.querySelectorAll('.direc .link').forEach(link => {
     });
 });
 
-
-
-
-
-// Add event listeners for 'styled-p' elements
+// Add event listeners for 'styled-p' elements (to open detail sections)
 document.querySelectorAll('.content .styled-p').forEach(styledP => {
     styledP.addEventListener('click', function () {
         const targetClass = this.getAttribute('data-target'); // Get the target class from data attribute
@@ -200,11 +200,4 @@ document.querySelectorAll('.content .styled-p').forEach(styledP => {
         }
     });
 });
-
-
-
-
-
-
-
 
