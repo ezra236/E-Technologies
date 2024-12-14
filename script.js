@@ -185,15 +185,19 @@ document.querySelectorAll('.direc .link').forEach(link => {
 document.querySelectorAll('.content .styled-p').forEach(styledP => {
     styledP.addEventListener('click', function () {
         const targetClass = this.getAttribute('data-target'); // Get the target class from data attribute
+        const targetDetail = document.querySelector(`.${targetClass}`); // Find the corresponding detail section
 
-        // Hide all detail sections
-        document.querySelectorAll('.showd .detail').forEach(detail => {
-            detail.classList.remove('active');
-        });
+        // Toggle the active class on the target detail section
+        if (targetDetail.classList.contains('active')) {
+            targetDetail.classList.remove('active'); // If already active, remove the class to hide it
+        } else {
+            // Hide all detail sections
+            document.querySelectorAll('.showd .detail').forEach(detail => {
+                detail.classList.remove('active');
+            });
 
-        // Show the corresponding detail section with transition
-        const targetDetail = document.querySelector(`.${targetClass}`);
-        targetDetail.classList.add('active');
+            targetDetail.classList.add('active'); // Add the active class to show the clicked section
+        }
     });
 });
 
