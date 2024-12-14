@@ -213,7 +213,6 @@ document.querySelectorAll('.content .styled-p').forEach(styledP => {
 
 
 
-
 document.querySelectorAll('.directry .linkt, .directry .linktry').forEach(link => {
     link.addEventListener('click', function() {
         const targetClass = this.getAttribute('data-target'); // Get the target class from data attribute
@@ -238,6 +237,37 @@ document.querySelectorAll('.directry .linkt, .directry .linktry').forEach(link =
         }
     });
 });
+
+
+
+
+
+
+document.querySelectorAll('.directry .linktrya').forEach(link => {
+    link.addEventListener('click', function() {
+        const targetClass = this.getAttribute('data-target'); // Get the target class from the data attribute
+
+        // Find the corresponding content element
+        const targetContent = document.querySelector(`.showdtrya .${targetClass}`);
+
+        // Close any currently active content
+        document.querySelectorAll('.showdtrya .content').forEach(content => {
+            if (content !== targetContent) {
+                content.classList.remove('active'); // Remove active class from other content
+            }
+        });
+
+        // Toggle the active state of the clicked content
+        if (targetContent.classList.contains('active')) {
+            // If already active, deactivate it
+            targetContent.classList.remove('active');
+        } else {
+            // Otherwise, activate the clicked content
+            targetContent.classList.add('active');
+        }
+    });
+});
+
 
 
 
