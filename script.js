@@ -162,6 +162,19 @@ document.querySelectorAll('.direc .link').forEach(link => {
         const targetContent = document.querySelector(`.${targetClass}`);
         const targetDetail = document.querySelector(`.${targetClass}-detail`); // Corresponding detail section
 
+        // **NEW**: Before proceeding, close any previously active content and detail sections
+        document.querySelectorAll('.showd .content').forEach(content => {
+            if (content !== targetContent) {
+                content.classList.remove('active');  // Close other active content sections
+            }
+        });
+        
+        document.querySelectorAll('.showd .detail').forEach(detail => {
+            if (detail !== targetDetail) {
+                detail.classList.remove('active');  // Close other active detail sections
+            }
+        });
+
         // Check if the target content is already active
         if (targetContent.classList.contains('active')) {
             // If active, remove the active class to hide it
@@ -170,12 +183,7 @@ document.querySelectorAll('.direc .link').forEach(link => {
                 targetDetail.classList.remove('active'); // Close corresponding detail section when closing content
             }
         } else {
-            // If not active, hide all content sections first
-            document.querySelectorAll('.showd .content').forEach(content => {
-                content.classList.remove('active');
-            });
-
-            // Show the corresponding content with transition
+            // If not active, show the corresponding content with transition
             targetContent.classList.add('active');
         }
     });
@@ -200,4 +208,7 @@ document.querySelectorAll('.content .styled-p').forEach(styledP => {
         }
     });
 });
+
+
+
 
