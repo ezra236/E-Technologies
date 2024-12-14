@@ -91,6 +91,7 @@ body {
     background-color: #f9f9f9;
     height: 100%;
     padding-left: 40px;
+    z-index: 2;
 }
 
 .showd {
@@ -104,20 +105,21 @@ body {
 .content {
     position: absolute;
     top: 0;
-    left: 0; /* Start at the left edge of showd */
-    width: 0%; 
+    left: 0;  
+    width: 50%;
     height: 100%;
     background-color: #ffffff;
-    padding-top: 35px;
-    border-left: 1px solid black;
+    padding: 20px;
     visibility: hidden;
-    transition: width 0.6s ease; 
+    transform: translateX(-100%);  
+    transition: transform 0.6s ease, visibility 0s 0.6s; 
+    z-index: 1;  /* Make sure content is below directry */
 }
 
 .content.active {
-    width: 50%; /* Slide content to occupy 50% width of showd */
-    visibility: visible; 
-    transition: width 0.6s ease, visibility 0s 0s;
+    visibility: visible;
+    transform: translateX(0);  /* Move to its position inside the container */
+    transition: transform 0.6s ease, visibility 0s 0s; /* Make the transition instant once active */
 }
 
 .link {
@@ -331,6 +333,7 @@ body {
     background-color: #f9f9f9;
     height: 100%;
     padding-left: 40px;
+    z-index: 2;
 }
 
 .showdtry {
@@ -391,7 +394,25 @@ body {
 }
 
 
+#contact-block .content {
+    position: absolute;
+    top: 0;
+    left: 0;  /* Start from the left edge of showdtry */
+    width: 50%;
+    height: 100%;
+    background-color: #ffffff;  /* Adjust content background */
+    padding: 20px;
+    visibility: hidden;
+    transform: translateX(-100%);  /* Start outside the container to the left */
+    transition: transform 0.6s ease, visibility 0s 0.6s; /* Transition from left to right */
+    z-index: 1;
+}
 
+#contact-block .content.active {
+    visibility: visible;
+    transform: translateX(0);  /* Move to its position inside the container */
+    transition: transform 0.6s ease, visibility 0s 0s; /* Make the transition instant once active */
+}
 
 
 
