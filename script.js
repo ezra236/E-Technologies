@@ -8,6 +8,7 @@ document.querySelectorAll('.nav-item').forEach(item => {
         if (block.classList.contains('show')) {
             block.classList.remove('show'); // Collapse the block
             arrow.textContent = '▼'; // Change to down arrow
+            item.classList.remove('active'); // Remove active class
         } else {
             // Collapse all other blocks
             document.querySelectorAll('.nav-block').forEach(otherBlock => {
@@ -22,6 +23,10 @@ document.querySelectorAll('.nav-item').forEach(item => {
             // Expand the current block
             block.classList.add('show');
             arrow.textContent = '▲'; // Change to up arrow
+
+            // Add active class to the clicked nav-item and remove from others
+            document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
+            item.classList.add('active');
         }
 
         // Prevent the default anchor link behavior
@@ -41,8 +46,12 @@ document.addEventListener('click', function (event) {
         document.querySelectorAll('.arrow').forEach(arrow => {
             arrow.textContent = '▼'; // Reset all arrows to down
         });
+
+        // Remove active class from all nav items
+        navLinks.forEach(link => link.classList.remove('active'));
     }
 });
+
 
 
 
@@ -210,6 +219,95 @@ document.querySelectorAll('.content .styled-p').forEach(styledP => {
 });
 
 
+
+
+document.querySelectorAll('.direc p').forEach(p => {
+    p.addEventListener('click', function() {
+        // Check if the clicked paragraph already has the special background color
+        if (p.style.backgroundColor === 'rgba(6, 36, 120, 0.9)') {
+            // If it does, remove it
+            p.style.backgroundColor = '';
+        } else {
+            // First, remove the background color from any paragraph that has it
+            document.querySelectorAll('.direc p').forEach(otherP => {
+                if (otherP !== p && otherP.style.backgroundColor === 'rgba(6, 36, 120, 0.9)') {
+                    otherP.style.backgroundColor = ''; // Remove background from other paragraphs
+                }
+            });
+
+            // Then, apply the new background color to the clicked paragraph
+            p.style.backgroundColor = 'rgba(6, 36, 120, 0.9)';
+        }
+    });
+});
+
+
+document.querySelectorAll('.styled-p').forEach(p => {
+    p.addEventListener('click', function() {
+        // Check if the clicked paragraph already has the special background color
+        if (p.style.backgroundColor === 'rgba(6, 36, 120, 0.9)') {
+            // If it does, remove it
+            p.style.backgroundColor = '';
+        } else {
+            // First, remove the background color from any paragraph that has it
+            document.querySelectorAll('.styled-p').forEach(otherP => {
+                if (otherP !== p && otherP.style.backgroundColor === 'rgba(6, 36, 120, 0.9)') {
+                    otherP.style.backgroundColor = ''; // Remove background from other paragraphs
+                }
+            });
+
+            // Then, apply the new background color to the clicked paragraph
+            p.style.backgroundColor = 'rgba(6, 36, 120, 0.9)';
+        }
+    });
+});
+
+
+
+document.querySelectorAll('.directry p').forEach(p => {
+    p.addEventListener('click', function() {
+        // Check if any p has the background color of rgba(6, 36, 120, 0.9)
+        const currentActive = document.querySelector('.directry p.active');
+        
+        // If there's an active one and it's not the clicked one, reset its background
+        if (currentActive && currentActive !== p) {
+            currentActive.style.backgroundColor = ''; // Reset background
+            currentActive.classList.remove('active'); // Remove active class
+        }
+
+        // Toggle the background color for the clicked p
+        if (p.style.backgroundColor === 'rgba(6, 36, 120, 0.9)') {
+            p.style.backgroundColor = ''; // Remove the background color
+            p.classList.remove('active'); // Remove active class
+        } else {
+            p.style.backgroundColor = 'rgba(6, 36, 120, 0.9)'; // Set new background color
+            p.classList.add('active'); // Add active class
+        }
+    });
+});
+
+
+document.querySelectorAll('.styled-pp').forEach(item => {
+    item.addEventListener('click', function () {
+        // Check if any p element already has the active background color
+        const activeP = document.querySelector('.styled-pp.active');
+        
+        if (activeP && activeP !== item) {
+            // Remove the active background color from the previously clicked p
+            activeP.classList.remove('active');
+        }
+
+        // Toggle the background color on the clicked p
+        item.classList.toggle('active');
+    });
+});
+
+
+
+
+
+
+    
 
 
 
