@@ -179,6 +179,22 @@ body {
     transition: transform 0.6s ease, visibility 0s 0s; /* Make the transition instant once active */
 }
 
+.content a {
+    color: #0a0b0c; 
+    text-decoration: none; 
+    transition: color 0.3s ease, transform 0.3s ease; 
+}
+
+.content a:hover {
+    color: #1a48bc; 
+    transform: scale(1.1); 
+}
+
+.content a:active {
+    color: #e74c3c; 
+    transform: scale(1);
+}
+
 .link {
     cursor: pointer; /* Make links clickable */
 }
@@ -187,18 +203,18 @@ body {
     color: #0e0229; 
 }
 
-.link a {
+.direc a {
     color: #0a0b0c; 
     text-decoration: none; 
     transition: color 0.3s ease, transform 0.3s ease; 
 }
 
-.link a:hover {
+.direc a:hover {
     color: #1a48bc; 
     transform: scale(1.1); 
 }
 
-.link a:active {
+.direc a:active {
     color: #e74c3c; 
     transform: scale(1);
 }
@@ -394,6 +410,22 @@ body {
     padding-left: 40px;
 }
 
+.direct a {
+    color: #0a0b0c; 
+    text-decoration: none; 
+    transition: color 0.3s ease, transform 0.3s ease; 
+}
+
+.direct a:hover {
+    color: #1a48bc; 
+    transform: scale(1.1); 
+}
+
+.direct a:active {
+    color: #e74c3c; 
+    transform: scale(1);
+}
+
 .showdt {
     width: 70%;  
     background-color: #730041;
@@ -528,6 +560,22 @@ body {
     cursor: pointer;  
 }
 
+.directr a {
+    color: #0a0b0c; 
+    text-decoration: none; 
+    transition: color 0.3s ease, transform 0.3s ease; 
+}
+
+.directr a:hover {
+    color: #1a48bc; 
+    transform: scale(1.1); 
+}
+
+.directr a:active {
+    color: #e74c3c; 
+    transform: scale(1);
+}
+
 .linktr {
     cursor: pointer; /* Make links clickable */
     color: #000;
@@ -630,6 +678,22 @@ body {
     background-color: rgba(138, 164, 234, 0.647);  
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);  
     cursor: pointer;  
+}
+
+.directry a {
+    color: #0a0b0c; 
+    text-decoration: none; 
+    transition: color 0.3s ease, transform 0.3s ease; 
+}
+
+.directry a:hover {
+    color: #1a48bc; 
+    transform: scale(1.1); 
+}
+
+.directry a:active {
+    color: #e74c3c; 
+    transform: scale(1);
 }
 
 .linktry {
