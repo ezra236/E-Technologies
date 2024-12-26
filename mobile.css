@@ -1186,7 +1186,7 @@ body {
     display: flex;
     margin: 0;
     padding: 0;
-    gap: 30px;
+    gap: 50px;
 }
 
 .navbarr .nav-links {
@@ -1194,7 +1194,7 @@ body {
     color: #000;
     font-size: 19px;
     font-weight: 500;
-    padding: 10px 0;
+    padding: 10px 40px;
     position: relative;
 }
 
@@ -1222,6 +1222,7 @@ body {
     text-align: center;
     padding: 50px 20px;
     background-color: white;
+    scroll-margin-top: 180px;
 }
 
 .section-titlep {
@@ -1282,6 +1283,7 @@ body {
     justify-content: flex-start;
     gap: 20px; /* Space between the image and text */
     background-color: #7600eb30;
+    scroll-margin-top: 150px;
 }
 
 .left-image {
@@ -1325,6 +1327,7 @@ body {
     text-align: center;
     padding: 50px 20px;
     background-color: #001bcc53;
+    scroll-margin-top: 150px;
 }
 
 .section-subtitlef {
@@ -1395,6 +1398,7 @@ body {
     margin-bottom: 25px;
     text-align: center;
     overflow: hidden;
+    scroll-margin-top: 150px;
   }
 
   .testimonial-container h2 {
@@ -1583,6 +1587,7 @@ body {
     margin-bottom: 20px;
     margin-top: 90px;
     text-align: center;
+    scroll-margin-top: 180px;
 }
 
 .headers p {
