@@ -4,6 +4,7 @@ document.querySelectorAll('.nav-item').forEach(item => {
         const blockId = item.getAttribute('href').substring(1) + '-block'; // Get the block id
         const block = document.getElementById(blockId);
         const buttonM = document.querySelector('.buttonM'); // Select the button
+        const buttonMc = document.querySelector('.buttonMc'); // Select the buttonMc
         const ezra = document.querySelector('.ezra'); // Select the ezra class
 
         // Toggle the current block visibility
@@ -12,6 +13,7 @@ document.querySelectorAll('.nav-item').forEach(item => {
             arrow.textContent = '▼'; // Change to down arrow
             item.classList.remove('active'); // Remove active class
             buttonM.style.display = 'block'; // Show the button again when the block is collapsed
+            buttonMc.style.display = 'block'; // Show buttonMc again when the block is collapsed
 
             // Show the ezra element when the block is collapsed
             ezra.style.display = 'block'; 
@@ -32,6 +34,7 @@ document.querySelectorAll('.nav-item').forEach(item => {
 
             // Hide the button and ezra before showing the new block
             buttonM.style.display = 'none';
+            buttonMc.style.display = 'none'; // Hide buttonMc when a new block is expanded
             ezra.style.display = 'none';
 
             // Wait for the ezra block to disappear before expanding the new block
@@ -62,8 +65,9 @@ document.addEventListener('click', function (event) {
         // Remove active class from all nav items
         navLinks.forEach(link => link.classList.remove('active'));
 
-        // Show the button and ezra when the block is collapsed
+        // Show the buttons when the block is collapsed
         document.querySelector('.buttonM').style.display = 'block';
+        document.querySelector('.buttonMc').style.display = 'block'; // Show buttonMc when all blocks are collapsed
         document.querySelector('.ezra').style.display = 'block';
     }
 });
