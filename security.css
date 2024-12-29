@@ -1166,14 +1166,27 @@ body {
 /* Introduction Section */
 .introduction {
     text-align: center;
-    background:white;
+    background:rgb(11, 1, 45);
     padding: 30px;
     border-radius: 0px;
     font-size: 18px;
 }
 
+.introduction h2 {
+    color: white;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.introduction p {
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 19px;
+}
+
 .features{
     width: 100%;
+    background-color: white;
     height: 300px;
 }
 
@@ -1181,7 +1194,7 @@ body {
 .features h2{
     text-align: center;
     text-transform: uppercase;
-    color: #000000;
+    color: black;
     font-size: 28px;
 }
 
@@ -1204,7 +1217,7 @@ body {
 
 .card h3 {
     font-size: 1.2em;
-    color: #030405;
+    color: #110603;
     margin-bottom: 10px;
 }
 

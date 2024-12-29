@@ -1242,7 +1242,7 @@ body {
 
 /* General Section Styling */
 .services {
-    background: url('download\ \(17\).jpg') no-repeat center center/cover;
+    background-color: #010126;
     background-size: 100% 100%;
     position: relative;
     color: #fff;
@@ -1251,7 +1251,6 @@ body {
 }
 
 .services-overlay {
-    background: rgba(0, 0, 0, 0.6);
     padding: 50px;
     border-radius: 10px;
 }
@@ -1308,7 +1307,7 @@ body {
 
 .technologies {
     position: relative;
-    background: url('Black.jpg') no-repeat center center/cover; /* Add background image */
+    background-color: #10047e6b;
     padding: 40px;
     background-size: 100% 100%;
     text-align: center;
@@ -1316,27 +1315,28 @@ body {
 }
 
 .technologies .background-overlay {
-    background: rgba(0, 0, 0, 0.5); /* Overlay to darken background */
     padding: 40px;
     border-radius: 10px;
 }
 
 .technologies h2 {
     font-size: 2.5rem;
-    color: #f1c40f;
+    color: #020307;
     margin-bottom: 20px;
 }
 
 .technologies p {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     margin-bottom: 30px;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .tech-categories-container {
     display: flex;
     justify-content: space-around; /* Distribute space evenly */
-    flex-wrap: wrap; /* Allows wrapping on smaller screens */
-    gap: 20px; /* Adds space between the items */
+    flex-wrap: wrap; 
+    gap: 20px; 
 }
 
 .tech-category {
