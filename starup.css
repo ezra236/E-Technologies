@@ -10,11 +10,15 @@ body {
     padding: 10px 25px;
     background-color: #ffffff;
     border-bottom: 1px solid #e0e0e0;
-    position: relative;
-    z-index: 2;
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    z-index: 1000; 
     height: 50px;
     gap: 250px;
 }
+
 
 /* Menu Icon */
 .menu-icon {
@@ -79,15 +83,6 @@ body {
     text-align: center;
 }
 
-.dashboard-content h1 {
-    margin: 0;
-    font-size: 3rem;
-}
-
-.dashboard-content p {
-    margin: 10px 0;
-    font-size: 1.2rem;
-}
 
 .dashboard-content button {
     margin-top: 20px;
@@ -102,6 +97,59 @@ body {
 
 .dashboard-content button:hover {
     background: #005bb5;
+}
+
+.amadeus-sites {
+    padding: 50px 20px;
+}
+
+.amadeus-sites h1 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #e0e6f1; /* Slightly lighter text */
+}
+
+.sites-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.site-card {
+    background: rgba(255, 255, 255, 0.05); /* Transparent white for card */
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.site-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+.site-card .icon {
+    margin-bottom: 20px;
+}
+
+.site-card .icon img {
+    width: 50px;
+    height: 50px;
+}
+
+.site-card h2 {
+    font-size: 1.5rem;
+    color: #e0e6f1;
+    margin-bottom: 10px;
+}
+
+.site-card p {
+    font-size: 0.9rem;
+    color: #a3b1cc; /* Softer text for descriptions */
+    line-height: 1.5;
 }
 
 
@@ -121,7 +169,6 @@ body {
     height: 100%;
     object-fit: cover;
 }
-
 
 .text-overlays {
     position: absolute;
@@ -146,7 +193,6 @@ body {
     white-space: nowrap; 
 }
 
-/* Dynamic Text Container */
 .dynamic-text-containers {
     position: relative;
     height: 60px; /* Adjust to fit one line of text */
@@ -171,7 +217,6 @@ body {
     left: 0;
 }
 
-/* Animation for Dynamic Text */
 @keyframes slideText {
     0% { transform: translateY(100%); opacity: 0; }
     5% { transform: translateY(0); opacity: 1; }
@@ -179,7 +224,7 @@ body {
     25% { transform: translateY(-100%); opacity: 0; }
 }
 
-/* Delay for Each Sentence */
+
 .dynamic-texts:nth-child(1) { animation-delay: 0s; }
 .dynamic-texts:nth-child(2) { animation-delay: 5s; }
 .dynamic-texts:nth-child(3) { animation-delay: 10s; }
@@ -187,7 +232,43 @@ body {
 .dynamic-texts:nth-child(5) { animation-delay: 20s; }
 
 
+.cta-button {
+    position: absolute;
+    top: 70%; /* Adjust button position below text */
+    left: 11%;
+    transform: translateX(-50%);
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(90deg, #0048B4, #0078FF);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; 
+}
 
+.cta-button::after {
+    content: '➜'; /* Arrow Symbol */
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+/* Hover Effect */
+.cta-button:hover {
+    background: linear-gradient(90deg, #0078FF, #00A1FF);
+}
+
+.cta-button:hover::after {
+    transform: translateX(10px); /* Arrow moves slightly to the right */
+}
 
 
 
@@ -197,14 +278,14 @@ body {
 }
 
 .startup-section h1 {
-    font-size: 24px;
+    font-size: 26px;
     font-weight: bold;
     color: #001E61;
     margin-bottom: 20px;
 }
 
 .startup-section p {
-    font-size: 16px;
+    font-size: 18px;
     margin-bottom: 40px;
     line-height: 1.5;
 }
