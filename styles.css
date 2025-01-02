@@ -1431,38 +1431,124 @@ display: none; /* Hide the scrollbar */
     z-index: 1;
   }
 
-  .content-overlay {
-position: absolute;
-bottom: 100px;
-left: 50px;
-z-index: 2;
-color: #050432;
-text-align: left;
-padding: 10px;
-border-radius: 0px;
+/* General Styles for Content Overlay */
+.content-overlay {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    z-index: 2;
+    text-align: left;
+    padding: 10px;
+    border-radius: 0px;
 }
 
-
-  .content-overlay h1 {
-    margin: 0;
-    font-size: 2.5rem;
-    padding: 10px;
-  }
-
-  .content-overlay p {
-    margin: 10px 0 0;
-    font-size: 1.2rem;
-    line-height: 1.5;
+/* Portfolio Title and Intro */
+.portfolio-title {
+    font-size: 1.8rem;
+    color: #050432;
+    text-transform: uppercase;
     font-weight: bold;
-    padding: 10px;
-    width: 400px;
-  }
+}
 
+.portfolio-intro {
+    font-size: 1.3rem;
+    color: #050432;
+    line-height: 1.6;
+    width: 500px;
+    font-weight: normal;
+}
+
+.mobile-title {
+    font-size: 2rem;
+    color: white;
+    font-weight: bold;
+}
+
+.mobile-desc {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    width: 500px;
+    line-height: 1.5;
+}
+
+/* Website App Styles */
+.web-title {
+    font-size: 2rem;
+    color: #050432;
+    font-weight: bold;
+}
+
+.web-desc {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #050432;
+    line-height: 1.5;
+    width: 500px;
+}
+
+/* Desktop App Styles */
+.desktop-title {
+    font-size: 2rem;
+    color: white;
+    font-weight: bold;
+}
+
+.desktop-desc {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: white;
+    width: 500px;
+}
+
+/* Machine Learning Styles */
+.ml-title {
+    font-size: 2rem;
+    color: white;
+    font-weight: bold;
+}
+
+.ml-desc {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: white;
+    width: 500px;
+}
+
+/* Security Solutions Styles */
+.security-title {
+    font-size: 2rem;
+    color: white;
+    font-weight: bold;
+}
+
+.security-desc {
+    font-size: 1.3rem;
+    font-weight: bold;
+    line-height: 1.6;
+    color: white;
+    width: 500px;
+}
+
+/* Data Science Styles */
+.ds-title {
+    font-size: 2rem;
+    color: white;
+    font-weight: bold;
+}
+
+.ds-desc {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: white;
+    width: 500px;
+    font-weight: bold;
+}
 
 
   .nav-arrow {
     position: absolute;
-    bottom: 110px;
+    bottom: 20px;
     width: 30px;
     height: 30px;
     background-color: #ca3e14;
