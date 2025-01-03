@@ -1342,8 +1342,8 @@ body {
 .portfolio-section {
     padding: 50px 20px;
     text-align: center;
-    background-color: #615ff351;
-    height: 600px;
+    background-color: #030231;
+    height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1352,18 +1352,17 @@ body {
 .port {
     position: relative;
     width: 90%;
-    height: 90%;
+    height: 99%;
     padding: 5px;
     box-sizing: border-box;
     overflow: hidden;
 }
 
-
   .scroll-containers {
     position: absolute;
     bottom: 20px;
     right: 20px;
-    width: 700px;
+    width: 450px;
     height: 180px;
     display: flex;
     overflow-x: auto;
@@ -1378,7 +1377,7 @@ display: none; /* Hide the scrollbar */
 }
 
   .item {
-    width: 140px;
+    width: 110px;
     flex: 0 0 auto;
     height: 100%;
     display: flex;
@@ -1392,7 +1391,7 @@ display: none; /* Hide the scrollbar */
   }
 
   .item img {
-      width: 140px;
+      width: 110px;
       height: 100%;
   }
 
@@ -1434,8 +1433,8 @@ display: none; /* Hide the scrollbar */
 /* General Styles for Content Overlay */
 .content-overlay {
     position: absolute;
-    bottom: 50px;
-    left: 50px;
+    bottom: 20px;
+    left: 20px;
     z-index: 2;
     text-align: left;
     padding: 10px;
@@ -1510,6 +1509,7 @@ display: none; /* Hide the scrollbar */
 
 .ml-desc {
     font-size: 1.3rem;
+    font-weight: bold;
     line-height: 1.6;
     color: white;
     width: 500px;
@@ -1548,10 +1548,10 @@ display: none; /* Hide the scrollbar */
 
   .nav-arrow {
     position: absolute;
-    bottom: 20px;
+    bottom: 30px;
     width: 30px;
     height: 30px;
-    background-color: #ca3e14;
+    background-color: transparent;
     color: white;
     border: none;
     border-radius: 50%;
@@ -1559,21 +1559,20 @@ display: none; /* Hide the scrollbar */
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    font-size: 1.5rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    font-size: 1.8rem;
     z-index: 6;
   }
 
   .nav-arrow:hover {
-    background-color: #6c1d04;
+    color: blue;
   }
 
   .nav-arrow.left {
-    left: 500px;
+    left: 700px;
   }
 
   .nav-arrow.right {
-    left: 560px;
+    left: 760px;
   }
 
 
