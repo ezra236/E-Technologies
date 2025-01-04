@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-WebAppDesk&Mobile</title>
     <link rel="stylesheet" href="webproduct.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="icon" href="ee.png">
 </head>
 <body>
@@ -323,158 +324,228 @@
 
 
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <video autoplay muted loop class="hero-video">
-            <source src="vd.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="hero-content">
-            <h1>Transforming Ideas into Stunning Websites</h1>
-            <p>We deliver world-class web development solutions tailored to your business needs.</p>
-            <a href="#contact" class="cta-button">Get a Free Quote</a>
-        </div>
-    </section>
+<!-- Hero Section -->
+<section class="hero">
+    <video autoplay muted loop class="hero-video">
+        <source src="vids.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>Transforming Ideas into Stunning Websites</h1>
+        <p>We deliver world-class web development solutions tailored to your business needs.</p>
+        <a href="#contact" class="cta-button">Get a Free Quote</a>
+    </div>
+</section>
+
+
+
+
     
 
     <!-- Key Features Section -->
     <h1 class="why-choose-us-title">Why Choose Us</h1>
+    
+    
     <div class="container">
         <div class="accordion">
             <div class="accordion-item">
-                <button class="accordion-button" onclick="toggleExplanation('reason1')">Expert Network & Schedule Planning</button>
+                <button class="accordion-button" onclick="toggleExplanation('reason1')">
+                    Expert Network & Schedule Planning
+                    <i class="fas fa-chevron-down"></i>
+                </button>
                 <div class="accordion-content" id="reason1">
                     We provide optimized planning solutions to maximize efficiency and reduce operational costs.
                 </div>
             </div>
             <div class="accordion-item">
-                <button class="accordion-button" onclick="toggleExplanation('reason2')">Proven Revenue Management</button>
+                <button class="accordion-button" onclick="toggleExplanation('reason2')">
+                    Proven Revenue Management
+                    <i class="fas fa-chevron-down"></i>
+                </button>
                 <div class="accordion-content" id="reason2">
                     Our revenue management solutions ensure maximum profitability through data-driven strategies.
                 </div>
             </div>
             <div class="accordion-item">
-                <button class="accordion-button" onclick="toggleExplanation('reason3')">Smart Dynamic Pricing</button>
+                <button class="accordion-button" onclick="toggleExplanation('reason3')">
+                    Smart Dynamic Pricing
+                    <i class="fas fa-chevron-down"></i>
+                </button>
                 <div class="accordion-content" id="reason3">
                     Real-time pricing models adapt to market demand for better returns.
                 </div>
             </div>
             <div class="accordion-item">
-                <button class="accordion-button" onclick="toggleExplanation('reason4')">Advanced Search & Shopping</button>
+                <button class="accordion-button" onclick="toggleExplanation('reason4')">
+                    Advanced Search & Shopping
+                    <i class="fas fa-chevron-down"></i>
+                </button>
                 <div class="accordion-content" id="reason4">
                     Seamless and efficient shopping experience for customers.
                 </div>
             </div>
             <div class="accordion-item">
-                <button class="accordion-button" onclick="toggleExplanation('reason5')">Efficient Project Management</button>
+                <button class="accordion-button" onclick="toggleExplanation('reason5')">
+                    Efficient Project Management
+                    <i class="fas fa-chevron-down"></i>
+                </button>
                 <div class="accordion-content" id="reason5">
                     Our solutions help streamline project workflows, improve team collaboration, and meet deadlines effectively.
                 </div>
             </div>
             <div class="accordion-item">
-                <button class="accordion-button" onclick="toggleExplanation('reason6')">Innovative Technology Integration</button>
+                <button class="accordion-button" onclick="toggleExplanation('reason6')">
+                    Innovative Technology Integration
+                    <i class="fas fa-chevron-down"></i>
+                </button>
                 <div class="accordion-content" id="reason6">
                     We bring the latest technologies to your business, ensuring that you're always ahead of the competition.
                 </div>
             </div>
             <div class="accordion-item">
-                <button class="accordion-button" onclick="toggleExplanation('reason7')">Customer-Centric Approach</button>
+                <button class="accordion-button" onclick="toggleExplanation('reason7')">
+                    Customer-Centric Approach
+                    <i class="fas fa-chevron-down"></i>
+                </button>
                 <div class="accordion-content" id="reason7">
                     Our focus is on understanding your customers' needs and delivering exceptional service that keeps them coming back.
                 </div>
             </div>
             <div class="accordion-item">
-                <button class="accordion-button" onclick="toggleExplanation('reason8')">Sustainable Practices</button>
+                <button class="accordion-button" onclick="toggleExplanation('reason8')">
+                    Sustainable Practices
+                    <i class="fas fa-chevron-down"></i>
+                </button>
                 <div class="accordion-content" id="reason8">
                     We prioritize eco-friendly practices, ensuring that your business remains responsible while thriving in today's market.
                 </div>
-            </div>            
+            </div>
         </div>
         <div class="image-container">
             <img src="uds.jpg" alt="Airplane Window View">
         </div>
-    </div>    
-
+    </div>
+    
+    
     
 
-    <!-- Technologies Section -->
-    <section class="technologies">
-        <h2>Technologies We Use</h2>
-        <div class="tech-logos">
+<!-- Technologies Section -->
+<section class="technologies">
+    <h2>Technologies We Use</h2>
+    <div class="tech-logos">
+        <div class="tech-item">
             <img src="HTML5 logo PNG.jpg" alt="HTML5">
+            <p>HTML5</p>
+        </div>
+        <div class="tech-item">
             <img src="css.jpg" alt="CSS3">
+            <p>CSS3</p>
+        </div>
+        <div class="tech-item">
             <img src="JS Logo.jpg" alt="JavaScript">
+            <p>JavaScript</p>
+        </div>
+        <div class="tech-item">
             <img src="React logo PNG.jpg" alt="React">
-            <img src="django.jpg" alt="JavaScript">
-            <img src="Laravel Logo Magnet.jpg" alt="React">
-            <img src="php.jpg" alt="JavaScript">
-            <img src="Introduction to Nodejs.jpg" alt="React">
+            <p>React</p>
         </div>
-    </section>
+        <div class="tech-item">
+            <img src="django.jpg" alt="Django">
+            <p>Django</p>
+        </div>
+        <div class="tech-item">
+            <img src="Laravel Logo Magnet.jpg" alt="Laravel">
+            <p>Laravel</p>
+        </div>
+        <div class="tech-item">
+            <img src="php.jpg" alt="PHP">
+            <p>PHP</p>
+        </div>
+        <div class="tech-item">
+            <img src="Introduction to Nodejs.jpg" alt="Node.js">
+            <p>Node.js</p>
+        </div>
+    </div>
 
-    <!-- Pricing Plans Section -->
-    <section class="pricing">
-        <h2 class="section-titled">Our Pricing Plans</h2>
-        <div class="pricing-container">
-            <div class="pricing-item">
-                <h3>Basic</h3>
-                <p class="price">$299 <span>/ Project</span></p>
-                <ul>
-                    <li>Basic Features</li>
-                    <li>Email Support</li>
-                    <li>1 Month Updates</li>
-                </ul>
-                <button class="pricing-btn">Get Started</button>
-            </div>
-            <div class="pricing-item highlight">
-                <h3>Standard</h3>
-                <p class="price">$599 <span>/ Project</span></p>
-                <ul>
-                    <li>All Basic Features</li>
-                    <li>Priority Support</li>
-                    <li>6 Months Updates</li>
-                </ul>
-                <button class="pricing-btn">Get Started</button>
-            </div>
-            <div class="pricing-item">
-                <h3>Premium</h3>
-                <p class="price">$999 <span>/ Project</span></p>
-                <ul>
-                    <li>All Standard Features</li>
-                    <li>24/7 Support</li>
-                    <li>1 Year Updates</li>
-                </ul>
-                <button class="pricing-btn">Get Started</button>
-            </div>
-        </div>
-    </section>
-    
+    <div class="circle-1"></div>
+    <div class="circle-2"></div>
+    <div class="circle-3"></div>
+    <div class="circle-4"></div>
+</section>
 
-    <!-- FAQ Section -->
-    <section class="faq">
-        <h2 class="section-titles">Frequently Asked Questions</h2>
-        <div class="faq-container">
-            <div class="faq-item">
-                <button class="faq-question" onclick="toggleFAQ('faq1')">
-                    What services do you offer? <span class="faq-icon">+</span>
-                </button>
-                <p class="faq-answer" id="faq1">We offer web development, e-commerce solutions, and more.</p>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" onclick="toggleFAQ('faq2')">
-                    How long does a project take? <span class="faq-icon">+</span>
-                </button>
-                <p class="faq-answer" id="faq2">Project duration depends on complexity but usually takes 4–6 weeks.</p>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" onclick="toggleFAQ('faq3')">
-                    Do you provide ongoing support? <span class="faq-icon">+</span>
-                </button>
-                <p class="faq-answer" id="faq3">Yes, we offer maintenance and support packages.</p>
-            </div>
+
+
+
+
+<!-- Pricing Plans Section -->
+<section class="pricing">
+    <h2 class="section-titled">Our Pricing Plans</h2>
+    <div class="pricing-container">
+        <div class="pricing-item">
+            <h3>Basic</h3>
+            <p class="price">$299 <span>/ Project</span></p>
+            <ul>
+                <li>Basic Features</li>
+                <li>Email Support</li>
+                <li>1 Month Updates</li>
+            </ul>
+            <button class="pricing-btn">Get Started</button>
         </div>
-    </section>
+        <div class="pricing-item highlight">
+            <h3>Standard</h3>
+            <p class="price">$599 <span>/ Project</span></p>
+            <ul>
+                <li>All Basic Features</li>
+                <li>Priority Support</li>
+                <li>6 Months Updates</li>
+            </ul>
+            <button class="pricing-btn">Get Started</button>
+        </div>
+        <div class="pricing-item">
+            <h3>Premium</h3>
+            <p class="price">$999 <span>/ Project</span></p>
+            <ul>
+                <li>All Standard Features</li>
+                <li>24/7 Support</li>
+                <li>1 Year Updates</li>
+            </ul>
+            <button class="pricing-btn">Get Started</button>
+        </div>
+    </div>
+</section>
+
+
     
+    
+<!-- FAQ Section -->
+<section class="faqs">
+    <h2 class="faqs-title">Frequently Asked Questions</h2>
+    <div class="faq">
+        <button class="faq-question">
+            <i class="fas fa-chevron-down"></i>
+            <span>What services do you offer?</span>
+        </button>
+        <p class="faq-answer">We offer web development, e-commerce solutions, and more. Our team delivers high-quality, user-centric digital experiences.</p>
+    </div>
+    <div class="faq">
+        <button class="faq-question">
+            <i class="fas fa-chevron-down"></i>
+            <span>How long does a project take?</span>
+        </button>
+        <p class="faq-answer">Project duration depends on complexity but typically takes 4–6 weeks. We provide an estimated timeline at the start of every project.</p>
+    </div>
+    <div class="faq">
+        <button class="faq-question">
+            <i class="fas fa-chevron-down"></i>
+            <span>Do you provide ongoing support?</span>
+        </button>
+        <p class="faq-answer">Yes, we offer continuous maintenance and support packages, including bug fixes, updates, and improvements to ensure your website's longevity.</p>
+    </div>
+</section>
+
+
+
 
 
 

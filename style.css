@@ -67,8 +67,8 @@ body {
 }
 
 .nav-block {
-    position: absolute; /* Stack all blocks on top of each other */
-    top: 0px;
+    position: fixed; 
+    top: 72px;
     left: 0;
     width: 0; 
     height: 450px; 

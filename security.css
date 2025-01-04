@@ -67,8 +67,8 @@ body {
 }
 
 .nav-block {
-    position: absolute; /* Stack all blocks on top of each other */
-    top: 0px;
+    position: fixed; 
+    top: 72px;
     left: 0;
     width: 0; 
     height: 450px; 
@@ -1166,20 +1166,20 @@ body {
 /* Introduction Section */
 .introduction {
     text-align: center;
-    background:rgb(11, 1, 45);
+    background: white;
     padding: 30px;
     border-radius: 0px;
     font-size: 18px;
 }
 
 .introduction h2 {
-    color: white;
-    font-size: 28px;
+    color: #001f54;
+    font-size: 39px;
     margin-bottom: 20px;
 }
 
 .introduction p {
-    color: white;
+    color: #030810;
     font-family: 'Times New Roman', Times, serif;
     font-size: 19px;
 }
@@ -1194,8 +1194,8 @@ body {
 .features h2{
     text-align: center;
     text-transform: uppercase;
-    color: black;
-    font-size: 28px;
+    color: #001f54;
+    font-size: 36px;
 }
 
 .feature-cards {
@@ -1217,7 +1217,7 @@ body {
 
 .card h3 {
     font-size: 1.2em;
-    color: #110603;
+    color: #020211;
     margin-bottom: 10px;
 }
 
@@ -1252,67 +1252,53 @@ body {
     font-size: 28px;
 }
 
-
 .best-practices {
-    background: #0121b167; /* Light gradient background */
+    padding: 40px;
+    background-color: white; /* Light background for readability */
     border-radius: 0px;
-    padding: 20px 30px;
-    height: 400px;
+    width: 100%;
+    margin: 0 auto;
+    font-family: 'Arial', sans-serif;
 }
 
 .best-practices h2 {
-    font-size: 1.8em;
+    font-size: 2rem;
+    color: #050505;
     text-align: center;
-    color: #004085; /* Deep blue heading */
-    margin-bottom: 35px;
-    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 .best-practices ul {
-    list-style: none;
-    padding: 0;
+    list-style-type: none; /* Remove default bullets */
+    padding-left: 100px;
 }
 
-.best-practices li {
-    background: white;
-    border: 1px solid #d9edf7;
-    border-radius: 0px;
-    margin: 10px 0;
-    padding: 12px 15px;
-    font-size: 1em;
+.best-practices ul li {
+    font-size: 1.1rem;
+    color: #070606;
+    margin-bottom: 35px;
+    line-height: 1.6;
     display: flex;
     align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
 }
 
-.best-practices li:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+.best-practices ul li strong {
+    font-weight: bold;
+    color: #0077b6; 
+    margin-right: 10px;
 }
 
-.best-practices li strong {
-    color: #0056b3;
-    margin-right: 8px;
-    font-weight: 600;
+/* Icon styling */
+.best-practices ul li strong::before {
+    margin-right: 8px; /* Space between icon and text */
 }
 
-
-.integration {
-    text-align: center;
-    background: white;
-    padding: 30px;
-    border-radius: 0px;
-}
-
-.integration h2 {
-    font-size: 25px;
-    text-transform: uppercase;
-}
-
-.integration p {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 18px;
+.best-practices ul li:hover {
+    background-color: #e9e3e3;
+    transition: background-color 0.3s ease;
 }
 
 
@@ -1373,8 +1359,6 @@ body {
     background-color: #0071C5;
     color: white;
 }
-
-
 
 
 .footer {

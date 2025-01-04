@@ -67,8 +67,8 @@ body {
 }
 
 .nav-block {
-    position: absolute; /* Stack all blocks on top of each other */
-    top: 0px;
+    position: fixed; 
+    top: 72px;
     left: 0;
     width: 0; 
     height: 450px; 
@@ -920,7 +920,7 @@ body {
     height: 600px;
     margin-top: 72px;
     position: relative; 
-    z-index: 1; 
+    z-index: 10; 
 }
 
 .mchez {
@@ -1192,12 +1192,20 @@ body {
 /* Individual Field Card */
 .ml-field {
     background: #ffffff;
-    border: 1px solid #e0e0e0;
+    border: 1px solid #04030347;
     border-radius: 0px;
     padding: 20px;
     text-align: left;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 1s ease, opacity 0.3s ease;
+    transform: scale(0.8); 
+    opacity: 0; 
 }
+
+.ml-field.visible {
+    transform: scale(1); 
+    opacity: 1; /* Become visible */
+}
+
 
 .ml-field h3 {
     font-size: 1.5rem;
@@ -1271,114 +1279,217 @@ body {
 }
 
 
-
 .ml-services {
+    padding: 40px;
     background-color: white;
-    padding: 0px 20px;
-    margin: 50px auto;
-    max-width: 1250px;
+    position: relative;
     text-align: center;
+    display: flex;
+    justify-content: center; 
+    gap: 50px;
+    flex-wrap: wrap; 
+    margin-bottom: 100px;
 }
 
 .ml-services h2 {
     font-size: 2.5rem;
-    color: #002d73;
+    color: #08064f;
     margin-bottom: 40px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    width: 100%; /* Ensures the title takes the full width of the container */
 }
 
 .service-category {
-    display: inline-block;
-    width: 350px;
-    height: 260px;
-    margin: 10px 1.5%;
-    background-color: white;
-    border: 1px solid rgba(0, 0, 0, 0.099);
-    border-radius: 0px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    justify-content: center;
 }
 
 .service-card {
+    background-color: #002d73;
     padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    width: 250px;
+    height: 250px;
     text-align: center;
-    color: #050404;
+    position: relative;
+    transform-style: preserve-3d;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
+/* Title styling */
 .service-card h3 {
-    font-size: 1.8rem;
-    color: #0056b3;
+    font-size: 1.5rem;
+    color: white;
     margin-bottom: 15px;
 }
 
 .service-card p {
     font-size: 1.2rem;
-    color: #060606;
-    line-height: 1.5;
-}
-
-.service-category:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-
-
-/* Headings */
-.case-studies h2 {
-    font-size: 2em;
-    margin-bottom: 30px;
     color: white;
+}
+
+/* Hover Effect */
+.service-card:hover {
+    transform: rotateY(15deg) scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Background effect on hover */
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: -1;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Subtle background color change on hover */
+.service-card:hover::before {
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+
+.pricing {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 50px;
+    padding-bottom: 90px;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    margin-top: -60px;
+}
+
+.section-titled {
+    font-size: 3rem;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 60px;
+    color: #fff;
+    letter-spacing: 2px;
     text-transform: uppercase;
 }
 
-/* Case Studies Styling */
-.case-studies {
-    background: #030043;
-    border-radius: 0px;
-    padding: 20px 30px;
-    margin: 50px auto;
-    width: 100%;
-    height: 420px;
-    text-align: center;
-    margin-top: 0px;
-}
-
-.case-studies .case-container {
+.pricing-container {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    justify-content: center; /* Centers the cards */
-    gap: 50px; /* Space between cards */
+    gap: 50px;
 }
 
-.case-card {
-    background: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-radius: 0px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+.pricing-item {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    border-radius: 20px;
+    padding: 30px 25px;
+    width: 320px;
+    text-align: center;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    position: relative;
+    color: #fff;
+}
+
+.pricing-item:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.6);
+}
+
+.pricing-item.highlight {
+    background: linear-gradient(135deg, #4caf50, #81c784);
+    border-radius: 20px;
+    padding: 40px 30px;
+    width: 350px;
+    text-align: center;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    position: relative;
+    color: #fff;
+}
+
+.pricing-item.highlight:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.6);
+}
+
+.pricing-item h3 {
+    font-size: 1.8rem;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 15px;
+    text-transform: capitalize;
+    color: #fff;
+}
+
+.pricing-item .price {
+    font-size: 2.5rem;
+    font-weight: 700;
     margin: 20px 0;
-    text-align: left;
-    width: 500px;
+    color: #fff;
+    transition: color 0.3s ease;
 }
 
-.case-card h3 {
-    color: #0078d7;
-    font-size: 1.3em;
-    margin-bottom: 10px;
+.pricing-item .price span {
+    font-size: 1.2rem;
+    color: #e0e0e0;
 }
 
-.case-card p {
-    margin: 5px 0;
-    font-size: 1em;
-    color: #000000;
+.pricing-item ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
 }
 
-.case-card strong {
-    color: #070606;
+.pricing-item ul li {
+    margin: 12px 0;
+    font-size: 1rem;
+    color: #e0e0e0;
+    transition: color 0.3s ease;
 }
+
+.pricing-btn {
+    margin-top: 25px;
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 16px 45px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 600;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Highlight Plan Button */
+.pricing-item.highlight .pricing-btn {
+    background: #fff;
+    color: #4caf50;
+    border: 2px solid #4caf50;
+}
+
+.pricing-item.highlight .pricing-btn:hover {
+    background: #4caf50;
+    color: #fff;
+    transform: translateY(-4px);
+}
+
+
 
 /* Data Privacy & Security Styling */
 .data-security {
@@ -1425,49 +1536,84 @@ body {
 }
 
 
-.faq-section {
-    background-color: white;
-    padding: 40px 20px;
-    margin: 50px auto;
-    max-width: 900px;
-    border-radius: 0px;
-}
 
-.faq-section h2 {
+/* FAQs Section */
+.faqs {
+    padding: 50px 20px;
+    background: white;
     text-align: center;
-    font-size: 2.0rem;
-    color: #080808;
-    margin-bottom: 20px;
-    text-transform: uppercase;
 }
 
-.faq-item {
-    background-color: white;
-    padding: 5px;
-    margin-bottom: 5px;
-    border-radius: 0px;
-    border: 1px solid rgba(0, 0, 0, 0.142);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+.faqs-title {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
 }
 
-.faq-item h3 {
-    font-size: 1.5rem;
-    color: #007BFF;
-    margin-bottom: 10px;
-    padding-left: 50px;
+/* FAQ Item Styling */
+.faq {
+    margin-bottom: 15px;
+    width: 550px;
+    padding-left: 500px;
+}
+
+.faq-question {
+    background: #fff;
+    padding: 15px;
+    width: 100%;
+    text-align: left;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1.1em;
+    color: #0078d7;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     cursor: pointer;
-    transition: color 0.3s;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
-.faq-item p {
-    font-size: 1.2rem;
-    color: #040101;
+.faq-question i {
+    font-size: 1.2em;
+    transition: transform 0.3s ease;
+    margin-right: 50px; /* Add some space between the chevron and the question */
+}
+
+.faq-question span {
+    flex-grow: 1; /* Ensures the text takes up remaining space */
+}
+
+/* Answer Styling */
+.faq-answer {
+    display: none;
+    padding: 10px 15px;
+    font-size: 1.2em;
     font-family: 'Times New Roman', Times, serif;
-    display: none; /* Hide the answers initially */
+    color: #080808;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-top: none;
+    margin-top: -1px;
+    border-radius: 0 0 8px 8px;
 }
 
-.faq-item h3:hover {
-    color: #0056b3;
+.faq-question:hover {
+    background: #f1f1f1;
+}
+
+.faq-question.active {
+    background: #0078d7;
+    color: white;
+}
+
+.faq-question.active i {
+    transform: rotate(180deg);
+}
+
+/* Hover and Active States */
+.faq-answer.show {
+    display: block;
 }
 
 

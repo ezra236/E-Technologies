@@ -3,7 +3,6 @@ document.querySelectorAll('.nav-item').forEach(item => {
         const arrow = item.querySelector('.arrow'); // Find the arrow inside the clicked nav-item
         const blockId = item.getAttribute('href').substring(1) + '-block'; // Get the block id
         const block = document.getElementById(blockId);
-        const buttonM = document.querySelector('.buttonM'); // Select the button
         const ezra = document.querySelector('.ezra'); // Select the ezra class
 
         // Toggle the current block visibility
@@ -11,10 +10,7 @@ document.querySelectorAll('.nav-item').forEach(item => {
             block.classList.remove('show'); // Collapse the block
             arrow.textContent = '▼'; // Change to down arrow
             item.classList.remove('active'); // Remove active class
-            buttonM.style.display = 'block'; // Show the button again when the block is collapsed
-
-            // Show the ezra element when the block is collapsed
-            ezra.style.display = 'block'; 
+            ezra.style.display = 'block'; // Show the ezra element again when block is collapsed
         } else {
             // Collapse all other blocks
             document.querySelectorAll('.nav-block').forEach(otherBlock => {
@@ -30,8 +26,7 @@ document.querySelectorAll('.nav-item').forEach(item => {
             document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
             item.classList.add('active');
 
-            // Hide the button and ezra before showing the new block
-            buttonM.style.display = 'none';
+            // Hide the ezra element before showing the new block
             ezra.style.display = 'none';
 
             // Wait for the ezra block to disappear before expanding the new block
@@ -62,8 +57,7 @@ document.addEventListener('click', function (event) {
         // Remove active class from all nav items
         navLinks.forEach(link => link.classList.remove('active'));
 
-        // Show the button and ezra when the block is collapsed
-        document.querySelector('.buttonM').style.display = 'block';
+        // Show the ezra element when the block is collapsed
         document.querySelector('.ezra').style.display = 'block';
     }
 });
@@ -75,7 +69,12 @@ document.addEventListener('click', function (event) {
 
 
 
+
 const statements = [
+    "Innovative solutions driving progress.",
+    "Reliable partner in technology advancement.",
+    "Excellence in customized tech solutions.",
+    "Empowering growth through digital innovation."
 ];
 
 let currentIndex = 0;
@@ -322,109 +321,17 @@ document.querySelectorAll('.directry .linktrya').forEach(link => {
 
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    const slides = document.querySelectorAll(".testimonial-slide");
-    const totalSlides = slides.length;
-    const prevButton = document.querySelector(".navigation button:first-of-type");
-    const nextButton = document.querySelector(".navigation button:last-of-type");
-    const counter = document.querySelector(".navigation span");
-    let currentIndex = 0;
+// Select all navigation links
+const navLinks = document.querySelectorAll('.nav-linkss');
 
-    function updateSlides() {
-      slides.forEach((slide, index) => {
-        slide.style.transform = `translateX(-${currentIndex * 100}%)`;
-      });
-      counter.textContent = `${currentIndex + 1} / ${totalSlides}`;
-    }
-
-    prevButton.addEventListener("click", () => {
-      if (currentIndex > 0) {
-        currentIndex--;
-        updateSlides();
-      }
-    });
-
-    nextButton.addEventListener("click", () => {
-      if (currentIndex < totalSlides - 1) {
-        currentIndex++;
-        updateSlides();
-      }
-    });
-
-    updateSlides();
-  });
-
-
-
-
-
-
-  function toggleExplanation(id) {
-    const content = document.getElementById(id);
-    const button = content.previousElementSibling; // Get the accordion button
-    const allContents = document.querySelectorAll('.accordion-content');
-    const allButtons = document.querySelectorAll('.accordion-button'); // Get all buttons
-
-    allContents.forEach(item => {
-        if (item !== content) {
-            item.style.display = 'none'; // Hide all other content blocks
-        }
-    });
-
-    allButtons.forEach(button => {
-        button.classList.remove('active'); // Remove the active class from all buttons
-    });
-
-    if (content.style.display === 'block') {
-        content.style.display = 'none'; // If the content is visible, hide it
-        button.classList.remove('active'); // Remove the active class from the button
-    } else {
-        content.style.display = 'block'; // Show the selected content block
-        button.classList.add('active'); // Add the active class to the button
-    }
-}
-
-
-
-
-
-
-function toggleFAQ(id) {
-    const answer = document.getElementById(id);
-    const parent = answer.parentElement;
-    const icon = parent.querySelector('.faq-icon');
-    
-    // Close all answers
-    document.querySelectorAll('.faq-answer').forEach(item => {
-        if (item.id !== id) {
-            item.style.display = 'none';
-            item.parentElement.classList.remove('active');
-            item.parentElement.querySelector('.faq-icon').innerText = '+';
-        }
-    });
-
-    // Toggle current answer
-    if (answer.style.display === 'block') {
-        answer.style.display = 'none';
-        parent.classList.remove('active');
-        icon.innerText = '+';
-    } else {
-        answer.style.display = 'block';
-        parent.classList.add('active');
-        icon.innerText = '-';
-    }
-}
-
-
-
-
-
-// JavaScript for Accordion
-document.querySelectorAll('.faq-question').forEach(question => {
-    question.addEventListener('click', function () {
-        this.classList.toggle('active');
-        const answer = this.nextElementSibling;
-        answer.classList.toggle('show');
+// Add click event listener to each link
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        // Remove 'active' class from all links
+        navLinks.forEach(nav => nav.classList.remove('active'));
+        
+        // Add 'active' class to the clicked link
+        link.classList.add('active');
     });
 });
 
@@ -432,26 +339,40 @@ document.querySelectorAll('.faq-question').forEach(question => {
 
 
 
+// Get all navigation links
+const navLinkss = document.querySelectorAll('.nav-linkss');
 
-document.addEventListener("DOMContentLoaded", function() {
-    const productItems = document.querySelectorAll('.product-item');
+// Observe sections and divs with IDs
+const sections = document.querySelectorAll('section[id], div[id]');
 
-    // Create an IntersectionObserver to detect when product items enter the viewport
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
+// Intersection Observer to detect section in view
+const observer = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                // When the element comes into view, add the 'visible' class
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target); // Stop observing the element once it has appeared
+                const id = entry.target.getAttribute('id');
+                // Remove active class from all links
+                navLinkss.forEach((link) => link.classList.remove('active'));
+                // Add active class to the current section's link
+                document
+                    .querySelector(`.nav-linkss[href="#${id}"]`)
+                    .classList.add('active');
             }
         });
-    }, {
-        threshold: 0.5  // Trigger when 50% of the element is in the viewport
-    });
+    },
+    {
+        root: null, // viewport
+        threshold: 0.6, // 60% of the section must be visible
+    }
+);
 
-    // Observe all product items
-    productItems.forEach(item => {
-        observer.observe(item);
-    });
-});
+// Observe each section and div
+sections.forEach((section) => observer.observe(section));
+
+
+
+
+
+
+
 

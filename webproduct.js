@@ -359,6 +359,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
+
   function toggleExplanation(id) {
     const content = document.getElementById(id);
     const button = content.previousElementSibling; // Get the accordion button
@@ -388,8 +390,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
-function toggleFAQ(id) {
+  function toggleFAQ(id) {
     const answer = document.getElementById(id);
     const parent = answer.parentElement;
     const icon = parent.querySelector('.faq-icon');
@@ -418,6 +419,46 @@ function toggleFAQ(id) {
 
 
 
+
+// JavaScript for Accordion
+document.querySelectorAll('.faq-question').forEach(question => {
+    question.addEventListener('click', function () {
+        this.classList.toggle('active');
+        const answer = this.nextElementSibling;
+        answer.classList.toggle('show');
+    });
+});
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const hero = document.querySelector('.hero');
+    const heroContent = document.querySelector('.hero-content');
+    
+    const observerOptions = {
+        root: null, // use viewport as root
+        rootMargin: '0px',
+        threshold: 0.1 // trigger when 10% of the hero section is in view
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Add 'visible' class to hero-content when hero section is in view
+                heroContent.classList.add('visible');
+            } else {
+                // Remove 'visible' class when hero section is out of view
+                heroContent.classList.remove('visible');
+            }
+        });
+    }, observerOptions);
+
+    // Start observing the .hero section
+    observer.observe(hero);
+});
 
 
 

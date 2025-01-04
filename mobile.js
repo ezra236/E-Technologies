@@ -368,3 +368,38 @@ const observer = new IntersectionObserver(
 
 // Observe each section and div
 sections.forEach((section) => observer.observe(section));
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const cards = document.querySelectorAll('.cardd img'); // Select all images inside the cards
+    const section = document.querySelector('.experience-section'); // Select the experience section
+
+    // Function to animate images
+    function animateImages() {
+        cards.forEach((img) => {
+            img.classList.remove('animate'); // Remove the class to reset animation
+            void img.offsetWidth; // Trigger reflow to reset the animation
+            img.classList.add('animate'); // Reapply the animation class to trigger the animation
+        });
+    }
+
+    // Create an IntersectionObserver to observe when the section comes into view
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateImages(); // Trigger animation when section comes into view
+            }
+        });
+    }, {
+        threshold: 0.1 // Trigger when 10% of the section is visible
+    });
+
+    // Start observing the .experience-section
+    observer.observe(section);
+});
+
+

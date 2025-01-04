@@ -67,8 +67,8 @@ body {
 }
 
 .nav-block {
-    position: absolute; /* Stack all blocks on top of each other */
-    top: 0px;
+    position: fixed; 
+    top: 72px;
     left: 0;
     width: 0; 
     height: 450px; 
@@ -1575,6 +1575,22 @@ display: none; /* Hide the scrollbar */
     left: 760px;
   }
 
+
+  .content-link-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px 25px;
+    background-color: #0858ee;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.content-link-btn:hover {
+    background-color: #005bb5;
+}
 
 
 

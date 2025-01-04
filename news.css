@@ -67,8 +67,8 @@ body {
 }
 
 .nav-block {
-    position: absolute; 
-    top: 0px;
+    position: fixed; 
+    top: 72px;
     left: 0;
     width: 0; 
     height: 450px; 
@@ -91,6 +91,7 @@ body {
     transition: width 0.6s ease, opacity 0.6s ease; 
     z-index: 15000;
 }
+
 
 .direc {
     width: 30%;  /* Adjust width as needed */

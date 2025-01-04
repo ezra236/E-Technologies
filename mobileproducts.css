@@ -67,8 +67,8 @@ body {
 }
 
 .nav-block {
-    position: absolute; /* Stack all blocks on top of each other */
-    top: 0px;
+    position: fixed; 
+    top: 72px;
     left: 0;
     width: 0; 
     height: 450px; 
@@ -1196,21 +1196,36 @@ body {
     background-color: white;
 }
 
-/* Styling for each product item */
 .product-item {
     display: flex;
-    flex-direction: column;  /* Stack the content vertically */
+    flex-direction: column; 
     justify-content: space-between;
-    width: calc(33.33% - 20px); /* Three products per row, adjusted for the gap */
+    width: calc(33.33% - 20px); 
     background-color: rgb(255, 255, 255);
     padding: 20px;
     border-radius: 0px;
+    border: 1px solid #001f5420;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    box-sizing: border-box; 
+    box-sizing: border-box;
     height: 400px;
     width: 300px;
+    transform: scale(0.8); /* Start smaller */
+    opacity: 0;
+    animation: productLoad 0.8s ease-out forwards;
 }
+
+/* Keyframes for the loading animation */
+@keyframes productLoad {
+    0% {
+        transform: scale(0.8); /* Start smaller */
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1); /* Reach original size */
+        opacity: 1;
+    }
+}    
 
 .product-title {
     font-size: 1.5em;
@@ -1242,7 +1257,7 @@ body {
 
 /* General Section Styling */
 .services {
-    background-color: #010126;
+    background-color: #08083d;
     background-size: 100% 100%;
     position: relative;
     color: #fff;
@@ -1276,7 +1291,7 @@ body {
 }
 
 .service-card {
-    background: rgba(255, 255, 255, 0.1);
+    background: white;
     padding: 20px;
     border-radius: 8px;
     width: 250px;
@@ -1293,83 +1308,98 @@ body {
 .service-card h3 {
     font-size: 1.2rem;
     margin-bottom: 5px;
+    color: #002d73;
 }
 
 .service-card p {
     font-size: 1.2rem;
+    color: #001f54;
 }
 
 /* Hover Effect */
 .service-card:hover {
     transform: scale(1.05);
-    background: rgba(255, 255, 255, 0.2);
+    background: rgb(221, 216, 216);
 }
 
+/* Main section styling */
 .technologies {
-    position: relative;
-    background-color: #10047e6b;
-    padding: 40px;
-    background-size: 100% 100%;
+    background: white;
+    padding: 50px 20px;
     text-align: center;
-    color: #fff;
+    perspective: 1000px; /* Perspective for 3D effect */
 }
 
-.technologies .background-overlay {
-    padding: 40px;
-    border-radius: 10px;
+.background-overlay {
+    background: white;
+    padding: 5px 20px;
+    padding-bottom: 50px;
+    border-radius: 0px;
+    transition: transform 0.3s ease-out; /* Smooth transform on hover */
 }
 
 .technologies h2 {
-    font-size: 2.5rem;
-    color: #020307;
+    font-size: 36px;
+    color: black;
     margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .technologies p {
-    font-size: 1.4rem;
-    margin-bottom: 30px;
-    color: white;
-    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    color: #070606;
+    margin-bottom: 40px;
 }
 
 .tech-categories-container {
     display: flex;
-    justify-content: space-around; /* Distribute space evenly */
-    flex-wrap: wrap; 
-    gap: 20px; 
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
 }
 
+/* Tech category styles */
 .tech-category {
-    background: white;
-    margin: 15px auto;
-    padding: 20px;
-    border-radius: 0px;
-    width: 300px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
+    background: linear-gradient(145deg, #03013b, #03013b);
+    border-radius: 15px;
+    padding: 30px 20px;
+    width: 250px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out; /* Smooth 3D effect on hover */
+    text-align: center;
 }
 
 .tech-category:hover {
-    transform: scale(1.05); /* Hover effect */
+    transform: translateY(-10px) rotateX(5deg) rotateY(5deg); /* 3D effect on hover */
+    box-shadow: 0 25px 35px rgba(0, 0, 0, 0.2); /* Enhanced shadow for hover */
 }
 
 .tech-category h3 {
+    font-size: 22px;
+    color: white;
     display: flex;
     align-items: center;
-    font-size: 1.5rem;
-    color: #2c3e50;
-}
-
-.tech-category p{
-    color: #002d73;
-    font-size: 20px;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
 }
 
 .tech-icon {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease-in-out; /* Icon animation */
 }
+
+.tech-category:hover .tech-icon {
+    transform: scale(1.1); /* Slightly enlarge the icon on hover */
+}
+
+.tech-category p {
+    font-size: 16px;
+    color: white;
+}
+
 
 .features {
     position: relative;
@@ -1439,68 +1469,92 @@ body {
 
 
 
-/* Pricing Section */
 .pricing {
-    background: linear-gradient(135deg, #f9fafc, #eef1f7); /* Soft Gradient */
-    padding: 60px 20px;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 50px;
+    padding-bottom: 90px;
     text-align: center;
-    background: white;
+    overflow: hidden;
+    position: relative;
+    margin-top: -60px;
 }
 
 .section-titled {
-    font-size: 38px;
+    font-size: 3rem;
     font-weight: 700;
-    font-family: 'Times New Roman', Times, serif;
-    margin-bottom: 45px;
-    color: #0c0202;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 60px;
+    color: #fff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
-/* Pricing Container */
 .pricing-container {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; /* Responsive layout */
-    gap: 30px;
-    background: white;
+    flex-wrap: wrap;
+    gap: 50px;
 }
 
-/* Pricing Item */
 .pricing-item {
-    background: rgb(255, 253, 253);
-    border: 1px solid #ddd;
-    border-radius: 10px;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    border-radius: 20px;
+    padding: 30px 25px;
+    width: 320px;
     text-align: center;
-    padding: 30px;
-    width: 280px;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-/* Highlight Middle Plan */
-.pricing-item.highlight {
-    background: #0056b3; /* Green Highlight */
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    position: relative;
     color: #fff;
-    transform: scale(1.05);
 }
 
-/* Plan Titles */
+.pricing-item:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.6);
+}
+
+.pricing-item.highlight {
+    background: linear-gradient(135deg, #4caf50, #81c784);
+    border-radius: 20px;
+    padding: 40px 30px;
+    width: 350px;
+    text-align: center;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    position: relative;
+    color: #fff;
+}
+
+.pricing-item.highlight:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.6);
+}
+
 .pricing-item h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
+    font-size: 1.8rem;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 15px;
+    text-transform: capitalize;
+    color: #fff;
 }
 
-/* Pricing Amount */
 .pricing-item .price {
-    font-size: 28px;
-    font-weight: bold;
-    margin: 10px 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 20px 0;
+    color: #fff;
+    transition: color 0.3s ease;
 }
 
 .pricing-item .price span {
-    font-size: 16px;
-    color: #353535;
+    font-size: 1.2rem;
+    color: #e0e0e0;
 }
 
-/* Plan Features */
 .pricing-item ul {
     list-style: none;
     padding: 0;
@@ -1508,42 +1562,42 @@ body {
 }
 
 .pricing-item ul li {
-    margin: 5px 0;
-    font-size: 16px;
-    font-family: 'Times New Roman', Times, serif;
+    margin: 12px 0;
+    font-size: 1rem;
+    color: #e0e0e0;
+    transition: color 0.3s ease;
 }
 
-/* Call-to-Action Button */
 .pricing-btn {
-    margin-top: 15px;
-    background: #0056b3;
+    margin-top: 25px;
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
     color: #fff;
     border: none;
-    border-radius: 5px;
-    padding: 12px 35px;
+    border-radius: 50px;
+    padding: 16px 45px;
     cursor: pointer;
-    font-size: 14px;
-    transition: background 0.3s;
+    font-size: 1.2rem;
+    font-weight: 600;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .pricing-btn:hover {
-    background: #034184;
-}
-
-/* Hover Effect */
-.pricing-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
 
-/* Highlight Plan Hover Effect */
+/* Highlight Plan Button */
 .pricing-item.highlight .pricing-btn {
     background: #fff;
-    color: #4CAF50;
+    color: #4caf50;
+    border: 2px solid #4caf50;
 }
 
 .pricing-item.highlight .pricing-btn:hover {
-    background: #ddd;
+    background: #4caf50;
+    color: #fff;
+    transform: translateY(-4px);
 }
 
 

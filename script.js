@@ -369,3 +369,29 @@ document.querySelectorAll('.directry .linktrya').forEach(link => {
 
 
 
+
+const items = document.querySelectorAll('.item');
+    const contentDisplay = document.getElementById('content-display');
+    const scrollContainer = document.querySelector('.scroll-containers');
+    const scrollLeft = document.getElementById('scroll-left');
+    const scrollRight = document.getElementById('scroll-right');
+
+    items.forEach(item => {
+      item.addEventListener('click', () => {
+        const content = item.getAttribute('data-content');
+        contentDisplay.innerHTML = content;
+      });
+    });
+
+    scrollLeft.addEventListener('click', () => {
+      scrollContainer.scrollBy({ left: -200, behavior: 'smooth' });
+    });
+
+    scrollRight.addEventListener('click', () => {
+      scrollContainer.scrollBy({ left: 200, behavior: 'smooth' });
+    });
+
+
+
+
+

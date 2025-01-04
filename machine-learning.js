@@ -357,20 +357,96 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+  function toggleExplanation(id) {
+    const content = document.getElementById(id);
+    const button = content.previousElementSibling; // Get the accordion button
+    const allContents = document.querySelectorAll('.accordion-content');
+    const allButtons = document.querySelectorAll('.accordion-button'); // Get all buttons
 
-// Select all FAQ questions
-const faqQuestions = document.querySelectorAll('.faq-question');
-
-// Add a click event listener for each FAQ question
-faqQuestions.forEach(question => {
-    question.addEventListener('click', () => {
-        const answer = question.nextElementSibling; // Get the next <p> element (the answer)
-
-        // Toggle the display of the answer
-        if (answer.style.display === 'block') {
-            answer.style.display = 'none';
-        } else {
-            answer.style.display = 'block';
+    allContents.forEach(item => {
+        if (item !== content) {
+            item.style.display = 'none'; // Hide all other content blocks
         }
+    });
+
+    allButtons.forEach(button => {
+        button.classList.remove('active'); // Remove the active class from all buttons
+    });
+
+    if (content.style.display === 'block') {
+        content.style.display = 'none'; // If the content is visible, hide it
+        button.classList.remove('active'); // Remove the active class from the button
+    } else {
+        content.style.display = 'block'; // Show the selected content block
+        button.classList.add('active'); // Add the active class to the button
+    }
+}
+
+
+
+  function toggleFAQ(id) {
+    const answer = document.getElementById(id);
+    const parent = answer.parentElement;
+    const icon = parent.querySelector('.faq-icon');
+    
+    // Close all answers
+    document.querySelectorAll('.faq-answer').forEach(item => {
+        if (item.id !== id) {
+            item.style.display = 'none';
+            item.parentElement.classList.remove('active');
+            item.parentElement.querySelector('.faq-icon').innerText = '+';
+        }
+    });
+
+    // Toggle current answer
+    if (answer.style.display === 'block') {
+        answer.style.display = 'none';
+        parent.classList.remove('active');
+        icon.innerText = '+';
+    } else {
+        answer.style.display = 'block';
+        parent.classList.add('active');
+        icon.innerText = '-';
+    }
+}
+
+
+
+
+
+// JavaScript for Accordion
+document.querySelectorAll('.faq-question').forEach(question => {
+    question.addEventListener('click', function () {
+        this.classList.toggle('active');
+        const answer = this.nextElementSibling;
+        answer.classList.toggle('show');
+    });
+});
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const mlFields = document.querySelectorAll('.ml-field');
+
+    // Create an IntersectionObserver to detect when ml-field elements enter the viewport
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // When the element comes into view, add the 'visible' class
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target); // Stop observing the element once it has appeared
+            }
+        });
+    }, {
+        threshold: 0.5  // Trigger when 50% of the element is in the viewport
+    });
+
+    // Observe all ml-field elements
+    mlFields.forEach(field => {
+        observer.observe(field);
     });
 });
