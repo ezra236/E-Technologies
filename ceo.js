@@ -3,6 +3,8 @@ document.querySelectorAll('.nav-item').forEach(item => {
         const arrow = item.querySelector('.arrow'); // Find the arrow inside the clicked nav-item
         const blockId = item.getAttribute('href').substring(1) + '-block'; // Get the block id
         const block = document.getElementById(blockId);
+        const buttonM = document.querySelector('.buttonM'); // Select the button
+        const buttonMc = document.querySelector('.buttonMc'); // Select the buttonMc
         const ezra = document.querySelector('.ezra'); // Select the ezra class
 
         // Toggle the current block visibility
@@ -10,7 +12,11 @@ document.querySelectorAll('.nav-item').forEach(item => {
             block.classList.remove('show'); // Collapse the block
             arrow.textContent = '▼'; // Change to down arrow
             item.classList.remove('active'); // Remove active class
-            ezra.style.display = 'block'; // Show the ezra element again when block is collapsed
+            buttonM.style.display = 'block'; // Show the button again when the block is collapsed
+            buttonMc.style.display = 'block'; // Show buttonMc again when the block is collapsed
+
+            // Show the ezra element when the block is collapsed
+            ezra.style.display = 'block'; 
         } else {
             // Collapse all other blocks
             document.querySelectorAll('.nav-block').forEach(otherBlock => {
@@ -26,7 +32,9 @@ document.querySelectorAll('.nav-item').forEach(item => {
             document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
             item.classList.add('active');
 
-            // Hide the ezra element before showing the new block
+            // Hide the button and ezra before showing the new block
+            buttonM.style.display = 'none';
+            buttonMc.style.display = 'none'; // Hide buttonMc when a new block is expanded
             ezra.style.display = 'none';
 
             // Wait for the ezra block to disappear before expanding the new block
@@ -57,7 +65,9 @@ document.addEventListener('click', function (event) {
         // Remove active class from all nav items
         navLinks.forEach(link => link.classList.remove('active'));
 
-        // Show the ezra element when the block is collapsed
+        // Show the buttons when the block is collapsed
+        document.querySelector('.buttonM').style.display = 'block';
+        document.querySelector('.buttonMc').style.display = 'block'; // Show buttonMc when all blocks are collapsed
         document.querySelector('.ezra').style.display = 'block';
     }
 });
@@ -70,11 +80,9 @@ document.addEventListener('click', function (event) {
 
 
 
+
+
 const statements = [
-    "Innovative solutions driving progress.",
-    "Reliable partner in technology advancement.",
-    "Excellence in customized tech solutions.",
-    "Empowering growth through digital innovation."
 ];
 
 let currentIndex = 0;

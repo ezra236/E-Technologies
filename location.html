@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-WebAppDesk&Mobile</title>
-    <link rel="stylesheet" href="leadership.css">
+    <link rel="stylesheet" href="location.css">
     <link rel="icon" href="ee.png">
 </head>
 <body>
@@ -270,7 +270,9 @@
         </div>
     
         <div class="reh">
-            <h1 class="reh-title">E-Wadm Executive Committee</h1>
+            <h1 class="reh-title">
+                ←<span class="space"></span> I'd like to find an office
+            </h1>
         </div>
     </div>
 
@@ -279,74 +281,166 @@
         <nav class="breadcrumb">
               <a href="Home.html">Home</a>
               <span>/</span>
-              <a href="about.html">About</a>
-              <span>/</span>
-              <a href="leadership.html">Leadership</a>
+              <a href="news.html">Location</a>
         </nav>
     </div>
 
 
 
 
-    <header>
-        <h1 class="d">Our leadership is dedicated to delivering innovative Mobile, Web, and Desktop solutions for a smarter digital future.</h1>
-    </header>    
-    <section class="leadership">
-        <div class="leader-card">
-            <img src="ceo.jpg" alt="Ana Doval de la Heras" class="leader-img">
-            <h2 class="name">Ezra Muthomi</h2>
-            <p>President, (CEO)</p>
-            <a href="ceo.html" class="bio-link">Bio Page</a>
-        </div>
-        <div class="leader-card">
-            <img src="download (20).jpg" alt="Ana Doval de la Heras" class="leader-img">
-            <h2 class="name">Jackson Pek</h2>
-            <p>Chief Operating Officer (COO)</p>
-            <a href="coo.html" class="bio-link">Bio Page</a>
-        </div>
-        <div class="leader-card">
-            <img src="Executive portraits.jpg" alt="Ana Doval de la Heras" class="leader-img">
-            <h2 class="name">Ana Doval de la Heras</h2>
-            <p>Head of Quality Assurance </p>
-            <a href="qa.html" class="bio-link">Bio Page</a>
-        </div>
-        <div class="leader-card">
-            <img src="download (20).jpg" alt="Ana Doval de la Heras" class="leader-img">
-            <h2 class="name">Wolfgang Krips</h2>
-            <p>Head of UI/UX Design</p>
-            <a href="ui.html" class="bio-link">Bio Page</a>
-        </div>
-    </section>
 
+    <div class="container">
+        <h2 class="based-on-title">Based on</h2>
+        <div class="button-container" id="button-container">
+            <button class="btn" onclick="showBlock('blockA')">Office Location</button>
+            <button class="btn" onclick="showBlock('blockB')">Office Function</button>
+            <div class="refresh-container">
+                <div class="refresh-icon"></div>
+            </div>
+        </div>
 
+        <div class="content-container">
+            <div id="blockA" class="content-block"> 
+                <div class="containerf">
+                    <div class="region-selectorf">
+                        <button onclick="showRegionBlock('africaBlock')">Africa</button>
+                        <button onclick="showRegionBlock('asiaPacificBlock')">Asia & Pacific</button>
+                        <button onclick="showRegionBlock('southAmericaBlock')">South and Central America</button>
+                        <button onclick="showRegionBlock('europeBlock')">Europe</button>
+                        <button onclick="showRegionBlock('uaeBlock')">United Arab Emirates</button>
+                        <button onclick="showRegionBlock('middleEastBlock')">Middle East</button>
+                        <button onclick="showRegionBlock('northAmericaBlock')">North America</button>
+                        <button onclick="showButtonContainer()">X</button>
+                    </div>
+                </div>
+            </div>
 
+            <div class="region-blocks">
+                <div id="africaBlock" class="region-block">
+                    <div class="containerx">
+                        <div class="titlex"> Country</div>
+                        <ul class="country-list">
+                            <li onclick="showDetailsBlockc()">Kenya</li>
+                            <li><button onclick="showButtonContainers()">X</button></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="asiaPacificBlock" class="region-block">WE HAVE NOT ESTABLISHED A BRANCH YET.<br><br>
+                    <button onclick="showButtonContainers()">X</button>
+                </div>
+                <div id="southAmericaBlock" class="region-block">WE HAVE NOT ESTABLISHED A BRANCH YET.<br><br>
+                    <button onclick="showButtonContainers()">X</button>
+                </div>
+                <div id="europeBlock" class="region-block">WE HAVE NOT ESTABLISHED A BRANCH YET.<br><br>
+                    <button onclick="showButtonContainers()">X</button>
+                </div>
+                <div id="uaeBlock" class="region-block">WE HAVE NOT ESTABLISHED A BRANCH YET.<br><br>
+                    <button onclick="showButtonContainers()">X</button>
+                </div>
+                <div id="middleEastBlock" class="region-block">WE HAVE NOT ESTABLISHED A BRANCH YET.<br><br>
+                    <button onclick="showButtonContainers()">X</button>
+                </div>
+                <div id="northAmericaBlock" class="region-block">WE HAVE NOT ESTABLISHED A BRANCH YET.<br><br>
+                    <button onclick="showButtonContainers()">X</button>
+                </div>
+            </div>
 
+            <div id="detailsBlock" class="detailsc-block">
+                <div class="info-container">
+                    <div class="info-icon"></div>
+                    <h2 class="info-title">Office information</h2>
+                </div>
+
+              <div class="sosa">
+                <div class="card">
+                    <div class="badge">Office</div>
+                    <h1>E-Wadm in Kenya</h1>
+                    <p>14 Riverside (off Riverside Drive) 4th floor Grosvenor building (Suite 4A)</p>
+                    <p>6680-00100 Nairobi</p>
+                    <p>KEN</p>
+                    <div class="contactb">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21 11.72 11.72 0 003.64 1.17 1 1 0 01.87 1v3.61a1 1 0 01-1 1A19.91 19.91 0 012 4a1 1 0 011-1h3.61a1 1 0 011 .87 11.72 11.72 0 001.17 3.64 1 1 0 01-.21 1.11z"/></svg>
+                        <a href="tel:+254204282000">+254 20 428 2000</a>
+                    </div>
+                    <div class="contactb">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 12.713l11.447-7.632a1 1 0 00-.894-1.781L12 10.868 1.447 3.3a1 1 0 00-.894 1.781l11.447 7.632zm11.394-1.083L13 17.24v4.81a1 1 0 001.447.894L23.447 15.4a1 1 0 00-.053-1.77zM1.553 15.4L10 22.944a1 1 0 001.447-.894v-4.81l-10.447-6.61a1 1 0 00-1.447.894v9.616a1 1 0 001.447.894z"/></svg>
+                        <a href="mailto:info@amadeus.co.ke">info@amadeus.co.ke</a>
+                    </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="blockB" class="content-block">
+                <div class="refresh-container">
+                    <div class="containerf">
+                        <div class="region-selectorf">
+                            <button onclick="showRegionBlockd('headquartersBlock')">Headquarters</button>
+                            <button onclick="showRegionBlockd('teamBlock')">Team Offices</button>
+                          <button onclick="showButtonContainer()">X</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="region-blocks">
+                <div id="headquartersBlock" class="region-blockd">
+                    <div class="info-container">
+                        <div class="info-icon"></div>
+                        <h2 class="info-title">Office information</h2>
+                    </div>
+    
+                  <div class="sosa">
+                    <div class="card">
+                        <div class="badge">Office</div>
+                        <h1>E-Wadm in Kenya</h1>
+                        <p>14 Riverside (off Riverside Drive) 4th floor Grosvenor building (Suite 4A)</p>
+                        <p>6680-00100 Nairobi</p>
+                        <p>KEN</p>
+                        <div class="contactb">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21 11.72 11.72 0 003.64 1.17 1 1 0 01.87 1v3.61a1 1 0 01-1 1A19.91 19.91 0 012 4a1 1 0 011-1h3.61a1 1 0 011 .87 11.72 11.72 0 001.17 3.64 1 1 0 01-.21 1.11z"/></svg>
+                            <a href="tel:+254204282000">+254 20 428 2000</a>
+                        </div>
+                        <div class="contactb">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 12.713l11.447-7.632a1 1 0 00-.894-1.781L12 10.868 1.447 3.3a1 1 0 00-.894 1.781l11.447 7.632zm11.394-1.083L13 17.24v4.81a1 1 0 001.447.894L23.447 15.4a1 1 0 00-.053-1.77zM1.553 15.4L10 22.944a1 1 0 001.447-.894v-4.81l-10.447-6.61a1 1 0 00-1.447.894v9.616a1 1 0 001.447.894z"/></svg>
+                            <a href="mailto:info@amadeus.co.ke">info@amadeus.co.ke</a>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="teamBlock" class="region-blockd">
+                    <div class="info-container">
+                        <div class="info-icon"></div>
+                        <h2 class="info-title">Office information</h2>
+                    </div>
+    
+                  <div class="sosa">
+                    <div class="card">
+                        <div class="badge">Office</div>
+                        <h1>E-Wadm in Kenya</h1>
+                        <p>14 Riverside (off Riverside Drive) 4th floor Grosvenor building (Suite 4A)</p>
+                        <p>6680-00100 Nairobi</p>
+                        <p>KEN</p>
+                        <div class="contactb">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21 11.72 11.72 0 003.64 1.17 1 1 0 01.87 1v3.61a1 1 0 01-1 1A19.91 19.91 0 012 4a1 1 0 011-1h3.61a1 1 0 011 .87 11.72 11.72 0 001.17 3.64 1 1 0 01-.21 1.11z"/></svg>
+                            <a href="tel:+254204282000">+254 20 428 2000</a>
+                        </div>
+                        <div class="contactb">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 12.713l11.447-7.632a1 1 0 00-.894-1.781L12 10.868 1.447 3.3a1 1 0 00-.894 1.781l11.447 7.632zm11.394-1.083L13 17.24v4.81a1 1 0 001.447.894L23.447 15.4a1 1 0 00-.053-1.77zM1.553 15.4L10 22.944a1 1 0 001.447-.894v-4.81l-10.447-6.61a1 1 0 00-1.447.894v9.616a1 1 0 001.447.894z"/></svg>
+                            <a href="mailto:info@amadeus.co.ke">info@amadeus.co.ke</a>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
 
 
     
-    <div class="containerd">
-        <h2>Discover more about E-Wadm</h2>
-        <div class="cards">
-          <div class="card">
-            <div class="icon">🏢</div>
-            <h3>Innovation</h3>
-            <div class="arrowt">→</div>
-          </div>
-          <div class="card">
-            <div class="icon">🌐</div>
-            <h3>Newsroom</h3>
-            <div class="arrowt">→</div>
-          </div>
-          <div class="card">
-            <div class="icon">👥</div>
-            <h3>About Us</h3>
-            <div class="arrowt">→</div>
-          </div>
-        </div>
-    </div>
 
-
-
+ 
 
     <div class="footer">
         <div class="contact">
@@ -424,6 +518,6 @@
 
 
 
-    <script src="leadership.js"></script>
+    <script src="location.js"></script>
 </body>
 </html>

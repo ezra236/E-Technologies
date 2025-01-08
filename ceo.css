@@ -1103,13 +1103,34 @@ body {
     left: 0;
     z-index: 200;
     background-color: blue; /* Example background for visibility */
-    width: 100%;
+    width: 70%;
     height: 500px;
     text-align: center;
-    background-image: url('download (10).jpg');
+    background-image: url('download\ \(10\).jpg');
     background-size: 100% 100%; /* Adjusts image to cover the entire element */
     background-repeat: no-repeat; /* Prevents image repetition */
     background-position: center; /* Centers the image */
+}
+
+.reh-right {
+    position: absolute;
+    top: 100px;
+    left: 60%; 
+    z-index: 200;
+    background-color: green; /* Example background for visibility */
+    width: 40%;
+    height: 500px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.reh-right img {
+    width: 100%;
+    height: 100%;
+    margin-top: -2px;
 }
 
 .breadcrumb {
@@ -1188,7 +1209,58 @@ body {
     width: 1080px;
 }
 
+/* Button Styling */
+.buttonMc {
+    background-color: #040faa;  
+    color: white; 
+    padding: 12px 35px; 
+    border: 2px solid #040faa; 
+    border-radius: 5px; 
+    font-size: 16px;
+    font-weight: bold; /* Bold text */
+    cursor: pointer; 
+    transition: background-color 0.3s, transform 0.2s; 
+    position: absolute;
+    z-index: 5;
+    top: 400px; 
+    left: 32%; 
+    transform: translateX(-50%); 
+}
 
+.buttonMc:hover {
+    background-color: #051078; 
+    color: white;
+    transform: translateX(-50%) scale(1.05);  
+}
+
+.buttonMc:active {
+    background-color: #78051a; 
+    transform: translateX(-50%) scale(0.95); /* Keep centering while shrinking */
+}
+
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    margin-top: 200px;
+}
+
+/* Individual Columns */
+.column {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Optional Styling for Readability */
+.column p {
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.5;
+}
 
 
 
@@ -1200,7 +1272,6 @@ body {
     padding: 40px;
     background-color: #eaeaea;
     height: 310px;
-    margin-top: 200px;
 }
 
 .footer-section {

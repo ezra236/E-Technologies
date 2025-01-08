@@ -400,3 +400,62 @@ function showButtonContainer() {
 
 
 
+
+function showRegionBlock(regionId) {
+    // Hide the content block first
+    let contentBlock = document.querySelector('.content-block');
+    contentBlock.classList.remove('active');
+
+    // After the content block is hidden, show the selected region block
+    setTimeout(() => {
+        // Hide all blocks
+        let allBlocks = document.querySelectorAll('.region-block');
+        allBlocks.forEach(block => {
+            block.classList.remove('active');
+        });
+
+        // Show the selected region block
+        let selectedBlock = document.getElementById(regionId);
+        selectedBlock.classList.add('active');
+    }, 500); // Delay to match the transition time of the content block
+}
+
+
+
+function showRegionBlockd(regionId) {
+    // Hide the content block first
+    let contentBlock = document.querySelector('.content-block');
+    contentBlock.classList.remove('active');
+
+    // After the content block is hidden, show the selected region block
+    setTimeout(() => {
+        // Hide all blocks
+        let allBlocks = document.querySelectorAll('.region-block');
+        allBlocks.forEach(block => {
+            block.classList.remove('active');
+        });
+
+        // Show the selected region block
+        let selectedBlock = document.getElementById(regionId);
+        selectedBlock.classList.add('active');
+    }, 500); // Delay to match the transition time of the content block
+}
+
+
+
+function showButtonContainers() {
+    // Refresh the page when the refresh icon is clicked
+    location.reload();
+}
+
+
+function showDetailsBlockc() {
+    // Hide the region-blocks
+    document.querySelectorAll('.region-blocks').forEach(block => {
+        block.style.display = 'none';
+    });
+
+    // Show and animate the details block
+    const detailsBlock = document.getElementById('detailsBlock');
+    detailsBlock.classList.add('active');
+}
