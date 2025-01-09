@@ -1224,8 +1224,15 @@ body {
 .imagea img {
     padding-left: 80px;
     width: 80%;
+    transition: clip-path 2s ease-out, opacity 1s ease-out;
+    clip-path: inset(0 0 100% 0); 
+    opacity: 0; 
 }
 
+.container.in-view .imagea img {
+    clip-path: inset(0 0 0 0); 
+    opacity: 1; /* Fade the image in */
+}
 
 .containerf {
     padding: 50px;
@@ -1267,6 +1274,14 @@ body {
 .cardf img {
     width: 85%;
     height: 400px;
+    transition: clip-path 1s ease-out, opacity 1s ease-out;
+    clip-path: inset(0 0 100% 0); 
+    opacity: 0; 
+}
+
+.cardf.in-view img {
+    clip-path: inset(0 0 0 0); 
+    opacity: 1; 
 }
 
 .card-content {

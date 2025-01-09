@@ -1422,262 +1422,6 @@ body {
 
 
 
-/* Portfolio Section Styling */
-.portfolio-section {
-    padding: 50px 20px;
-    text-align: center;
-    background-color: #030231;
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.port {
-    position: relative;
-    width: 90%;
-    height: 99%;
-    padding: 5px;
-    box-sizing: border-box;
-    overflow: hidden;
-}
-
-  .scroll-containers {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    width: 450px;
-    height: 180px;
-    display: flex;
-    overflow-x: auto;
-    background-color: transparent;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 0px;
-    z-index: 5;
-  }
-
-  .scroll-containers::-webkit-scrollbar {
-display: none; /* Hide the scrollbar */
-}
-
-  .item {
-    width: 110px;
-    flex: 0 0 auto;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #ccc;
-    margin-right: 20px;
-    border-radius: 0px;
-    cursor: pointer;
-    transition: transform 0.3s, background-color 0.3s;
-  }
-
-  .item img {
-      width: 110px;
-      height: 100%;
-  }
-
-  .item:hover {
-    transform: scale(1.025);
-  }
-
-  .item:last-child {
-    margin-right: 0;
-  }
-
-  .content-display {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 0px;
-    padding: 5px;
-    box-sizing: border-box;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-image: url('portt.jpg');
-    background-size: 100% 100%;
-  }
-
-  .content-display img {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-  }
-
-/* General Styles for Content Overlay */
-.content-overlay {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    z-index: 2;
-    text-align: left;
-    padding: 10px;
-    border-radius: 0px;
-}
-
-/* Portfolio Title and Intro */
-.portfolio-title {
-    font-size: 1.8rem;
-    color: #050432;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-.portfolio-intro {
-    font-size: 1.3rem;
-    color: #050432;
-    line-height: 1.6;
-    width: 500px;
-    font-weight: normal;
-}
-
-.mobile-title {
-    font-size: 2rem;
-    color: white;
-    font-weight: bold;
-}
-
-.mobile-desc {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: white;
-    width: 500px;
-    line-height: 1.5;
-}
-
-/* Website App Styles */
-.web-title {
-    font-size: 2rem;
-    color: #050432;
-    font-weight: bold;
-}
-
-.web-desc {
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: #050432;
-    line-height: 1.5;
-    width: 500px;
-}
-
-/* Desktop App Styles */
-.desktop-title {
-    font-size: 2rem;
-    color: white;
-    font-weight: bold;
-}
-
-.desktop-desc {
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: white;
-    width: 500px;
-}
-
-/* Machine Learning Styles */
-.ml-title {
-    font-size: 2rem;
-    color: white;
-    font-weight: bold;
-}
-
-.ml-desc {
-    font-size: 1.3rem;
-    font-weight: bold;
-    line-height: 1.6;
-    color: white;
-    width: 500px;
-}
-
-/* Security Solutions Styles */
-.security-title {
-    font-size: 2rem;
-    color: white;
-    font-weight: bold;
-}
-
-.security-desc {
-    font-size: 1.3rem;
-    font-weight: bold;
-    line-height: 1.6;
-    color: white;
-    width: 500px;
-}
-
-/* Data Science Styles */
-.ds-title {
-    font-size: 2rem;
-    color: white;
-    font-weight: bold;
-}
-
-.ds-desc {
-    font-size: 1.3rem;
-    line-height: 1.6;
-    color: white;
-    width: 500px;
-    font-weight: bold;
-}
-
-
-  .nav-arrow {
-    position: absolute;
-    bottom: 30px;
-    width: 30px;
-    height: 30px;
-    background-color: transparent;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    font-size: 1.8rem;
-    z-index: 6;
-  }
-
-  .nav-arrow:hover {
-    color: blue;
-  }
-
-  .nav-arrow.left {
-    left: 700px;
-  }
-
-  .nav-arrow.right {
-    left: 760px;
-  }
-
-
-  .content-link-btn {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 12px 25px;
-    background-color: #0858ee;
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
-
-.content-link-btn:hover {
-    background-color: #005bb5;
-}
-
-
-
 .journey {
     display: flex;
     width: 100%;
@@ -1865,20 +1609,28 @@ display: none; /* Hide the scrollbar */
 }
 
 .blog-card {
-    flex: 0 0 calc(25% - 20px); /* Adjust the width to show 4 cards */
+    flex: 0 0 calc(25% - 20px);
     background: #fff;
     border-radius: 0px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     height: 390px;
+    opacity: 0; /* Initially hidden */
+    transform: scale(0.5); 
+    transition: transform 1.5s ease, opacity 0.8s ease; 
 }
 
+.blog-card.visible {
+    opacity: 1; 
+    transform: scale(1); 
+}
 
 .blog-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Different transition duration on hover */
 }
+
 
 .blog-card img {
     width: 100%;

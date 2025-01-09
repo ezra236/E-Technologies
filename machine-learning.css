@@ -1308,7 +1308,7 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease-in-out;
+    transition: all 0.5s ease-in-out; /* Smooth transition for transform and opacity */
     width: 250px;
     height: 250px;
     text-align: center;
@@ -1318,9 +1318,18 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    opacity: 0; 
+    transform: scale(0.6); 
 }
 
-/* Title styling */
+.service-card.visible {
+    opacity: 1; 
+    transition: transform 1.5s ease, opacity 0.5s ease, box-shadow 0.3s ease;
+    transform: scale(1); 
+}
+
+
 .service-card h3 {
     font-size: 1.5rem;
     color: white;

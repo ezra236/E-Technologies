@@ -419,7 +419,58 @@ function toggleFAQ(id) {
 
 
 
+document.addEventListener("DOMContentLoaded", () => {
+    const featureItems = document.querySelectorAll(".feature-item");
 
+    // Function to reveal feature items when they come into view
+    function revealFeatureItems() {
+        featureItems.forEach(item => {
+            const itemRect = item.getBoundingClientRect();
+            // Check if the feature item is within the visible part of the viewport
+            if (
+                itemRect.top < window.innerHeight &&
+                itemRect.bottom >= 0
+            ) {
+                item.classList.add("visible");
+            }
+        });
+    }
+
+    // Trigger revealFeatureItems on page load to handle initial case
+    revealFeatureItems();
+
+    // Trigger revealFeatureItems when the user scrolls
+    window.addEventListener("scroll", revealFeatureItems);
+});
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const serviceCards = document.querySelectorAll(".service-card");
+
+    // Function to reveal service cards when they come into view
+    function revealServiceCards() {
+        serviceCards.forEach(card => {
+            const cardRect = card.getBoundingClientRect();
+            // Check if the service card is within the visible part of the viewport
+            if (
+                cardRect.top < window.innerHeight &&
+                cardRect.bottom >= 0
+            ) {
+                card.classList.add("visible");
+            }
+        });
+    }
+
+    // Trigger revealServiceCards on page load to handle the initial case
+    revealServiceCards();
+
+    // Trigger revealServiceCards when the user scrolls
+    window.addEventListener("scroll", revealServiceCards);
+});
 
 
 

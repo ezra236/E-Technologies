@@ -167,8 +167,16 @@ header::after {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 1.5s ease, opacity 0.5s ease, box-shadow 0.3s ease;
     text-align: center;
+    cursor: pointer;
+    opacity: 0; 
+    transform: scale(0.6); 
+}
+
+.category-card.visible {
+    opacity: 1; 
+    transform: scale(1); /* Original size */
 }
 
 .category-card h3 {
@@ -187,6 +195,7 @@ header::after {
 /* Hover Effects */
 .category-card:hover {
     transform: translateY(-5px);
+    transition: transform 0.5s ease, box-shadow 0.5s ease, opacity 0.5s ease;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 

@@ -376,3 +376,51 @@ sections.forEach((section) => observer.observe(section));
 
 
 
+document.addEventListener("DOMContentLoaded", () => {
+    const blogCards = document.querySelectorAll(".blog-card");
+
+    // Function to reveal blog cards when they come into view
+    function revealBlogCards() {
+        blogCards.forEach(card => {
+            const cardRect = card.getBoundingClientRect();
+            // Check if the blog card is within the visible part of the viewport
+            if (
+                cardRect.top < window.innerHeight &&
+                cardRect.bottom >= 0
+            ) {
+                card.classList.add("visible");
+            }
+        });
+    }
+
+    // Trigger revealBlogCards on page load to handle the initial case
+    revealBlogCards();
+
+    // Trigger revealBlogCards when the user scrolls
+    window.addEventListener("scroll", revealBlogCards);
+});
+
+
+
+
+
+
+// Function to check if the blog section is in view
+const blogSection = document.querySelector('.blog-section');
+
+function checkBlogSectionInView() {
+    const rect = blogSection.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    if (rect.top <= windowHeight && rect.bottom >= 0) {
+        blogSection.classList.add('in-view'); // Add class to trigger effect
+    } else {
+        blogSection.classList.remove('in-view'); // Remove class when out of view
+    }
+}
+
+// Listen to the scroll event
+window.addEventListener('scroll', checkBlogSectionInView);
+
+// Call the function initially in case the section is already in view
+checkBlogSectionInView();

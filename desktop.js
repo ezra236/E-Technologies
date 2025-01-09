@@ -455,3 +455,32 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const featureItems = document.querySelectorAll(".feature-item");
+
+    // Function to reveal feature items when they come into view
+    function revealFeatureItems() {
+        featureItems.forEach(item => {
+            const itemRect = item.getBoundingClientRect();
+            // Check if the feature item is within the visible part of the viewport
+            if (
+                itemRect.top < window.innerHeight &&
+                itemRect.bottom >= 0
+            ) {
+                item.classList.add("visible");
+            }
+        });
+    }
+
+    // Trigger revealFeatureItems on page load to handle the initial case
+    revealFeatureItems();
+
+    // Trigger revealFeatureItems when the user scrolls
+    window.addEventListener("scroll", revealFeatureItems);
+});

@@ -407,3 +407,10 @@ nextButton.addEventListener('click', () => {
 
 // Initial Setup
 updateScroll();
+
+
+
+
+
+
+

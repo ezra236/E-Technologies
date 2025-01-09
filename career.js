@@ -3,6 +3,7 @@ document.querySelectorAll('.nav-item').forEach(item => {
         const arrow = item.querySelector('.arrow'); // Find the arrow inside the clicked nav-item
         const blockId = item.getAttribute('href').substring(1) + '-block'; // Get the block id
         const block = document.getElementById(blockId);
+        const contactSalesButton = document.querySelector('.buttonM'); // Select the "Contact Sales" button
 
         // Toggle the current block visibility
         if (block.classList.contains('show')) {
@@ -29,10 +30,19 @@ document.querySelectorAll('.nav-item').forEach(item => {
             item.classList.add('active');
         }
 
+        // Hide the "Contact Sales" button when any nav-block is shown
+        if (document.querySelector('.nav-block.show')) {
+            contactSalesButton.style.display = 'none';
+        } else {
+            contactSalesButton.style.display = 'block'; // Show the button if no block is visible
+        }
+
         // Prevent the default anchor link behavior
         event.preventDefault();
     });
 });
+
+
 
 // Close the block when clicking outside the block
 document.addEventListener('click', function (event) {
@@ -49,6 +59,10 @@ document.addEventListener('click', function (event) {
 
         // Remove active class from all nav items
         navLinks.forEach(link => link.classList.remove('active'));
+
+        // Show the button and ezra when the block is collapsed
+        document.querySelector('.buttonM').style.display = 'block';
+        document.querySelector('.ezra').style.display = 'block';
     }
 });
 
@@ -59,12 +73,7 @@ document.addEventListener('click', function (event) {
 
 
 
-
 const statements = [
-    "Innovative solutions driving progress.",
-    "Reliable partner in technology advancement.",
-    "Excellence in customized tech solutions.",
-    "Empowering growth through digital innovation."
 ];
 
 let currentIndex = 0;
@@ -84,68 +93,9 @@ setInterval(rotateText, 2000); // Change text every 2 seconds
 
 
 
-let currentIndexx = 1;
-const descriptions = document.querySelectorAll('.description-content');
-const videos = document.querySelectorAll('.vid3 video');
-const totalDescriptions = descriptions.length;
-
-function navigate(direction) {
-    // Pause and hide the current video
-    const currentVideo = videos[currentIndexx - 1];
-    currentVideo.pause(); // Stop the video from playing
-    currentVideo.currentTime = 0; // Reset the video to the beginning
-    currentVideo.classList.add('hidden');
-
-    // Hide the current description
-    descriptions[currentIndexx - 1].classList.remove('active');
-
-    // Update the current index
-    if (direction === 'next') {
-        currentIndexx = (currentIndexx % totalDescriptions) + 1;
-    } else if (direction === 'prev') {
-        currentIndexx = (currentIndexx - 2 + totalDescriptions) % totalDescriptions + 1;
-    }
-
-    // Show new description and video
-    descriptions[currentIndexx - 1].classList.add('active');
-    const newVideo = videos[currentIndexx - 1];
-    newVideo.classList.remove('hidden');
-
-    // Update navigation display
-    document.querySelector('.navigation span').textContent = `${currentIndexx}/3`;
-}
-
-// Initialize first description and video as active
-descriptions[0].classList.add('active');
-videos[0].classList.remove('hidden');
 
 
 
-
-
-const blogGrid = document.querySelector('.blog-grid');
-const paginationDots = document.querySelectorAll('.pagination span');
-const prevArrow = document.getElementById('prev-arrow');
-const nextArrow = document.getElementById('next-arrow');
-let currentIndexc = 0;
-const cardsToShow = 4; // Number of cards to show per scroll
-
-const updateGrid = () => {
-    blogGrid.style.transform = `translateX(-${currentIndexc * 25}%)`; // 25% per page scroll (4 cards)
-    paginationDots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentIndexc);
-    });
-};
-
-prevArrow.addEventListener('click', () => {
-    if (currentIndexc > 0) currentIndexc--; // Move to previous 4 cards
-    updateGrid();
-});
-
-nextArrow.addEventListener('click', () => {
-    if (currentIndexc < paginationDots.length - 1) currentIndexc++; // Move to next 4 cards
-    updateGrid();
-});
 
 
 
@@ -371,35 +321,109 @@ document.querySelectorAll('.directry .linktrya').forEach(link => {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    const cards = document.querySelectorAll(".blog-card");
-    const container = document.querySelector(".blog-scroll-container");
+    const slides = document.querySelectorAll(".testimonial-slide");
+    const totalSlides = slides.length;
+    const prevButton = document.querySelector(".navigation button:first-of-type");
+    const nextButton = document.querySelector(".navigation button:last-of-type");
+    const counter = document.querySelector(".navigation span");
+    let currentIndex = 0;
 
-    // Function to reveal cards when the container comes into view
-    function revealCards() {
-        const containerRect = container.getBoundingClientRect();
-        // Check if the container is within the viewport
-        if (
-            containerRect.top < window.innerHeight &&
-            containerRect.bottom >= 0
-        ) {
-            cards.forEach(card => {
-                // Check if each card is within the visible area of the container
-                const cardRect = card.getBoundingClientRect();
-                if (
-                    cardRect.top < window.innerHeight &&
-                    cardRect.bottom >= 0
-                ) {
-                    card.classList.add("visible");
-                }
-            });
-        }
+    function updateSlides() {
+      slides.forEach((slide, index) => {
+        slide.style.transform = `translateX(-${currentIndex * 100}%)`;
+      });
+      counter.textContent = `${currentIndex + 1} / ${totalSlides}`;
     }
 
-    // Trigger revealCards on page load to handle the initial case
-    revealCards();
+    prevButton.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateSlides();
+      }
+    });
 
-    // Trigger revealCards when the user scrolls
-    window.addEventListener("scroll", revealCards);
+    nextButton.addEventListener("click", () => {
+      if (currentIndex < totalSlides - 1) {
+        currentIndex++;
+        updateSlides();
+      }
+    });
+
+    updateSlides();
+  });
+
+
+
+
+
+
+  function toggleExplanation(id) {
+    const content = document.getElementById(id);
+    const button = content.previousElementSibling; // Get the accordion button
+    const allContents = document.querySelectorAll('.accordion-content');
+    const allButtons = document.querySelectorAll('.accordion-button'); // Get all buttons
+
+    allContents.forEach(item => {
+        if (item !== content) {
+            item.style.display = 'none'; // Hide all other content blocks
+        }
+    });
+
+    allButtons.forEach(button => {
+        button.classList.remove('active'); // Remove the active class from all buttons
+    });
+
+    if (content.style.display === 'block') {
+        content.style.display = 'none'; // If the content is visible, hide it
+        button.classList.remove('active'); // Remove the active class from the button
+    } else {
+        content.style.display = 'block'; // Show the selected content block
+        button.classList.add('active'); // Add the active class to the button
+    }
+}
+
+
+
+
+
+
+function toggleFAQ(id) {
+    const answer = document.getElementById(id);
+    const parent = answer.parentElement;
+    const icon = parent.querySelector('.faq-icon');
+    
+    // Close all answers
+    document.querySelectorAll('.faq-answer').forEach(item => {
+        if (item.id !== id) {
+            item.style.display = 'none';
+            item.parentElement.classList.remove('active');
+            item.parentElement.querySelector('.faq-icon').innerText = '+';
+        }
+    });
+
+    // Toggle current answer
+    if (answer.style.display === 'block') {
+        answer.style.display = 'none';
+        parent.classList.remove('active');
+        icon.innerText = '+';
+    } else {
+        answer.style.display = 'block';
+        parent.classList.add('active');
+        icon.innerText = '-';
+    }
+}
+
+
+
+
+
+// JavaScript for Accordion
+document.querySelectorAll('.faq-question').forEach(question => {
+    question.addEventListener('click', function () {
+        this.classList.toggle('active');
+        const answer = this.nextElementSibling;
+        answer.classList.toggle('show');
+    });
 });
 
 
@@ -407,6 +431,156 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+document.addEventListener("DOMContentLoaded", function() {
+    const productItems = document.querySelectorAll('.product-item');
+
+    // Create an IntersectionObserver to detect when product items enter the viewport
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // When the element comes into view, add the 'visible' class
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target); // Stop observing the element once it has appeared
+            }
+        });
+    }, {
+        threshold: 0.5  // Trigger when 50% of the element is in the viewport
+    });
+
+    // Observe all product items
+    productItems.forEach(item => {
+        observer.observe(item);
+    });
+});
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const featureItems = document.querySelectorAll(".feature-item");
+
+    // Function to reveal feature items when they come into view
+    function revealFeatureItems() {
+        featureItems.forEach(item => {
+            const itemRect = item.getBoundingClientRect();
+            // Check if the feature item is within the visible part of the viewport
+            if (
+                itemRect.top < window.innerHeight &&
+                itemRect.bottom >= 0
+            ) {
+                item.classList.add("visible");
+            }
+        });
+    }
+
+    // Trigger revealFeatureItems on page load to handle the initial case
+    revealFeatureItems();
+
+    // Trigger revealFeatureItems when the user scrolls
+    window.addEventListener("scroll", revealFeatureItems);
+});
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const cards = document.querySelectorAll('.card img'); // Select all images inside the cards
+    const section = document.querySelector('.cards'); // Select the experience section
+
+    // Function to animate images
+    function animateImages() {
+        cards.forEach((img) => {
+            img.classList.remove('animate'); // Remove the class to reset animation
+            void img.offsetWidth; // Trigger reflow to reset the animation
+            img.classList.add('animate'); // Reapply the animation class to trigger the animation
+        });
+    }
+
+    // Create an IntersectionObserver to observe when the section comes into view
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateImages(); // Trigger animation when section comes into view
+            }
+        });
+    }, {
+        threshold: 0.1 // Trigger when 10% of the section is visible
+    });
+
+    // Start observing the .experience-section
+    observer.observe(section);
+});
+
+
+
+
+
+// Select the video, play button, and title elements
+const video = document.getElementById('customVideo');
+const playButton = document.getElementById('playButton');
+const imageSection = document.querySelector('.image-sectionh');
+const videoTitle = document.getElementById('videoTitle');
+
+// Add an event listener to the play button
+playButton.addEventListener('click', () => {
+    video.play(); // Play the video
+    videoTitle.classList.add('hidden'); // Hide the title
+});
+
+// Add an event listener for mouse enter on the image section
+imageSection.addEventListener('mouseenter', () => {
+    playButton.classList.remove('hidden'); // Show the play button
+});
+
+// Add an event listener for mouse leave on the image section
+imageSection.addEventListener('mouseleave', () => {
+    if (!video.paused) {
+        playButton.classList.add('hidden'); // Hide the play button if the video is playing
+    }
+});
+
+// Add an event listener to the video for when it's paused
+video.addEventListener('pause', () => {
+    videoTitle.classList.remove('hidden'); // Show the title
+    playButton.classList.remove('hidden'); // Show the play button
+});
+
+// Add an event listener to the video for when it ends
+video.addEventListener('ended', () => {
+    videoTitle.classList.remove('hidden'); // Show the title
+    playButton.classList.remove('hidden'); // Show the play button
+});
+
+
+
+
+
+// Function to check if the section is in view
+const section = document.querySelector('.section');
+
+function checkSectionInView() {
+    const rect = section.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    if (rect.top <= windowHeight && rect.bottom >= 0) {
+        section.classList.add('in-view'); // Add class to trigger effect
+    } else {
+        section.classList.remove('in-view'); // Remove class when out of view
+    }
+}
+
+// Listen to the scroll event
+window.addEventListener('scroll', checkSectionInView);
+
+// Call the function initially in case the section is already in view
+checkSectionInView();
 
 
 

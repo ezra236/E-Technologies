@@ -1282,10 +1282,19 @@ body {
     margin-top: 20px;
 }
 
+
 .partner-image img {
-    width: 80%; /* Ensure the image fills the container */
+    width: 80%; 
     height: 300px;
     object-fit: cover;
+    transition: clip-path 1s ease-out, opacity 1s ease-out;
+    clip-path: inset(0 0 100% 0); 
+    opacity: 0; /* Start with image invisible */
+}
+
+.partner-image.in-view img {
+    clip-path: inset(0 0 0 0); 
+    opacity: 1; 
 }
 
 .descriptions {

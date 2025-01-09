@@ -403,3 +403,26 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+
+
+
+// Function to check if the section is in view
+const section = document.querySelector('.image-text-container');
+
+function checkSectionInView() {
+    const rect = section.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    if (rect.top <= windowHeight && rect.bottom >= 0) {
+        section.classList.add('in-view'); // Add class to trigger effect
+    } else {
+        section.classList.remove('in-view'); // Remove class when out of view
+    }
+}
+
+// Listen to the scroll event
+window.addEventListener('scroll', checkSectionInView);
+
+// Call the function initially in case the section is already in view
+checkSectionInView();
+

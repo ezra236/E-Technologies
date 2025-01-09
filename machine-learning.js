@@ -450,3 +450,30 @@ document.addEventListener("DOMContentLoaded", function() {
         observer.observe(field);
     });
 });
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const serviceCards = document.querySelectorAll(".service-card");
+
+    // Function to reveal service cards when they come into view
+    function revealServiceCards() {
+        serviceCards.forEach(card => {
+            const cardRect = card.getBoundingClientRect();
+            // Check if the service card is within the visible part of the viewport
+            if (
+                cardRect.top < window.innerHeight &&
+                cardRect.bottom >= 0
+            ) {
+                card.classList.add("visible");
+            }
+        });
+    }
+
+    // Trigger revealServiceCards on page load to handle the initial case
+    revealServiceCards();
+
+    // Trigger revealServiceCards when the user scrolls
+    window.addEventListener("scroll", revealServiceCards);
+});

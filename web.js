@@ -352,3 +352,54 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateSlides();
   });
+
+
+
+
+
+// Function to check if the container is in view
+const container = document.querySelector('.container');
+
+function checkContainerInView() {
+    const rect = container.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    if (rect.top <= windowHeight && rect.bottom >= 0) {
+        container.classList.add('in-view'); // Add class to trigger effect
+    } else {
+        container.classList.remove('in-view'); // Remove class when out of view
+    }
+}
+
+// Listen to the scroll event
+window.addEventListener('scroll', checkContainerInView);
+
+// Call the function initially in case the section is already in view
+checkContainerInView();
+
+
+
+
+
+
+// Function to check if the card is in view
+const cards = document.querySelectorAll('.cardf');
+
+function checkCardInView() {
+    cards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+
+        if (rect.top <= windowHeight && rect.bottom >= 0) {
+            card.classList.add('in-view'); // Add class to trigger effect
+        } else {
+            card.classList.remove('in-view'); // Remove class when out of view
+        }
+    });
+}
+
+// Listen to the scroll event
+window.addEventListener('scroll', checkCardInView);
+
+// Call the function initially in case the card is already in view
+checkCardInView();

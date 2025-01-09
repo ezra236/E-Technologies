@@ -455,3 +455,26 @@ function toggleDescription(item) {
     }
 }
 
+
+
+
+
+// Function to check if the partner image is in view
+const partnerImage = document.querySelector('.partner-image');
+
+function checkPartnerImageInView() {
+    const rect = partnerImage.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    if (rect.top <= windowHeight && rect.bottom >= 0) {
+        partnerImage.classList.add('in-view'); // Add class to trigger effect
+    } else {
+        partnerImage.classList.remove('in-view'); // Remove class when out of view
+    }
+}
+
+// Listen to the scroll event
+window.addEventListener('scroll', checkPartnerImageInView);
+
+// Call the function initially in case the image is already in view
+checkPartnerImageInView();
