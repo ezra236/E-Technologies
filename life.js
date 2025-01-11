@@ -3,51 +3,46 @@ document.querySelectorAll('.nav-item').forEach(item => {
         const arrow = item.querySelector('.arrow'); // Find the arrow inside the clicked nav-item
         const blockId = item.getAttribute('href').substring(1) + '-block'; // Get the block id
         const block = document.getElementById(blockId);
-        const buttonM = document.querySelector('.buttonM'); // Select the button
-        const buttonMc = document.querySelector('.buttonMc'); // Select the buttonMc
-        const ezra = document.querySelector('.ezra'); // Select the ezra class
+        const contactSalesButton = document.querySelector('.buttonM'); // Select the "Contact Sales" button
 
         // Toggle the current block visibility
         if (block.classList.contains('show')) {
             block.classList.remove('show'); // Collapse the block
             arrow.textContent = '▼'; // Change to down arrow
             item.classList.remove('active'); // Remove active class
-            buttonM.style.display = 'block'; // Show the button again when the block is collapsed
-            buttonMc.style.display = 'block'; // Show buttonMc again when the block is collapsed
-
-            // Show the ezra element when the block is collapsed
-            ezra.style.display = 'block'; 
         } else {
             // Collapse all other blocks
             document.querySelectorAll('.nav-block').forEach(otherBlock => {
                 otherBlock.classList.remove('show');
             });
 
-            // Reset all arrows
+            // Reset all other arrows
             document.querySelectorAll('.arrow').forEach(otherArrow => {
                 otherArrow.textContent = '▼';
             });
 
+            // Expand the current block
+            block.classList.add('show');
+            arrow.textContent = '▲'; // Change to up arrow
+
             // Add active class to the clicked nav-item and remove from others
             document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
             item.classList.add('active');
+        }
 
-            // Hide the button and ezra before showing the new block
-            buttonM.style.display = 'none';
-            buttonMc.style.display = 'none'; // Hide buttonMc when a new block is expanded
-            ezra.style.display = 'none';
-
-            // Wait for the ezra block to disappear before expanding the new block
-            setTimeout(() => {
-                block.classList.add('show');
-                arrow.textContent = '▲'; // Change to up arrow
-            }, 300); // Delay time for Ezra to disappear, adjust as needed
+        // Hide the "Contact Sales" button when any nav-block is shown
+        if (document.querySelector('.nav-block.show')) {
+            contactSalesButton.style.display = 'none';
+        } else {
+            contactSalesButton.style.display = 'block'; // Show the button if no block is visible
         }
 
         // Prevent the default anchor link behavior
         event.preventDefault();
     });
 });
+
+
 
 // Close the block when clicking outside the block
 document.addEventListener('click', function (event) {
@@ -65,15 +60,11 @@ document.addEventListener('click', function (event) {
         // Remove active class from all nav items
         navLinks.forEach(link => link.classList.remove('active'));
 
-        // Show the buttons when the block is collapsed
+        // Show the button and ezra when the block is collapsed
         document.querySelector('.buttonM').style.display = 'block';
-        document.querySelector('.buttonMc').style.display = 'block'; // Show buttonMc when all blocks are collapsed
         document.querySelector('.ezra').style.display = 'block';
     }
 });
-
-
-
 
 
 
@@ -329,86 +320,102 @@ document.querySelectorAll('.directry .linktrya').forEach(link => {
 
 
 
-// Select all navigation links
-const navLinks = document.querySelectorAll('.nav-linkss');
 
-// Add click event listener to each link
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        // Remove 'active' class from all links
-        navLinks.forEach(nav => nav.classList.remove('active'));
-        
-        // Add 'active' class to the clicked link
-        link.classList.add('active');
-    });
+
+
+// Select the video, play button, and title elements
+const video = document.getElementById('customVideo');
+const playButton = document.getElementById('playButton');
+const imageSection = document.querySelector('.image-sectionh');
+const videoTitle = document.getElementById('videoTitle');
+
+// Add an event listener to the play button
+playButton.addEventListener('click', () => {
+    video.play(); // Play the video
+    videoTitle.classList.add('hidden'); // Hide the title
+});
+
+// Add an event listener for mouse enter on the image section
+imageSection.addEventListener('mouseenter', () => {
+    playButton.classList.remove('hidden'); // Show the play button
+});
+
+// Add an event listener for mouse leave on the image section
+imageSection.addEventListener('mouseleave', () => {
+    if (!video.paused) {
+        playButton.classList.add('hidden'); // Hide the play button if the video is playing
+    }
+});
+
+// Add an event listener to the video for when it's paused
+video.addEventListener('pause', () => {
+    videoTitle.classList.remove('hidden'); // Show the title
+    playButton.classList.remove('hidden'); // Show the play button
+});
+
+// Add an event listener to the video for when it ends
+video.addEventListener('ended', () => {
+    videoTitle.classList.remove('hidden'); // Show the title
+    playButton.classList.remove('hidden'); // Show the play button
 });
 
 
 
 
 
-// Get all navigation links
-const navLinkss = document.querySelectorAll('.nav-linkss');
 
-// Observe sections and divs with IDs
-const sections = document.querySelectorAll('section[id], div[id]');
+// Function to check if the card is in view
+const cards = document.querySelectorAll('.card');
 
-// Intersection Observer to detect section in view
-const observer = new IntersectionObserver(
-    (entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                const id = entry.target.getAttribute('id');
-                // Remove active class from all links
-                navLinkss.forEach((link) => link.classList.remove('active'));
-                // Add active class to the current section's link
-                document
-                    .querySelector(`.nav-linkss[href="#${id}"]`)
-                    .classList.add('active');
-            }
-        });
-    },
-    {
-        root: null, // viewport
-        threshold: 0.6, // 60% of the section must be visible
-    }
-);
+function checkCardInView() {
+    cards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
 
-// Observe each section and div
-sections.forEach((section) => observer.observe(section));
-
-
-
-const scrollContent = document.getElementById('scrollContent');
-const prevButton = document.getElementById('prev');
-const nextButton = document.getElementById('next');
-const items = document.querySelectorAll('.scroll-itema');
-const totalItems = items.length;
-
-let currentIndexz = 0;
-
-// Ensure smooth scrolling
-function updateScroll() {
-    scrollContent.style.transform = `translateX(-${currentIndexz * 100}%)`;
-    scrollContent.style.transition = 'transform 0.5s ease-in-out';
+        if (rect.top <= windowHeight && rect.bottom >= 0) {
+            card.classList.add('in-view'); // Add class to trigger effect
+        } else {
+            card.classList.remove('in-view'); // Remove class when out of view
+        }
+    });
 }
 
-// Move to the previous item
-prevButton.addEventListener('click', () => {
-    currentIndexz = (currentIndexz > 0) ? currentIndexz - 1 : totalItems - 1;
-    updateScroll();
+// Listen to the scroll event
+window.addEventListener('scroll', checkCardInView);
+
+// Call the function initially in case the card is already in view
+checkCardInView();
+
+
+
+
+
+
+
+// Select the reh-right element
+const rehRight = document.querySelector('.reh-right');
+
+// Trigger the effect when the page loads
+window.addEventListener('load', () => {
+    rehRight.classList.add('in-view'); // Add the 'in-view' class to trigger the effect
 });
 
-// Move to the next item
-nextButton.addEventListener('click', () => {
-    currentIndexz = (currentIndexz < totalItems - 1) ? currentIndexz + 1 : 0;
-    updateScroll();
+
+
+
+
+// Intersection Observer to detect when containerp is in view
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // Add 'in-view' class when the containerp comes into view
+            entry.target.classList.add('in-view');
+            observer.unobserve(entry.target); // Stop observing after it has entered the view
+        }
+    });
+}, { threshold: 0.5 }); // 50% of the container needs to be in view
+
+// Observe the containerp element
+document.querySelectorAll('.containerp').forEach(container => {
+    observer.observe(container);
 });
-
-// Initial Setup
-updateScroll();
-
-
-
-
-
