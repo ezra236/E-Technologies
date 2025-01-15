@@ -1476,10 +1476,11 @@ body {
 
 /* Technologies Section Styling */
 .technologies {
-    background: #020731; 
+    background: white; 
     padding: 60px 20px;
     border-radius: 0px;
-    margin: 60px auto;
+    margin: 10px auto;
+    margin-bottom: 60px;
     text-align: center;
     padding-left: 50px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
@@ -1489,71 +1490,15 @@ body {
     overflow: hidden; /* Prevents pseudo-elements from spilling outside */
 }
 
-/* Decorative Background Circles */
-.technologies::before,
-.technologies::after,
-.technologies .circle-1,
-.technologies .circle-2,
-.technologies .circle-3,
-.technologies .circle-4 {
-    content: "";
-    position: absolute;
-    background: rgba(255, 255, 255, 0.1); /* Decorative circles */
-    width: 150px;
-    height: 150px;
-    transform: rotate(45deg);
-    border-radius: 50%;
-    z-index: 0;
-}
-
-.technologies::before {
-    top: 20px;
-    left: -80px;
-}
-
-/* Bottom Right Circle */
-.technologies::after {
-    bottom: -80px;
-    right: 20%;
-}
-
-.technologies .circle-1 {
-    top: 50px;
-    right: 95px;
-    width: 80px;
-    height: 80px;
-}
-
-.technologies .circle-2 {
-    top: 20px;
-    left: 20%;
-    width: 80px;
-    height: 80px;
-}
-
-.technologies .circle-3 {
-    top: 88%;
-    left: 200px;
-    width: 40px;
-    height: 40px;
-}
-
-.technologies .circle-4 {
-    top: 5%;
-    right: 350px;
-    width: 40px;
-    height: 40px;
-}
 
 .technologies h2 {
     font-size: 38px;
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
-    color: #ffffff;
+    color: #020731;
     margin-bottom: 50px;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
     z-index: 1;
     position: relative;
 }
@@ -1574,7 +1519,7 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    background: linear-gradient(135deg, #ffffff, #f8f9ff);
+    background: #020731;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
@@ -1611,7 +1556,7 @@ body {
 .tech-item p {
     font-size: 14px;
     font-weight: 600;
-    color: #444;
+    color: white;
     margin-top: 8px;
     text-transform: uppercase;
     letter-spacing: 0.8px;
@@ -1753,112 +1698,6 @@ body {
 
 
 
-/* FAQs Section */
-.faqs {
-    padding: 30px 30px;
-    background: white;
-    text-align: center;
-    border-radius: 12px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Deeper shadow for depth */
-    width: 100%;
-    margin: auto;
-}
-
-.faqs-title {
-    font-size: 2.0rem;
-    font-weight: 700;
-    color: #333;
-    margin-bottom: 40px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-family: 'Arial', sans-serif;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1); /* Subtle text shadow for depth */
-}
-
-/* FAQ Item Styling */
-.faq {
-    margin-bottom: 20px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto; /* Center FAQ items */
-}
-
-.faq-question {
-    background: white;
-    padding: 10px 30px;
-    width: 100%;
-    text-align: left;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1.3em;
-    color: #0078d7;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-bottom: 15px;
-    font-family: 'Roboto', sans-serif; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Light shadow for a card effect */
-    letter-spacing: 1px;
-}
-
-/* Chevron icon */
-.faq-question i {
-    font-size: 1.0em;
-    transition: transform 0.3s ease;
-    margin-right: 15px;
-}
-
-.faq-question span {
-    flex-grow: 1;
-    color: #333; /* Darker color for question text */
-}
-
-/* Hover and Active States */
-.faq-question:hover {
-    background: #f4f7fc;
-    transform: translateY(-2px); /* Lift effect */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Enhanced shadow on hover */
-}
-
-.faq-question.active {
-    background: #0078d7;
-    color: white;
-}
-
-.faq-question.active i {
-    transform: rotate(180deg); /* Chevron rotates */
-}
-
-/* Answer Styling */
-.faq-answer {
-    display: none;
-    padding: 15px 30px;
-    font-size: 1.1em;
-    font-family: 'Times New Roman', Times, serif;
-    color: #0c0c0c;
-    background: white;
-    border: 1px solid #ddd;
-    border-top: none;
-    margin-top: -1px;
-    border-radius: 0 0 12px 12px;
-    transition: max-height 0.3s ease, padding 0.3s ease; /* Smooth expansion */
-    max-height: 0;
-    overflow: hidden;
-}
-
-/* Show Answer */
-.faq-answer.show {
-    display: block;
-    max-height: 500px;
-    padding: 20px 30px;
-}
-
-
-
-
-
 
 
 /* Contact Section */
@@ -1883,6 +1722,125 @@ body {
     border: none;
     border-radius: 5px;
 }
+
+
+.jh {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.partners-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #01074a; /* Dark blue background */
+    position: relative;
+    width: 85%;
+    color: white;
+    overflow: hidden;
+  }
+  
+  /* Diagonal lines */
+  .partners-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+      135deg,
+      transparent,
+      transparent 20px,
+      rgba(255, 255, 255, 0.1) 21px,
+      rgba(255, 255, 255, 0.1) 40px
+    );
+    pointer-events: none;
+  }
+  
+  .contentf {
+    max-width: 60%;
+  }
+  
+  .contentf h1 {
+    margin: 0;
+    font-size: 2.5rem;
+  }
+  
+  .contentf p {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    opacity: 0.9;
+  }
+  
+  .learn-more-btn {
+    background-color: #e9f0fc;
+    color: #00053f;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .learn-more-btn:hover {
+    background-color: #d0e0fa;
+    transform: scale(1.05);
+  }
+
+
+
+
+
+.connect-section {
+    text-align: center;
+    padding: 70px 20px;
+    height: 200px;
+    background-color: #8eaff58c;
+  }
+
+  .connect-section .subtitle {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .connect-section h1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0 0 20px;
+  }
+
+  .connect-section p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0 0 30px;
+    color: #1c1c3c;
+  }
+
+  .connect-section .btn {
+    display: inline-block;
+    background-color: #00003d;
+    color: #ffffff;
+    padding: 13px 90px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+
+  .connect-section .btn:hover {
+    background-color: #1a1a72;
+  }
 
 
 

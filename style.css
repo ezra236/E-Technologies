@@ -1326,6 +1326,64 @@ body {
 }
 
 
+
+
+.j {
+    background-color: white;
+}
+
+.containerd {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.containerd h1 {
+    font-size: 2rem;
+    color: #3d007a;
+}
+
+.containerd p {
+    font-size: 1.1rem;
+    color: #030303;
+    margin-bottom: 2rem;
+}
+
+.features-gridd {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.featured {
+    background-color: #b869fe70;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    text-align: left;
+    color: #3d007a;
+}
+
+.featured .icond {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #8049d1;
+}
+
+.featured h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #3d007a;
+}
+
+.featured p {
+    color: #030202;
+    font-size: 17px;
+}
+
+
+
 .headers {
     margin-bottom: 20px;
     margin-top: 90px;

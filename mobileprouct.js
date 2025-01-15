@@ -476,3 +476,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
+// script.js
+document.addEventListener('DOMContentLoaded', () => {
+    const featuredItems = document.querySelectorAll('.featured-item');
+  
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 }); // Trigger when 20% of the item is visible
+  
+    featuredItems.forEach(item => observer.observe(item));
+  });
+  

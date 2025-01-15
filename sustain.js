@@ -3,7 +3,6 @@ document.querySelectorAll('.nav-item').forEach(item => {
         const arrow = item.querySelector('.arrow'); // Find the arrow inside the clicked nav-item
         const blockId = item.getAttribute('href').substring(1) + '-block'; // Get the block id
         const block = document.getElementById(blockId);
-        const buttonM = document.querySelector('.buttonM'); // Select the button
         const ezra = document.querySelector('.ezra'); // Select the ezra class
 
         // Toggle the current block visibility
@@ -11,10 +10,7 @@ document.querySelectorAll('.nav-item').forEach(item => {
             block.classList.remove('show'); // Collapse the block
             arrow.textContent = '▼'; // Change to down arrow
             item.classList.remove('active'); // Remove active class
-            buttonM.style.display = 'block'; // Show the button again when the block is collapsed
-
-            // Show the ezra element when the block is collapsed
-            ezra.style.display = 'block'; 
+            ezra.style.display = 'block'; // Show the ezra element again when block is collapsed
         } else {
             // Collapse all other blocks
             document.querySelectorAll('.nav-block').forEach(otherBlock => {
@@ -30,8 +26,7 @@ document.querySelectorAll('.nav-item').forEach(item => {
             document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
             item.classList.add('active');
 
-            // Hide the button and ezra before showing the new block
-            buttonM.style.display = 'none';
+            // Hide the ezra element before showing the new block
             ezra.style.display = 'none';
 
             // Wait for the ezra block to disappear before expanding the new block
@@ -62,12 +57,10 @@ document.addEventListener('click', function (event) {
         // Remove active class from all nav items
         navLinks.forEach(link => link.classList.remove('active'));
 
-        // Show the button and ezra when the block is collapsed
-        document.querySelector('.buttonM').style.display = 'block';
+        // Show the ezra element when the block is collapsed
         document.querySelector('.ezra').style.display = 'block';
     }
 });
-
 
 
 
@@ -322,121 +315,71 @@ document.querySelectorAll('.directry .linktrya').forEach(link => {
 
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    const slides = document.querySelectorAll(".testimonial-slide");
-    const totalSlides = slides.length;
-    const prevButton = document.querySelector(".navigation button:first-of-type");
-    const nextButton = document.querySelector(".navigation button:last-of-type");
-    const counter = document.querySelector(".navigation span");
-    let currentIndex = 0;
 
-    function updateSlides() {
-      slides.forEach((slide, index) => {
-        slide.style.transform = `translateX(-${currentIndex * 100}%)`;
-      });
-      counter.textContent = `${currentIndex + 1} / ${totalSlides}`;
-    }
 
-    prevButton.addEventListener("click", () => {
-      if (currentIndex > 0) {
-        currentIndex--;
-        updateSlides();
-      }
+
+
+
+
+const menuItems = document.querySelectorAll('.left-alt p');
+const scrollContainerAlt = document.getElementById('scroll-container-alt');
+const scrollSectionsAlt = scrollContainerAlt.children;
+
+// Function to scroll to a section and update the active state
+function scrollToSection(index) {
+    const itemWidth = scrollSectionsAlt[0].offsetWidth;
+    scrollContainerAlt.scrollTo({
+        left: itemWidth * index,
+        behavior: 'smooth',
     });
+    updateActiveMenu(index);
+}
 
-    nextButton.addEventListener("click", () => {
-      if (currentIndex < totalSlides - 1) {
-        currentIndex++;
-        updateSlides();
-      }
-    });
-
-    updateSlides();
-  });
-
-
-
-
-
-
-  function toggleExplanation(id) {
-    const content = document.getElementById(id);
-    const button = content.previousElementSibling; // Get the accordion button
-    const allContents = document.querySelectorAll('.accordion-content');
-    const allButtons = document.querySelectorAll('.accordion-button'); // Get all buttons
-
-    allContents.forEach(item => {
-        if (item !== content) {
-            item.style.display = 'none'; // Hide all other content blocks
+// Function to update the active state of menu items
+function updateActiveMenu(activeIndex) {
+    menuItems.forEach((item, index) => {
+        if (index === activeIndex) {
+            item.classList.add('active');
+        } else {
+            item.classList.remove('active');
         }
     });
+}
 
-    allButtons.forEach(button => {
-        button.classList.remove('active'); // Remove the active class from all buttons
-    });
+// Detect scrolling and update active menu dynamically
+scrollContainerAlt.addEventListener('scroll', () => {
+    const scrollLeft = scrollContainerAlt.scrollLeft;
+    const itemWidth = scrollSectionsAlt[0].offsetWidth;
+    const activeIndex = Math.round(scrollLeft / itemWidth);
+    updateActiveMenu(activeIndex);
+});
 
-    if (content.style.display === 'block') {
-        content.style.display = 'none'; // If the content is visible, hide it
-        button.classList.remove('active'); // Remove the active class from the button
+// Initialize the active state
+updateActiveMenu(0);
+
+
+
+
+
+
+
+// Function to check if the .containerj is in view
+const containerj = document.querySelector('.containerj');
+
+function checkContainerInView() {
+    const rect = containerj.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    if (rect.top <= windowHeight && rect.bottom >= 0) {
+        containerj.classList.add('in-view'); // Add class to trigger effect
     } else {
-        content.style.display = 'block'; // Show the selected content block
-        button.classList.add('active'); // Add the active class to the button
+        containerj.classList.remove('in-view'); // Remove class when out of view
     }
 }
 
+// Listen to the scroll event
+window.addEventListener('scroll', checkContainerInView);
 
+// Call the function initially in case the section is already in view
+checkContainerInView();
 
-
-
-
-document.addEventListener("DOMContentLoaded", function() {
-    const productItems = document.querySelectorAll('.product-item');
-
-    // Create an IntersectionObserver to detect when product items enter the viewport
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // When the element comes into view, add the 'visible' class
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target); // Stop observing the element once it has appeared
-            }
-        });
-    }, {
-        threshold: 0.5  // Trigger when 50% of the element is in the viewport
-    });
-
-    // Observe all product items
-    productItems.forEach(item => {
-        observer.observe(item);
-    });
-});
-
-
-
-
-
-
-
-document.addEventListener("DOMContentLoaded", () => {
-    const featureItems = document.querySelectorAll(".feature-item");
-
-    // Function to reveal feature items when they come into view
-    function revealFeatureItems() {
-        featureItems.forEach(item => {
-            const itemRect = item.getBoundingClientRect();
-            // Check if the feature item is within the visible part of the viewport
-            if (
-                itemRect.top < window.innerHeight &&
-                itemRect.bottom >= 0
-            ) {
-                item.classList.add("visible");
-            }
-        });
-    }
-
-    // Trigger revealFeatureItems on page load to handle the initial case
-    revealFeatureItems();
-
-    // Trigger revealFeatureItems when the user scrolls
-    window.addEventListener("scroll", revealFeatureItems);
-});

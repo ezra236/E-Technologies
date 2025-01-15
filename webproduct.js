@@ -390,48 +390,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-  function toggleFAQ(id) {
-    const answer = document.getElementById(id);
-    const parent = answer.parentElement;
-    const icon = parent.querySelector('.faq-icon');
-    
-    // Close all answers
-    document.querySelectorAll('.faq-answer').forEach(item => {
-        if (item.id !== id) {
-            item.style.display = 'none';
-            item.parentElement.classList.remove('active');
-            item.parentElement.querySelector('.faq-icon').innerText = '+';
-        }
-    });
-
-    // Toggle current answer
-    if (answer.style.display === 'block') {
-        answer.style.display = 'none';
-        parent.classList.remove('active');
-        icon.innerText = '+';
-    } else {
-        answer.style.display = 'block';
-        parent.classList.add('active');
-        icon.innerText = '-';
-    }
-}
-
-
-
-
-
-// JavaScript for Accordion
-document.querySelectorAll('.faq-question').forEach(question => {
-    question.addEventListener('click', function () {
-        this.classList.toggle('active');
-        const answer = this.nextElementSibling;
-        answer.classList.toggle('show');
-    });
-});
-
-
-
-
 
 
 document.addEventListener('DOMContentLoaded', () => {
