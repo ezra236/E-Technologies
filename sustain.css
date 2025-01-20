@@ -920,7 +920,7 @@ body {
     height: 600px;
     margin-top: 72px;
     position: relative; 
-    z-index: 1; 
+    z-index: 2; 
 }
 
 .mchez {
@@ -1324,7 +1324,6 @@ body {
 
 
 
-
 .container-alt {
     display: flex;
     width: 100%;
@@ -1349,7 +1348,7 @@ body {
     top: 0; 
     left: 140px; 
     margin-top: 60px;
-    z-index: 10;
+    z-index: 1;
     width: 800px;
     margin-bottom: 0; 
     color: white;
@@ -1399,7 +1398,16 @@ body {
     display: flex;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
+
+    /* Hide scrollbar for all browsers */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
 }
+
+.scroll-container-alt::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+}
+
 
 .scroll-container-alt div {
     min-width: 100%;
