@@ -917,7 +917,7 @@ body {
 .display {
     background-color: rgb(2, 1, 57);
     width: 100%;
-    height: 460px;
+    height: 600px;
     margin-top: 72px;
     position: relative; 
     z-index: 1; 
@@ -1083,10 +1083,6 @@ body {
 }
 
 
-
-
-
-
 .ezra {
     position: absolute;
     top: 70px;
@@ -1107,12 +1103,44 @@ body {
     z-index: 200;
     background-color: blue; /* Example background for visibility */
     width: 100%;
-    height: 360px;
+    height: 500px;
     text-align: center;
     background-image: url('download (10).jpg');
     background-size: 100% 100%; /* Adjusts image to cover the entire element */
     background-repeat: no-repeat; /* Prevents image repetition */
     background-position: center; /* Centers the image */
+}
+
+
+.reh-right {
+    position: absolute;
+    top: 100px;
+    left: 65%;
+    z-index: 200;
+    background-color: #001f54; /* Dark blue background for contrast */
+    width: 35%;
+    height: 500px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.8s ease-in-out; /* Smooth animation for movement */
+    overflow: hidden; /* Ensures no overflow */
+}
+
+.reh-right img {
+    width: 100%;
+    height: 100%;
+    margin-top: -2px;
+    transition: clip-path 2s ease-out, opacity 1s ease-out; /* Smooth transitions */
+    clip-path: inset(0 0 100% 0); /* Initially hides the image */
+    opacity: 0; /* Makes the image invisible */
+}
+
+.display.in-view .reh-right img {
+    clip-path: inset(0 0 0 0); /* Fully reveals the image */
+    opacity: 1; /* Fades the image in */
 }
 
 .breadcrumb {
@@ -1140,281 +1168,131 @@ body {
     font-family: 19px;
 }
 
-.breadcrumb a:nth-of-type(2) {
+.breadcrumb a:nth-of-type(3) {
     color: black; 
 }
 
 .reh-title {
     font-size: 38px;
-    margin-top: 100px;
+    margin-top: 110px;
     text-align: left;
     color: white;
     padding-left: 140px;
 }
 
-
-.contact-info {
-    background-color: white;
-    padding: 20px;
-    border-radius: 0px;
-    width: 100%;
-    margin: 20px auto;
-}
-
-.social-media {
-    text-align: center;
-}
-
-.social-media p {
-    font-size: 1.2em;
-    color: #040404;
-    margin-bottom: 50px;
-}
-
-.social-icon {
-    display: inline-block;
-    margin: 0 15px;
-    padding: 10px 20px;
-    text-decoration: none;
+.reh p{
     color: white;
-    background-color: #0073e6;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-    font-size: 1.1em;
-}
-
-.social-icon.facebook {
-    background-color: #3b5998;
-}
-
-.social-icon.facebook:hover {
-    background-color: #060b73;
-}
-
-.social-icon.twitter {
-    background-color: #1da1f2;
-}
-
-.social-icon.twitter:hover {
-    background-color: #03118d;
-}
-
-.social-icon.linkedin {
-    background-color: #0077b5;
-}
-
-.social-icon.linkedin:hover {
-    background-color: #062973;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    text-align: justify;
+    margin-left: 140px;
+    line-height: 1.6;
+    width: 800px;
 }
 
 
-
-.sla {
-    background-color: white;
-    padding: 20px;
-    border-radius: 0px;
-   width: 97%;
-    text-align: center;
+.h {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    padding: 20px;
+    width: 100%;
 }
 
-.sla h2 {
-    font-size: 2.2em;
-    color: white;
-    margin-bottom: 20px;
-}
-.sla-content {
-    text-align: left;
-    width: 90%;
-    margin-bottom: 0px;
-    display: flex;
-    align-items: flex-start;
-    gap: 50px;
-    flex-direction: row;
-}
-
-.sla-item {
+.heading {
+    width: 80%;
+    padding: 30px;
     display: flex;
     align-items: center;
-    margin-bottom: 5px;
-    border-radius: 10px;
-    background-color: white;
-    padding: 10px;
-    display: flex;
-    align-items: flex-start;
     flex-direction: column;
+    background-color: white;
 }
 
-.sla-image {
-    width: 100%; /* Adjust the width as per your design */
-    height: 200px; /* Adjust the height as per your design */
-    margin-right: 15px; /* Add spacing between the image and the text */
+.heading h2 {
+    font-size: 33px;
+    color: #000e54;
+    font-weight: 800;
 }
 
-.sla-icon {
-    font-size: 2.2em;
-    margin-right: 15px;
-    color: #0073e6;
-}
-.sla-text p {
-    font-size: 1.1em;
-    color: black;
-}
-.highlight {
-    font-weight: bold;
-    color: #e74c3c;
-}
-.cta-button {
-    background-color: #0073e6;
-    color: white;
-    font-size: 1.2em;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-top: 20px;
-}
-.cta-button:hover {
-    background-color: #005bb5;
+.heading p {
+    font-size: 18px;
+    line-height: 1.5;
 }
 
 
-.feedback {
-    background-color: #ceddf8;
-    padding: 40px;
-    border-radius: 0px;
+.c {
     width: 100%;
-    text-align: center;
-}
-
-.feedback h2 {
-    font-size: 2.5em;
-    color: #0073e6;
-    margin-bottom: 20px;
-}
-
-.feedback p {
-    font-size: 1.1em;
-    color: #040404;
-    margin-bottom: 30px;
-}
-
-.form-container {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 0px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: left;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.form-container h3 {
-    font-size: 1.8em;
-    margin-bottom: 15px;
-    color: #0e0e0e;
-}
-
-.form-container label {
-    font-size: 1.1em;
-    color: #020202;
-    margin-bottom: 8px;
-    display: inline-block;
-}
-
-.form-container input,
-.form-container textarea {
-    width: 100%;
-    padding: 12px;
-    margin: 8px 0 20px 0;
-    border: 2px solid #ddd;
-    border-radius: 0px;
-    font-size: 1.1em;
-    transition: border-color 0.3s;
-}
-
-.form-container input:focus,
-.form-container textarea:focus {
-    border-color: #0073e6;
-    outline: none;
-}
-
-.form-container button {
-    background-color: #0073e6;
-    color: white;
-    font-size: 1.2em;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.form-container button:hover {
-    background-color: #005bb5;
-}
-
-
-.g {
-display: flex;
-justify-content: center;
-align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 50px;
+    background-color: #4e62e07e;
 }
 
 .container {
-text-align: center;
-width: 85%;
-height: 450px;
-margin-top: 0px;
-padding: 20px;
+    width: 80%;
+    margin: 2rem auto;
+    padding: 0 1rem;
 }
 
 .container h1 {
-font-size: 2rem;
-color: #7cabf5;
-margin-bottom: 30px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
 }
 
-.cards {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-gap: 20px;
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
 }
 
 .card {
-background-color: #16213e;
-padding: 20px;
-border-radius: 10px;
-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-text-align: left;
-cursor: pointer;
+    background-color: #0A0A23;
+    color: #FFFFFF;
+    border-radius: 0px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    justify-content: space-between;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(0px);
 }
 
 .card h2 {
-font-size: 1.25rem;
-margin: 15px 0;
-color: white;
+    font-size: 1.25rem;
+    margin: 0 0 0.5rem;
 }
 
 .card p {
-font-size: 1rem;
-line-height: 1.6;
-color: white;
+    font-size: 1.1rem;
+    margin: 0 0 1rem;
 }
 
-.card .link {
-color: #a0c4ff;
-font-weight: bold;
-text-decoration: none;
+.card a {
+    align-self: flex-end;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: text-decoration 0.2s;
 }
 
-.card .icon {
-font-size: 2.5rem;
-margin-bottom: 10px;
+.card:hover a {
+    text-decoration: underline;
+}
+
+.card a svg {
+    width: 16px;
+    height: 16px;
 }
 
 
@@ -1553,3 +1431,4 @@ margin-bottom: 10px;
 .social-icons a:hover {
     background-color: #555;
 }
+
