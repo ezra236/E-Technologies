@@ -27,12 +27,15 @@ document.querySelectorAll('.nav-item').forEach(item => {
             // Add active class to the clicked nav-item and remove from others
             document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
             item.classList.add('active');
+
+             // Close the mobile menu
+             toggleMenu();
         }
 
-        // Prevent the default anchor link behavior
         event.preventDefault();
     });
 });
+
 
 // Close the block when clicking outside the block
 document.addEventListener('click', function (event) {
@@ -54,6 +57,13 @@ document.addEventListener('click', function (event) {
 
 
 
+function toggleMenu() {
+    const hamburger = document.querySelector('.hamburger');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('show');
+}
 
 
 
