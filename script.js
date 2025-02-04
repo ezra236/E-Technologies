@@ -28,13 +28,13 @@ document.querySelectorAll('.nav-item').forEach(item => {
             document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
             item.classList.add('active');
 
-             // Close the mobile menu
-             toggleMenu();
+            closeMenu();
         }
 
         event.preventDefault();
     });
 });
+
 
 
 // Close the block when clicking outside the block
@@ -66,7 +66,12 @@ function toggleMenu() {
 }
 
 
-
+function closeMenu() {
+    const mobileMenu = document.querySelector('.mobile-menu');
+    
+    // Close the mobile menu by removing the 'show' class
+    mobileMenu.classList.remove('show');
+}
 
 
 
