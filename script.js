@@ -35,7 +35,37 @@ document.querySelectorAll('.nav-item').forEach(item => {
     });
 });
 
+document.querySelectorAll(".closez-btn").forEach(button => {
+    button.addEventListener("click", function () {
+        this.closest(".content").classList.remove("active"); // Hide only the parent content block
+    });
+});
 
+document.querySelectorAll(".closep-btn").forEach(button => {
+    button.addEventListener("click", function () {
+        this.closest(".detail").classList.remove("active"); // Hide only the parent content block
+    });
+});
+
+document.querySelector(".closed-btn").addEventListener("click", function () {
+    document.getElementById("services-block").classList.remove("show");
+});
+
+document.querySelector(".closet-btn").addEventListener("click", function () {
+    document.getElementById("about-block").classList.remove("show");
+});
+
+document.querySelectorAll(".closel-btn").forEach(button => {
+    button.addEventListener("click", function () {
+        this.closest(".content").classList.remove("active"); // Hide the parent content block
+    });
+});
+
+document.querySelectorAll(".closec-btn").forEach(button => {
+    button.addEventListener("click", function () {
+        this.closest(".content").classList.remove("active"); // Hide content
+    });
+});
 
 // Close the block when clicking outside the block
 document.addEventListener('click', function (event) {

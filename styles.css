@@ -228,6 +228,12 @@ body, html  {
     z-index: 10;
 }
 
+@media (max-width: 768px) {
+    .direc {
+        width: 100%;
+    }
+}
+
 .showd {
     width: 70%;  
     background-color: #001f54;
@@ -235,6 +241,12 @@ body, html  {
     padding: 0px;
     position: relative;
     display: flex;
+}
+
+@media (max-width: 768px) {
+    .showd {
+        width: 0%;
+    }
 }
 
 .showd > div:nth-child(1) {
@@ -303,8 +315,43 @@ body, html  {
 
 .content.active {
     visibility: visible;
-    transform: translateX(0);  /* Move to its position inside the container */
+    transform: translateX(0); 
     transition: transform 0.6s ease, visibility 0s 0s; /* Make the transition instant once active */
+}
+
+@media (max-width: 768px) {  
+    .content {
+        left: -400px;
+        width: 350px;  /* Take full width on mobile */
+        z-index: 20;  /* Ensure it's above .direc */
+    }
+}
+
+.closez-btn {
+    position: absolute; /* Absolute positioning inside .content */
+    bottom: 50px;  /* Position it at the bottom */
+    left: 15%; 
+    padding: 12px;
+    background-color: transparent; 
+    color: blue;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    display: none; /* Hide by default */
+}
+
+.closez-btn:hover {
+    color: #0c0153;
+}
+
+@media (max-width: 768px) {
+    .closez-btn {
+        display: block; /* Make it visible on small screens */
+    }
 }
 
 .content a {
@@ -356,6 +403,13 @@ body, html  {
     border-radius: 5px;
 }
 
+
+@media (max-width: 768px) {
+    .direc p {
+        width: 200px;
+    }
+}
+
 .direc p:hover {
     text-decoration: none;  
     background-color: rgba(138, 164, 234, 0.647);  
@@ -403,6 +457,46 @@ body, html  {
     width: 52%; 
     visibility: visible; 
     transition: width 0.6s ease, visibility 0s 0s; 
+}
+
+
+@media (max-width: 768px) {
+    .detail {
+        left: -380px;
+        width: 0;
+        z-index: 30;
+    }
+
+    .detail.active {
+        width: 390px;
+    }
+}
+
+.closep-btn {
+    position: absolute; /* Absolute positioning inside .content */
+    bottom: 20px;  /* Position it at the bottom */
+    left: 15%; 
+    padding: 12px;
+    background-color: transparent; 
+    color: blue;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    display: none;
+}
+
+.closep-btn:hover {
+    color: #0c0153;
+}
+
+@media (max-width: 768px) {
+    .closep-btn {
+        display: block; /* Make it visible on small screens */
+    }
 }
 
 .detail-title {
@@ -538,6 +632,12 @@ body, html  {
     padding-left: 40px;
 }
 
+@media (max-width: 768px) {
+    .direct {
+        width: 100%;
+    }
+}
+
 .direct a {
     color: #0a0b0c; 
     text-decoration: none; 
@@ -565,6 +665,12 @@ body, html  {
     gap: 20px;
 }
 
+@media (max-width: 768px) {
+    .showdt {
+        display: none;
+    }
+}
+
 .direct p {
     margin: 35px 0;  /* Space between paragraphs */
     color: #000;
@@ -572,6 +678,12 @@ body, html  {
     transition: background-color 0.6s ease, box-shadow 0.3s ease;  
     width: 300px;
     border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .direct p {
+        width: 200px;
+    }
 }
 
 .direct p:hover {
@@ -633,6 +745,60 @@ body, html  {
     padding-left: 40px;
 }
 
+@media (max-width: 768px) {
+    .directr {
+        width: 100%;
+    }
+}
+
+.closed-btn {
+    position: absolute;
+    bottom: 10px; /* Adjusts distance from the bottom */
+    left: 10px; /* Positions the button at the bottom-left */
+    padding: 8px 15px;
+    background-color: transparent; /* Change color as needed */
+    color: rgb(6, 6, 95);
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    display: none;
+}
+
+.closed-btn:hover {
+    color: black;
+}
+
+@media (max-width: 768px) {
+    .closed-btn {
+        display: block; /* Make it visible on small screens */
+    }
+}
+
+.closet-btn {
+    position: absolute;
+    bottom: 10px; /* Adjusts distance from the bottom */
+    left: 10px; /* Positions the button at the bottom-left */
+    padding: 8px 15px;
+    background-color: transparent; /* Change color as needed */
+    color: rgb(6, 6, 95);
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    display: none;
+}
+
+.closet-btn:hover {
+    color: black;
+}
+
+@media (max-width: 768px) {
+    .closet-btn {
+        display: block; /* Make it visible on small screens */
+    }
+}
+
 .showdtr {
     width: 70%;  
     background-color: #001f54;
@@ -645,6 +811,12 @@ body, html  {
     align-items: flex-start; 
     gap: 5px; 
     color: white;
+}
+
+@media (max-width: 768px) {
+    .showdtr {
+        display: none;
+    }
 }
 
 .showdtr > div {
@@ -734,6 +906,12 @@ body, html  {
     z-index: 2;
 }
 
+@media (max-width: 768px) {
+    .directry {
+        width: 100%;
+    }
+}
+
 .showdtry {
     width: 70%;  
     background-color: #730041;
@@ -742,6 +920,12 @@ body, html  {
     position: relative;
     display: flex;  /* Use flexbox for layout */
     flex-direction: row;
+}
+
+@media (max-width: 768px) {
+    .showdtry {
+        width: 0%;
+    }
 }
 
 .showdtry > div:nth-child(1) {
@@ -801,6 +985,12 @@ body, html  {
     border-radius: 5px;
 }
 
+@media (max-width: 768px) {
+    .directry p {
+        width: 200px;
+    }
+}
+
 .directry p:hover {
     text-decoration: none;  
     background-color: rgba(138, 164, 234, 0.647);  
@@ -852,7 +1042,7 @@ body, html  {
     position: absolute;
     top: 0;
     left: 0;  /* Start from the left edge of showdtry */
-    width: 50%;
+    width: 45%;
     height: 100%;
     background-color: white;  
     padding: 20px;
@@ -867,6 +1057,37 @@ body, html  {
     transform: translateX(0);  
     transition: transform 0.6s ease, visibility 0s 0s; 
 }
+
+@media (max-width: 768px) {  
+    #contact-block .content {
+        left: -400px;
+        width: 350px; 
+        z-index: 20;  /* Ensure it's above .direc */
+    }
+}
+
+.closel-btn {
+    position: absolute;
+    bottom: 50px;  
+    left: 15%;  /* Align it to the bottom-left */
+    padding: 12px;
+    background-color: transparent;
+    color: blue;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    display: none; /* Hide by default on desktop */
+}
+
+@media (max-width: 768px) {
+    .closel-btn {
+        display: block; /* Make it visible on mobile */
+    }
+}
+
 
 .styled-pp {
     margin: 0px 0;  /* Space between paragraphs */
@@ -927,6 +1148,13 @@ body, html  {
     transition: transform 0.6s ease, visibility 0s 0s; 
 }
 
+@media (max-width: 768px) {  
+    #company-block .content {
+        left: -400px;
+        width: 350px; 
+        z-index: 20;  /* Ensure it's above .direc */
+    }
+}
 
 .directrya {
     width: 30%;  /* Adjust width as needed */
@@ -934,6 +1162,12 @@ body, html  {
     height: 100%;
     padding-left: 40px;
     z-index: 2;
+}
+
+@media (max-width: 768px) {  
+  .directrya {
+        width: 100%; 
+    }
 }
 
 .showdtrya {
@@ -946,6 +1180,12 @@ body, html  {
     flex-direction: row;
 }
 
+@media (max-width: 768px) {  
+    .showdtrya {
+          width: 0%; 
+      }
+  }
+
 .directrya p {
     margin: 35px 0;  /* Space between paragraphs */
     color: #000;
@@ -953,6 +1193,35 @@ body, html  {
     transition: background-color 0.6s ease, box-shadow 0.3s ease;  
     width: 300px;
     border-radius: 5px;
+}
+
+@media (max-width: 768px) {  
+    .directrya p{
+          width: 150px; 
+      }
+  }
+
+  .closec-btn {
+    position: absolute; /* Absolute positioning inside .content */
+    bottom: 50px;  /* Position it at the bottom */
+    left: 15%;
+    padding: 12px;
+    background-color: transparent;
+    color: blue;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    display: none; /* Hide by default */
+}
+
+/* Show button only on mobile screens */
+@media (max-width: 768px) {
+    .closec-btn {
+        display: block; /* Make it visible on small screens */
+    }
 }
 
 .directrya p:hover {
@@ -1065,6 +1334,7 @@ body, html  {
 @media (max-width: 768px) {
     .display {
         width: 100%;
+        z-index: 5;
     }
 }
 
@@ -1106,6 +1376,13 @@ body, html  {
     }
 }
 
+
+@media (max-width: 376px) {
+    .text-overlay {
+        left: 20%; 
+    }
+}
+
 .rotating-container {
     position: absolute;
     top: 65%;
@@ -1136,6 +1413,12 @@ body, html  {
     }
 }
 
+
+@media (max-width: 376px) {
+    .rotating-overlay {
+        font-size: 18px;
+    }
+}
 
 /* Button styles */
 .action-button {
@@ -1307,12 +1590,28 @@ body, html  {
     position: relative;
 }
 
+@media (max-width: 768px) {
+    .services-section {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px 10px;
+    }
+}
+
 /* Section Title and Description */
 .section-titlex {
     font-size: 3rem;
     color: #005bb5;
     margin-bottom: 20px;
     font-family: 'Poppins', sans-serif;
+}
+
+@media (max-width: 395px) {
+    .section-titlex {
+        font-size: 2.6rem;
+        width: 95%;
+    }
 }
 
 .section-description {
@@ -1348,6 +1647,12 @@ body, html  {
     transition: transform 0.7s ease-in-out, box-shadow 0.7s ease-in-out;
     overflow: hidden;
     position: relative;
+}
+
+@media (max-width: 395px) {
+    .service-card {
+       width: 280px;
+    }
 }
 
 .service-card::before {
@@ -1564,6 +1869,13 @@ body, html  {
     }
 }
 
+@media (max-width: 390px) {
+    .solutions-box {
+        width: 100%;
+        max-width: 85%;
+    }
+}
+
   .solutions-box h2 {
     font-size: 1.9rem;
     color: #001f54;
@@ -1755,7 +2067,7 @@ body, html  {
     position: absolute; 
     top: 100px;
     left: 70px;
-    z-index: 10; /* Lower z-index to ensure it's below vid2 */
+    z-index: 1; /* Lower z-index to ensure it's below vid2 */
 }
 
 .vid2 {
@@ -1765,7 +2077,7 @@ body, html  {
     position: absolute; /* Stacked on top of vid1 */
     top: 70px;
     left: 40px;
-    z-index: 20; /* Higher z-index to appear on top */
+    z-index: 2; /* Higher z-index to appear on top */
 }
 .vid3 {
     width: 100%;
@@ -1774,7 +2086,7 @@ body, html  {
     position: absolute; /* Stacked on top of vid1 */
     top: 40px;
     left: 15px;
-    z-index: 30; /* Higher z-index to appear on top */
+    z-index: 3; /* Higher z-index to appear on top */
 }
 
 .hidden {
