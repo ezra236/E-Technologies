@@ -1538,6 +1538,14 @@ body, html  {
     color: white;
 }
 
+@media (max-width: 768px) {
+    .top-class h1{
+        font-size: 2.1rem;
+        text-align: center;
+        padding-top: 20px;
+    }
+}
+
 .top-class p {
     text-align: justify;
     font-size: 22px;
@@ -1548,6 +1556,12 @@ body, html  {
     color: white;
 }
 
+@media (max-width: 768px) {
+    .top-class p {
+        text-align: center;
+        margin-right: 0px;
+    }
+}
 
   .stat-item {
     background-color: white;
@@ -1659,6 +1673,12 @@ body, html  {
     max-width: 700px;
     margin: 0 auto 50px;
     line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .section-description {
+        max-width: 350px;
+    }
 }
 
 /* Services Container */
@@ -1900,7 +1920,7 @@ body, html  {
   
   @media (max-width: 768px) {
     .solutions-box {
-        max-width: 100%;
+        max-width: 80%;
         margin-right: 0px;
         height: auto;
         padding: 1rem;
@@ -1909,8 +1929,7 @@ body, html  {
 
 @media (max-width: 390px) {
     .solutions-box {
-        width: 100%;
-        max-width: 95%;
+        max-width: 80%;
     }
 }
 
@@ -1925,12 +1944,25 @@ body, html  {
     justify-content: space-between;
     margin-bottom: 1.5rem;
   }
+
+@media (max-width: 768px) {
+    .solutions-links {
+        flex-direction: column;
+        margin-bottom: 0.8rem;
+    }
+}
   
 .column {
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
   }
+
+@media (max-width: 768px) {
+    .column {
+        margin-bottom: 20px;
+    }
+}
   
 
 .solutions-links a {
