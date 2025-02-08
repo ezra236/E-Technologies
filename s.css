@@ -1,0 +1,65 @@
+/* General Styles */
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background: #f0f0f0;
+  }
+  
+  /* Scroll Container */
+  .scroll-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    justify-content: center;
+    align-items: center;
+    gap: -900px; /* Negative gap */
+    width: 70%;
+    padding: 20px 0;
+    scroll-behavior: smooth;
+  }
+  
+  /* Hide Scrollbar */
+  .scroll-container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Scroll Item */
+  .scroll-item {
+    flex: 0 0 150px; /* Default size for non-center items */
+    height: 150px;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    margin: 0 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: white;
+    font-weight: bold;
+    scroll-snap-align: center;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  /* Z-Index Rules */
+  .scroll-item:nth-child(1) { z-index: 5; }
+  .scroll-item:nth-child(2) { z-index: 10; }
+  .scroll-item:nth-child(3) { z-index: 15; }
+  .scroll-item:nth-child(4) { z-index: 20; }
+  .scroll-item:nth-child(5) { z-index: 100; }
+  .scroll-item:nth-child(6) { z-index: 20; }
+  .scroll-item:nth-child(7) { z-index: 15; }
+  .scroll-item:nth-child(8) { z-index: 10; }
+  .scroll-item:nth-child(9) { z-index: 5; }
+  
+  /* Active Center Item */
+  .scroll-item.active {
+    z-index: 100;
+    width: 200px;
+    height: 200px;
+    transform: scale(1.2);
+  }
+  

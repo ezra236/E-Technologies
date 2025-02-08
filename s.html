@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Support - E-WADM</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: #0073e6;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+        }
+        p {
+            font-size: 1.1em;
+            color: #555;
+        }
+        .contact-info, .sla, .feedback, .escalation {
+            margin-bottom: 30px;
+        }
+        .social-media a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #0073e6;
+        }
+        .social-media a:hover {
+            text-decoration: underline;
+        }
+        .form-container {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+        }
+        .form-container input, .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-container button {
+            background-color: #0073e6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .form-container button:hover {
+            background-color: #005bb5;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Customer Support - E-WADM</h1>
+    <p>Your trusted partner in Web Development, Mobile Apps, and Machine Learning Solutions</p>
+</header>
+
+<section class="contact-info">
+    <h2>Contact Information</h2>
+    <p><strong>Phone Number:</strong> +1 (234) 567-8900</p>
+    <p><strong>Email Address:</strong> <a href="mailto:support@ewadm.com">support@ewadm.com</a></p>
+    <p><strong>Business Address:</strong> 123 E-WADM Street, Tech City, Country</p>
+    <div class="social-media">
+        <p><strong>Follow Us:</strong></p>
+        <a href="https://facebook.com/ewadm" target="_blank">Facebook</a>
+        <a href="https://twitter.com/ewadm" target="_blank">Twitter</a>
+        <a href="https://linkedin.com/company/ewadm" target="_blank">LinkedIn</a>
+    </div>
+</section>
+
+<section class="support-hours">
+    <h2>Support Hours</h2>
+    <p>Our support team is available Monday to Friday from 9:00 AM to 6:00 PM (GMT).</p>
+</section>
+
+<section class="sla">
+    <h2>Service Level Agreement (SLA)</h2>
+    <p>Our response time for support requests is typically within 2 business hours. Resolution times vary depending on the complexity of the issue. For urgent issues, please reach out via phone.</p>
+</section>
+
+<section class="feedback">
+    <h2>Feedback & Surveys</h2>
+    <p>Your feedback is important to us! Please share your experience with our support team and services.</p>
+    <div class="form-container">
+        <h3>Submit Feedback</h3>
+        <form action="/submit-feedback" method="POST">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="feedback">Your Feedback:</label>
+            <textarea id="feedback" name="feedback" rows="4" required></textarea>
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </div>
+</section>
+
+<section class="escalation">
+    <h2>Escalation Process</h2>
+    <p>If you are not satisfied with the initial response or solution, please follow these steps to escalate the issue:</p>
+    <ol>
+        <li>Contact our support team via email at <a href="mailto:support@ewadm.com">support@ewadm.com</a>.</li>
+        <li>If the issue remains unresolved, request escalation to a senior support representative.</li>
+        <li>For urgent cases, please call us directly at +1 (234) 567-8900.</li>
+    </ol>
+</section>
+
+</body>
+</html>

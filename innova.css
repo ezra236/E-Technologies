@@ -1317,7 +1317,13 @@ body {
     display: flex;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
-  }
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.scroll-container-alt::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+}
 
   .scroll-container div {
     min-width: 100%;
@@ -1526,7 +1532,16 @@ body {
     display: flex;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
+
+    /* Hide scrollbar for all browsers */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
 }
+
+.scroll-container-alt::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+}
+
 
 .scroll-container-alt div {
     min-width: 100%;
