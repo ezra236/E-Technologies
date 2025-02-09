@@ -1649,6 +1649,7 @@ body, html {
     line-height: 1.5;
     padding-left: 140px;
     color: white;
+    margin-top: 10px;
 }
 
 @media (max-width:768px) {

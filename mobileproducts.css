@@ -2525,13 +2525,6 @@ body, html  {
     text-align: center;
     scroll-margin-top: 180px;
 }
-@media (max-width: 768px) {
-    .headers {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-    }
- }
 
 .headers p {
     color: #0071C5;
@@ -2545,12 +2538,13 @@ body, html  {
     color: #2B2B2B;
 }
 
-@media (max-width: 768px) {
+@media (max-width:768px) {
     .headers h1 {
-        font-size: 1.6rem;
-        width: 96%;
+        font-size: 1.3rem;
+        text-align: left;
+        padding: 10px;
     }
- }
+}
 
 .button-containers {
     display: flex;
@@ -2559,30 +2553,24 @@ body, html  {
     margin-bottom: 90px;
 }
 
-@media (max-width: 768px) {
+@media (max-width:768px) {
     .button-containers {
-        flex-direction: column;
         align-items: center;
+        flex-direction: column;
+        width: 100%;
     }
- }
+}
 
 .buttons {
     padding: 15px 30px;
     font-size: 1rem;
     font-weight: bold;
     text-decoration: none;
-    margin-top: 35px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
-
-@media (max-width: 768px) {
-    .buttons {
-        width: 60%;
-    }
- }
 
 .button-primary {
     background-color: #0071C5;
@@ -2603,6 +2591,7 @@ body, html  {
     background-color: #0071C5;
     color: white;
 }
+
 
 
 .footer {
