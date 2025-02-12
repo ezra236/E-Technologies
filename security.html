@@ -8,7 +8,30 @@
     <link rel="icon" href="ee.png">
 </head>
 <body>
+    
+    
+    <div class="mobile-menu">
+        <div class="mobil">
+         <ul class="nav-links">
+             <li><a href="#home" class="nav-item">Solutions <span class="arrow">&#9660;</span></a></li>
+             <li><a href="#services" class="nav-item">Partners <span class="arrow">&#9660;</span></a></li>
+             <li><a href="#about" class="nav-item">Resources <span class="arrow">&#9660;</span></a></li>
+             <li><a href="#contact" class="nav-item">Support <span class="arrow">&#9660;</span></a></li>
+             <li><a href="#company" class="nav-item">Company <span class="arrow">&#9660;</span></a></li>
+         </ul>
+        </div>
+     </div>
+
+
     <nav class="navbar">
+
+        <div class="hamburger" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+
+        <div class="logod">E-WADM Technologies</div>
         <div class="logo">E-WADM Technologies</div>
         <ul class="nav-links">
             <li><a href="#home" class="nav-item">Solutions <span class="arrow">&#9660;</span></a></li>
@@ -53,23 +76,35 @@
                             and business impact.</p>
                         <a href="#">Learn More</a>
                     </div>
-
+        
                     <div class="websites content">
                         <a href="websites.html" target="_blank">
                             <p class="styled-p" data-target="websites-detail">E-WADM for Websites →</p>
                         </a>
                         <p class="styled-p" data-target="products-detail">Products →</p>
+
+                        <p class="styled-pn"  onclick="window.location.href='webproduct.html'">Products →</p>
+
+                        <button class="closez-btn">Go Back</button>
                     </div>
                     <div class="mobile-app content">
                         <a href="mobile.html" target="_blank">
                             <p class="styled-p" data-target="mobileA-detail">E-WADM for Mobile →</p>
                         </a>
                         <p class="styled-p" data-target="mobile-detail">Products →</p>
+
+                        <p class="styled-pn"  onclick="window.location.href='mobileproducts.html'">Products →</p>
+
+                        <button class="closez-btn">Go Back</button>
                     </div>
                     <div class="desktop-sol content">
                         <p class="styled-p" data-target="desktop-detail">Products →</p>
-                    </div>
 
+                        <p class="styled-pn"  onclick="window.location.href='desktop.html'">Products →</p>
+
+                        <button class="closez-btn">Go Back</button>
+                    </div>
+        
                     <!-- Detail sections -->
                     <div class="detail products-detail">
                         <h2 class="detail-title">Our Web Development Products</h2>
@@ -80,6 +115,8 @@
                             <li><a href="#blogs-content-platforms">Blogs and Content Platforms →</a></li>
                             <li><a href="#landing-pages">Landing Pages →</a></li>
                         </ul>
+
+                        <button class="closep-btn">Go Back</button>
                     </div>
                     <div class="detail mobile-detail">
                         <ul class="mobile-products-list">
@@ -93,6 +130,8 @@
                             <li><a href="#ecommerce-apps">E-Commerce Mobile Apps →</a></li>
                             <li><a href="#social-media-apps">Social Media Apps →</a></li>
                         </ul>
+
+                        <button class="closep-btn">Go Back</button>
                     </div>
                     <div class="detail desktop-detail">
                         <h2 class="detail-title">Desktop Products</h2>
@@ -105,6 +144,8 @@
                             <li><a href="#productivity-tools">Productivity Tools</a></li>
                             <li><a href="#graphics-applications">Graphics and Design Applications</a></li>
                         </ul>
+
+                        <button class="closep-btn">Go Back</button>
                     </div>
                 </div>
             </div>
@@ -119,7 +160,8 @@
                     <a href="starups.html" target="_blank">
                         <p class="linkt">E-WADM for startUps ↗</p>
                     </a>
-                                            
+                        
+                    <button class="closed-btn">Go Back</button>
                 </div>
                 <div class="showdt">
                         <img src="cop.jpg" alt="E-WADM Solutions" class="showdt-image">
@@ -136,7 +178,9 @@
                     </a>
                     <a href="events.html" target="_blank">
                         <p class="linktr">Events →</p>
-                    </a>                      
+                    </a>         
+                    
+                    <button class="closet-btn">Go Back</button>
                 </div>
                 <div class="showdtr">
                     <div>
@@ -177,6 +221,8 @@
                       <a href="s-overview.html" target="_blank">
                         <p class="styled-pp">Overview →</p>
                       </a>
+
+                      <button class="closel-btn">Go Back</button>
                     </div>
                     <div class="training content">
                       <a href="t-overview.html" target="_blank">
@@ -185,6 +231,8 @@
                       <a href="l-partners.html" target="_blank">
                         <p class="styled-pp">E-WADM Learning Partners →</p>
                       </a>
+
+                      <button class="closel-btn">Go Back</button>
                     </div>
                         
                 </div>
@@ -225,6 +273,8 @@
                         <a href="location.html" target="_blank">
                             <p class="styled-ppp">Location ↗</p>
                         </a>
+
+                        <button class="closec-btn">Go Back</button>
                     </div>
                     <div class="career content">
                         <a href="career.html" target="_blank">
@@ -236,6 +286,8 @@
                         <a href="life.html" target="_blank">
                             <p class="styled-ppp">Life At E-WADM →</p>
                         </a>
+
+                        <button class="closec-btn">Go Back</button>
                     </div>
                     <div class="innova content">
                         <a href="innova.html" target="_blank">
@@ -247,6 +299,8 @@
                         <a href="ventures.html" target="_blank">
                             <p class="styled-ppp">Ventures →</p>
                         </a>
+
+                        <button class="closec-btn">Go Back</button>
                     </div>
                     <div class="sustain content">
                         <a href="sustain.html" target="_blank">
@@ -261,6 +315,8 @@
                         <a href="environ.html" target="_blank">
                             <p class="styled-ppp">Environmental →</p>
                         </a>
+
+                        <button class="closec-btn">Go Back</button>
                     </div>
                 </div>
 
@@ -282,7 +338,7 @@
     <div class="ezra">
         <nav class="breadcrumb">
             <a href="Home.html">Home</a>
-            <span>/</span>
+            <span>></span>
             <a href="security.html">Security</a>
         </nav>
     </div>
@@ -290,7 +346,7 @@
 
 
     <section class="introduction">
-        <h2>🚀 Introduction to E-WADM for Security</h2>
+        <h2>🚀 Security at E-Wadm</h2>
         <p>
             E-WADM (Enhanced Web Application Defense Mechanism) plays a critical role in modern security landscapes by addressing cyberattacks, data breaches, and unauthorized access. 
             It ensures robust protection for your systems with proactive security measures.
@@ -301,41 +357,55 @@
 
     <div class="j">
         <section class="container">
-            <h1>Make every decision count with the latest airport operations software at your fingertips</h1>
-            <p>Amadeus Airport Operations suite has been designed from the ground up, leveraging the power and capabilities of cloud technology to bring flexibility and agility to your airport operations.</p>
+            <h1>Fortify Your Digital Ecosystem with E-Wadm's Advanced Security Technologies</h1>
+            <p>
+                E-Wadm delivers cutting-edge security solutions engineered to protect mobile, web, and desktop systems. Leveraging robust encryption, multi-layered authentication, and real-time threat detection, our technologies ensure your digital operations remain secure and resilient.
+            </p>
             <div class="features-gridd">
                 <div class="featured">
-                    <div class="icond">👥</div>
-                    <h2>Built by industry experts</h2>
-                    <p>Technology designed and developed by airport experts, for the airport industry - we understand your needs and business goals.</p>
+                    <div class="icond">👨‍💻</div>
+                    <h2>Developed by Cybersecurity Experts</h2>
+                    <p>
+                        Crafted by seasoned cybersecurity professionals, our solutions are designed to counter modern threats and safeguard your critical assets.
+                    </p>
                 </div>
                 <div class="featured">
-                    <div class="icond">☁️</div>
-                    <h2>True cloud hosting</h2>
-                    <p>Cloud-based solutions give airports the flexibility to be responsive and agile, adjusting operations to meet changing demands.</p>
+                    <div class="icond">🔒</div>
+                    <h2>Advanced Encryption Protocols</h2>
+                    <p>
+                        Our state-of-the-art encryption secures data in transit and at rest, ensuring privacy and integrity across all platforms.
+                    </p>
                 </div>
                 <div class="featured">
-                    <div class="icond">💻</div>
-                    <h2>Integrated management systems</h2>
-                    <p>Multi-system integration enables airports to manage operations with confidence – from gate allocations to take-off calculations.</p>
+                    <div class="icond">🛡️</div>
+                    <h2>Multi-Layered Authentication</h2>
+                    <p>
+                        Utilizing robust multi-factor authentication, we verify user identities to prevent unauthorized access and strengthen system defenses.
+                    </p>
                 </div>
                 <div class="featured">
-                    <div class="icond">ℹ️</div>
-                    <h2>Informed decision-making</h2>
-                    <p>A constant exchange of data on flights, passengers, baggage and resources provides airports with a single, 360° view of operations.</p>
+                    <div class="icond">🔍</div>
+                    <h2>Real-Time Threat Detection</h2>
+                    <p>
+                        Integrated monitoring tools continuously scan for vulnerabilities and suspicious activity, allowing for rapid threat identification and response.
+                    </p>
                 </div>
                 <div class="featured">
-                    <div class="icond">🧬</div>
-                    <h2>Superior turnaround performance</h2>
-                    <p>Optimizing how airport resources are allocated leads to faster, efficient turnarounds – from catering and crew, to cargo loading.</p>
+                    <div class="icond">📱💻🖥️</div>
+                    <h2>Seamless Cross-Platform Integration</h2>
+                    <p>
+                        Our security solutions are optimized for mobile, web, and desktop environments, delivering consistent and comprehensive protection wherever you operate.
+                    </p>
                 </div>
                 <div class="featured">
-                    <div class="icond">🧳</div>
-                    <h2>Enhanced passenger journeys</h2>
-                    <p>Providing passengers with essential, flight-related information helps manage expectations and facilitate seamless journeys.</p>
+                    <div class="icond">⚙️</div>
+                    <h2>Continuous Security Updates</h2>
+                    <p>
+                        With regular updates and proactive vulnerability assessments, we ensure our systems remain resilient against evolving cyber threats.
+                    </p>
                 </div>
             </div>
-        </section>
+        </section>        
         </div>
 
 
@@ -343,40 +413,40 @@
 
         <div class="sa">
             <section class="benefits-section">
-                <h1>Benefits</h1>
+                <h1>Benefits </h1>
                 <div class="benefits-container">
                   <div class="benefit-item">
-                    <img src="rev.jpeg" alt="Revenue Icon" class="icon">
-                    <h2>Revenue Maximization</h2>
-                    <p>Maximize revenue by discovering and acting quickly on new market opportunities.</p>
+                    <img src="secu.jpeg" alt="Threat Detection Icon" class="icon">
+                    <h2>Comprehensive Threat Detection</h2>
+                    <p>Identify vulnerabilities and suspicious activities across mobile, web, and desktop systems in real time.</p>
                   </div>
                   <div class="benefit-item">
-                    <img src="us.jpeg" alt="Seamless Icon" class="icon">
-                    <h2>Seamless Passenger Experience</h2>
-                    <p>Give passengers a much smoother travel experience. Remove the need to queue at the airport for paper documents.</p>
+                    <img src="mul.jpeg" alt="Seamless Integration Icon" class="icon">
+                    <h2>Seamless Multi-Platform Integration</h2>
+                    <p>Integrate robust security protocols effortlessly across all devices for a unified defense system.</p>
                   </div>
                   <div class="benefit-item">
-                    <img src="tran.jpeg" alt="Transaction Icon" class="icon">
-                    <h2>Comprehensive Transaction Support</h2>
-                    <p>Fully integrated with Amadeus Ticket Changer. Supporting all industry transactions – from exchanges to refunds to voids.</p>
+                    <img src="enc.jpeg" alt="Data Encryption Icon" class="icon">
+                    <h2>Advanced Data Encryption</h2>
+                    <p>Protect sensitive information with state-of-the-art encryption techniques, ensuring data confidentiality and integrity.</p>
                   </div>
                   <div class="benefit-item">
-                    <img src="conn.jpeg" alt="Connectivity Icon" class="icon">
-                    <h2>Enhanced Connectivity</h2>
-                    <p>Implement new e-ticket interlining links. Take advantage of our industry-leading e-ticketing network.</p>
+                    <img src="mo.jpg" alt="Monitoring Icon" class="icon">
+                    <h2>Real-Time Monitoring & Alerts</h2>
+                    <p>Receive instant notifications about potential threats, enabling proactive responses to security breaches.</p>
                   </div>
                   <div class="benefit-item">
-                    <img src="flex.jpeg" alt="Ticketing Icon" class="icon">
-                    <h2>Flexible Ticketing Solutions</h2>
-                    <p>Issue e-tickets in both direct and indirect channels and provide customizable receipt documents as needed.</p>
+                    <img src="uis.jpeg" alt="User-Friendly Interface Icon" class="icon">
+                    <h2>User-Friendly Security Interface</h2>
+                    <p>Manage complex security settings effortlessly through an intuitive dashboard designed for all users.</p>
                   </div>
                   <div class="benefit-item">
-                    <img src="mana.jpeg" alt="Coupon Icon" class="icon">
-                    <h2>Efficient Coupon Management</h2>
-                    <p>Force coupon status changes. Transmit coupons to your Departure Control System (DSC) when necessary.</p>
+                    <img src="cs.jpg" alt="Automated Updates Icon" class="icon">
+                    <h2>Automated Security Updates</h2>
+                    <p>Ensure continuous protection with regular, automated updates that keep your systems resilient against emerging threats.</p>
                   </div>
                 </div>
-            </section>
+              </section>              
             </div>
     
 
@@ -392,6 +462,7 @@
     </div>
 
     
+
 
 
     <div class="footer">
@@ -411,48 +482,41 @@
         <div class="footer-section">
             <h3>Quick links</h3>
             <ul>
-                <li><a href="#">About WADM</a></li>
-                <li><a href="#">Find a solution</a></li>
-                <li><a href="#">Industries</a></li>
-                <li><a href="#">Offices</a></li>
-                <li><a href="#">Customer support</a></li>
-                <li><a href="#">Find services</a></li>
+                <li><a href="about.html">About WADM</a></li>
+                <li><a href="services.html">Find a solution</a></li>
+                <li><a href="location.html">Offices</a></li>
+                <li><a href="s-overview.html">Customer support</a></li>
+                <li><a href="services.html">Find services</a></li>
             </ul>
         </div>
 
         <div class="footer-section">
             <h3>Trending</h3>
             <ul>
-                <li><a href="#">SAP TechEd</a></li>
-                <li><a href="#">What is GROW with WADM?</a></li>
-                <li><a href="#">What is RISE with WADM?</a></li>
-                <li><a href="#">Sustainability</a></li>
-                <li><a href="#">Partner ecosystem</a></li>
+                <li><a href="grow.html">What is GROW with WADM?</a></li>
+                <li><a href="rise.html">What is RISE with WADM?</a></li>
+                <li><a href="sustain.html">Sustainability</a></li>
+                <li><a href="patner.html">Partner ecosystem</a></li>
             </ul>
         </div>
 
         <div class="footer-section">
-            <h3>About e-WADM</h3>
+            <h3>About E-WADM</h3>
             <ul>
-                <li><a href="#">Company information</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">News and press</a></li>
-                <li><a href="#">Events</a></li>
-                <li><a href="#">Customer stories</a></li>
-                <li><a href="#">Newsletter</a></li>
+                <li><a href="career.html">Careers</a></li>
+                <li><a href="news.html">News and press</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="blog.html">Blog</a></li>
             </ul>
         </div>
 
         <div class="footer-section">
             <h3>Site information</h3>
             <ul>
-                <li><a href="#">Privacy</a></li>
-                <li><a href="#">Terms of Use</a></li>
-                <li><a href="#">Legal disclosure</a></li>
-                <li><a href="#">Copyright</a></li>
-                <li><a href="#">Trademark</a></li>
-                <li><a href="#">Cookie statement</a></li>
-                <li><a href="#">Cookie preferences</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="TOU.html">Terms of Use</a></li>
+                <li><a href="copyright.html">Copyright</a></li>
+                <li><a href="cookie.html">Cookie statement</a></li>
             </ul>
         </div>
     </div>

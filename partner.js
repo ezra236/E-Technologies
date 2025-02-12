@@ -32,6 +32,8 @@ document.querySelectorAll('.nav-item').forEach(item => {
             document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
             item.classList.add('active');
 
+            closeMenu();
+
             // Hide the button and ezra before showing the new block
             buttonM.style.display = 'none';
             buttonMc.style.display = 'none'; // Hide buttonMc when a new block is expanded
@@ -48,6 +50,42 @@ document.querySelectorAll('.nav-item').forEach(item => {
         event.preventDefault();
     });
 });
+
+
+
+document.querySelectorAll(".closez-btn").forEach(button => {
+    button.addEventListener("click", function () {
+        this.closest(".content").classList.remove("active"); // Hide only the parent content block
+    });
+});
+
+document.querySelectorAll(".closep-btn").forEach(button => {
+    button.addEventListener("click", function () {
+        this.closest(".detail").classList.remove("active"); // Hide only the parent content block
+    });
+});
+
+document.querySelector(".closed-btn").addEventListener("click", function () {
+    document.getElementById("services-block").classList.remove("show");
+});
+
+document.querySelector(".closet-btn").addEventListener("click", function () {
+    document.getElementById("about-block").classList.remove("show");
+});
+
+document.querySelectorAll(".closel-btn").forEach(button => {
+    button.addEventListener("click", function () {
+        this.closest(".content").classList.remove("active"); // Hide the parent content block
+    });
+});
+
+document.querySelectorAll(".closec-btn").forEach(button => {
+    button.addEventListener("click", function () {
+        this.closest(".content").classList.remove("active"); // Hide content
+    });
+});
+
+
 
 // Close the block when clicking outside the block
 document.addEventListener('click', function (event) {
@@ -74,7 +112,21 @@ document.addEventListener('click', function (event) {
 
 
 
+function toggleMenu() {
+    const hamburger = document.querySelector('.hamburger');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('show');
+}
 
+
+function closeMenu() {
+    const mobileMenu = document.querySelector('.mobile-menu');
+    
+    // Close the mobile menu by removing the 'show' class
+    mobileMenu.classList.remove('show');
+}
 
 
 
