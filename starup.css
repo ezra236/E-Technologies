@@ -1,7 +1,15 @@
 /* General Styles */
-body {
+body, html  {
     margin: 0;
-    font-family: Arial, sans-serif;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    background-color: white;
+    width: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
 }
 
 .navbar {
@@ -19,6 +27,11 @@ body {
     gap: 250px;
 }
 
+@media (max-width: 768px) {
+    .navbar {
+        gap: 10px;
+    }
+}
 
 /* Menu Icon */
 .menu-icon {
@@ -65,7 +78,7 @@ body {
 /* Dashboard */
 .dashboard {
     position: fixed;
-    top: -100%;
+    top: -500%;
     left: 0;
     width: 100%;
     height: 100vh;
@@ -185,12 +198,25 @@ body {
     gap: 10px; 
 }
 
+@media (max-width:768px) {
+    .text-overlays {
+       left: 50%;
+       gap: 5px;
+    }
+}
+
 .constant-texts {
     font-size: 4rem;
     font-weight: bold;
     padding: 5px 10px;
     border-radius: 5px;
     white-space: nowrap; 
+}
+
+@media (max-width:768px) {
+    .constant-texts {
+        font-size: 1.5rem;
+    }
 }
 
 .dynamic-text-containers {
@@ -204,6 +230,14 @@ body {
     align-items: flex-start;
 }
 
+@media (max-width:768px) {
+    .dynamic-text-containers {
+        width: 200px;
+        align-items: center;
+        white-space: normal;
+    }
+}
+
 .dynamic-texts {
     font-size: 3.5rem;
     height: 60px;
@@ -215,6 +249,13 @@ body {
     margin-top: -5px;
     text-align: left; /* Ensure text starts from the left */
     left: 0;
+}
+
+@media (max-width:768px) {
+    .dynamic-texts {
+        font-size: 1.3rem;
+        margin-top: 17px;
+    }
 }
 
 @keyframes slideText {
@@ -252,6 +293,15 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 8px; 
+}
+
+@media (max-width: 768px) {
+    .cta-button {
+        top: 75%;
+        left: 25%;
+        padding: 10px;
+        font-weight: 400;
+    }
 }
 
 .cta-button::after {
@@ -329,6 +379,13 @@ body {
     margin-bottom: 90px;
 }
 
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding-left: 20px;
+    }
+}
+
 .card {
     flex: 1 1 calc(33.333% - 20px);
     text-align: center;
@@ -375,9 +432,23 @@ body {
     height: 310px;
 }
 
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+}
+
 .footer-section {
     flex: 1;
     margin: 0 20px;
+}
+
+@media (max-width: 768px) {
+    .footer-section {
+        width: 100%;
+    }
 }
 
 .footer-section h3 {
@@ -400,6 +471,12 @@ body {
     color: #333;
 }
 
+@media (max-width: 768px) {
+    .footer-section ul li a {
+        font-size: 20px;
+    }
+}
+
 .footer-section ul li a:hover {
     text-decoration: underline;
 }
@@ -409,8 +486,20 @@ body {
     margin: 0 20px;
 }
 
+@media (max-width: 768px) {
+    .contact {
+        width: 100%;
+    }
+}
+
 .contact p {
     margin: 0 0 20px;
+}
+
+@media (max-width: 768px) {
+    .contact p {
+        font-size: 20px;
+    }
 }
 
 .contact p a {
@@ -464,8 +553,15 @@ body {
     justify-content: flex-start; /* Align icons to the start (left) */
     gap: 15px; /* Spacing between icons */
     background-color: #eaeaea;
-    height: 100px;
+    height: 20%;
     width: 100%;
+}
+
+@media (max-width: 768px) {
+    .social-icons {
+       gap: 6px;
+       height: 10%;
+    }
 }
 
 .social-icons img {

@@ -1,7 +1,16 @@
 
-body {
+
+body, html  {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    background-color: white;
     font-family: Arial, sans-serif;
     line-height: 1.6;
+    width: 100%;
+}
+
+* {
     margin: 0;
     padding: 0;
 }
@@ -31,6 +40,13 @@ header {
 header h1 {
     float: left;
 }
+  
+@media (max-width: 768px) {
+    /* Hide all direct children of .container except nav */
+    .container > *:not(nav) {
+      display: none;
+    }
+  }
 
 header nav ul {
     float: right;
@@ -95,6 +111,11 @@ header::after {
     background: #02ad99;
 }
 
+.containers {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
 
 .tech-solutions {
@@ -141,6 +162,12 @@ header::after {
     background-color: white;
     padding: 50px 20px;
     text-align: center;
+}
+
+@media (max-width: 768px) {
+    .categories {
+        padding: 20px 10px;
+    }
 }
 
 .categories h2 {
@@ -207,6 +234,12 @@ header::after {
     background-color: white;
     padding: 60px 20px;
     text-align: center;
+}
+
+@media (max-width: 768px) {
+    .partners {
+        padding: 30px 20px;
+    }
 }
 
 .partners h2 {
@@ -295,6 +328,15 @@ header::after {
     overflow: hidden;
 }
 
+@media (max-width: 768px) {
+    .cta {
+        padding: 30px 15px;
+        align-items: center;
+        height: auto;
+        margin: 10px auto;
+    }
+}
+
 .cta h2 {
     font-size: 32px;
     margin-bottom: 15px;
@@ -343,12 +385,25 @@ header::after {
     padding: 40px;
     background-color: #eaeaea;
     height: 310px;
-    margin-top: -50px;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
 }
 
 .footer-section {
     flex: 1;
     margin: 0 20px;
+}
+
+@media (max-width: 768px) {
+    .footer-section {
+        width: 100%;
+    }
 }
 
 .footer-section h3 {
@@ -371,6 +426,12 @@ header::after {
     color: #333;
 }
 
+@media (max-width: 768px) {
+    .footer-section ul li a {
+        font-size: 20px;
+    }
+}
+
 .footer-section ul li a:hover {
     text-decoration: underline;
 }
@@ -380,8 +441,20 @@ header::after {
     margin: 0 20px;
 }
 
+@media (max-width: 768px) {
+    .contact {
+        width: 100%;
+    }
+}
+
 .contact p {
     margin: 0 0 20px;
+}
+
+@media (max-width: 768px) {
+    .contact p {
+        font-size: 20px;
+    }
 }
 
 .contact p a {
@@ -435,8 +508,15 @@ header::after {
     justify-content: flex-start; /* Align icons to the start (left) */
     gap: 15px; /* Spacing between icons */
     background-color: #eaeaea;
-    height: 100px;
+    height: 20%;
     width: 100%;
+}
+
+@media (max-width: 768px) {
+    .social-icons {
+       gap: 6px;
+       height: 10%;
+    }
 }
 
 .social-icons img {

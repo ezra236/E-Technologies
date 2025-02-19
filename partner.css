@@ -1657,8 +1657,8 @@ body, html  {
 
 @media (max-width: 768px) {
     .buttonM {
-        top: 500px;
-        left: 40%;
+        top: 550px;
+        left: 38%;
         white-space: nowrap;
     }
 }
@@ -1695,7 +1695,7 @@ body, html  {
 
 @media (max-width: 768px) {
     .buttonMc {
-        top: 590px;
+        top: 620px;
         left: 40%;
         white-space: nowrap;
     }
