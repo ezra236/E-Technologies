@@ -1144,12 +1144,12 @@ body {
 }
 
 .breadcrumb {
-    font-family: Arial, sans-serif;
     font-size: 18px;
     margin: 10px;
     text-align: left;
     margin-left: 65px;
     cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .breadcrumb a {

@@ -1,8 +1,14 @@
-/* styles.css */
-body {
+body, html  {
     margin: 0;
-    font-family: Arial, sans-serif;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
     background-color: white;
+    width: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
 }
 
 .navbar {
@@ -23,11 +29,125 @@ body {
 }
 
 
+.hamburger {
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+@media (min-width: 768px) { /* Target desktop screen and larger */
+    .hamburger {
+        display: none;
+    }
+}
+
+
+.hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: rgb(9, 9, 122);
+    margin: 4px 0;
+    transition: all 0.3s ease;
+}
+
+
+.mobile-menu {
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    overflow-x: hidden;
+    z-index: 105;
+    transition: 0.3s;
+    display: flex;
+    align-items: flex-start;
+}
+
+.mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-menu ul li {
+    margin: 15px 0;
+    background-color: #001f54;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.mobile-menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.mobile-menu.show {
+    left: 0;
+}
+
+/* CSS to lower the mobile menu stacking when hidden */
+.mobile-menu.hidden {
+    z-index: -1;
+  }
+
+  
+.mobil {
+    width: 100%;
+    height: 100%;
+    padding-left: 40px;
+    padding-top: 20px;
+    background-color: white;
+    display: flex;
+}   
+
+/* Hide nav-links in navbar on mobile devices */
+@media (max-width: 768px) {
+    .navbar .nav-links {
+        display: none;
+    }
+}
+
+/* Show the nav-links in mobile-menu only on mobile devices */
+@media (max-width: 768px) {
+    .mobile-menu .nav-links {
+        display: block;
+    }
+}
+
+
 .logo {
     font-size: 1.6rem;
     font-weight: bold;
     font-family: Orbitron;
 }
+
+
+.logod {
+    display: none; /* Hide on desktop by default */
+}
+
+@media (max-width: 768px) {
+    .logod {
+        display: block; /* Show on mobile */
+        width: 60%; /* Adjust width for better visibility */
+        font-size: 1.1rem;
+    }
+    .logo {
+        display: none;
+    }
+}
+
+@media (min-width: 769px) {
+    .logod {
+        display: none; /* Ensure it's hidden on larger screens */
+    }
+}
+
 
 .nav-links {
     list-style: none;
@@ -92,13 +212,18 @@ body {
     z-index: 15000;
 }
 
-
 .direc {
     width: 30%;  /* Adjust width as needed */
     background-color: white;
     height: 100%;
     padding-left: 40px;
     z-index: 10;
+}
+
+@media (max-width: 768px) {
+    .direc {
+        width: 100%;
+    }
 }
 
 .showd {
@@ -108,6 +233,12 @@ body {
     padding: 0px;
     position: relative;
     display: flex;
+}
+
+@media (max-width: 768px) {
+    .showd {
+        width: 0%;
+    }
 }
 
 .showd > div:nth-child(1) {
@@ -180,6 +311,41 @@ body {
     transition: transform 0.6s ease, visibility 0s 0s; /* Make the transition instant once active */
 }
 
+@media (max-width: 768px) {  
+    .content {
+        left: -400px;
+        width: 350px;  /* Take full width on mobile */
+        z-index: 20;  /* Ensure it's above .direc */
+    }
+}
+
+.closez-btn {
+    position: absolute; /* Absolute positioning inside .content */
+    bottom: 50px;  /* Position it at the bottom */
+    left: 15%; 
+    padding: 12px;
+    background-color: transparent; 
+    color: blue;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    display: none; /* Hide by default */
+}
+
+.closez-btn:hover {
+    color: #0c0153;
+}
+
+@media (max-width: 768px) {
+    .closez-btn {
+        display: block; /* Make it visible on small screens */
+    }
+}
+
 .content a {
     color: #0a0b0c; 
     text-decoration: none; 
@@ -229,6 +395,12 @@ body {
     border-radius: 5px;
 }
 
+@media (max-width: 768px) {
+    .direc p {
+        width: 200px;
+    }
+}
+
 .direc p:hover {
     text-decoration: none;  
     background-color: rgba(138, 164, 234, 0.647);  
@@ -245,6 +417,39 @@ body {
     border-radius: 5px;
     margin-left: 30px;
     margin-bottom: 20px;
+}
+
+
+@media (max-width: 768px) {
+    p[data-target="products-detail"] {
+        display: none;
+    }
+
+    p[data-target="mobile-detail"] {
+        display: none;
+    }
+
+    p[data-target="desktop-detail"] {
+        display: none;
+    }
+}
+
+.styled-pn {
+    margin: 0px 0;  /* Space between paragraphs */
+    color: #000;
+    padding: 10px;  
+    transition: background-color 0.6s ease, box-shadow 0.3s ease;  
+    width: 300px;
+    border-radius: 5px; 
+    margin-left: 30px;
+    margin-bottom: 20px;
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .styled-pn {
+        display: block;
+    }
 }
 
 .styled-p:hover {
@@ -277,6 +482,47 @@ body {
     visibility: visible; 
     transition: width 0.6s ease, visibility 0s 0s; 
 }
+
+@media (max-width: 768px) {
+    .detail {
+        left: -380px;
+        width: 0;
+        z-index: 30;
+    }
+
+    .detail.active {
+        width: 390px;
+    }
+}
+
+
+.closep-btn {
+    position: absolute; /* Absolute positioning inside .content */
+    bottom: 20px;  /* Position it at the bottom */
+    left: 15%; 
+    padding: 12px;
+    background-color: transparent; 
+    color: blue;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    display: none;
+}
+
+.closep-btn:hover {
+    color: #0c0153;
+}
+
+@media (max-width: 768px) {
+    .closep-btn {
+        display: block; /* Make it visible on small screens */
+    }
+}
+
 
 .detail-title {
     font-size: 1.8em;
@@ -411,6 +657,13 @@ body {
     padding-left: 40px;
 }
 
+@media (max-width: 768px) {
+    .direct {
+        width: 100%;
+    }
+}
+
+
 .direct a {
     color: #0a0b0c; 
     text-decoration: none; 
@@ -438,6 +691,12 @@ body {
     gap: 20px;
 }
 
+@media (max-width: 768px) {
+    .showdt {
+        display: none;
+    }
+}
+
 .direct p {
     margin: 35px 0;  /* Space between paragraphs */
     color: #000;
@@ -445,6 +704,12 @@ body {
     transition: background-color 0.6s ease, box-shadow 0.3s ease;  
     width: 300px;
     border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .direct p {
+        width: 200px;
+    }
 }
 
 .direct p:hover {
@@ -506,6 +771,63 @@ body {
     padding-left: 40px;
 }
 
+
+@media (max-width: 768px) {
+    .directr {
+        width: 100%;
+    }
+}
+
+
+
+.closed-btn {
+    position: absolute;
+    bottom: 10px; /* Adjusts distance from the bottom */
+    left: 10px; /* Positions the button at the bottom-left */
+    padding: 8px 15px;
+    background-color: transparent; /* Change color as needed */
+    color: rgb(6, 6, 95);
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    display: none;
+}
+
+.closed-btn:hover {
+    color: black;
+}
+
+@media (max-width: 768px) {
+    .closed-btn {
+        display: block; /* Make it visible on small screens */
+    }
+}
+
+.closet-btn {
+    position: absolute;
+    bottom: 10px; /* Adjusts distance from the bottom */
+    left: 10px; /* Positions the button at the bottom-left */
+    padding: 8px 15px;
+    background-color: transparent; /* Change color as needed */
+    color: rgb(6, 6, 95);
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    display: none;
+}
+
+.closet-btn:hover {
+    color: black;
+}
+
+@media (max-width: 768px) {
+    .closet-btn {
+        display: block; /* Make it visible on small screens */
+    }
+}
+
 .showdtr {
     width: 70%;  
     background-color: #001f54;
@@ -518,6 +840,12 @@ body {
     align-items: flex-start; 
     gap: 5px; 
     color: white;
+}
+
+@media (max-width: 768px) {
+    .showdtr {
+        display: none;
+    }
 }
 
 .showdtr > div {
@@ -607,6 +935,12 @@ body {
     z-index: 2;
 }
 
+@media (max-width: 768px) {
+    .directry {
+        width: 100%;
+    }
+}
+
 .showdtry {
     width: 70%;  
     background-color: #730041;
@@ -615,6 +949,12 @@ body {
     position: relative;
     display: flex;  /* Use flexbox for layout */
     flex-direction: row;
+}
+
+@media (max-width: 768px) {
+    .showdtry {
+        width: 0%;
+    }
 }
 
 .showdtry > div:nth-child(1) {
@@ -672,6 +1012,12 @@ body {
     transition: background-color 0.6s ease, box-shadow 0.3s ease;  
     width: 300px;
     border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .directry p {
+        width: 200px;
+    }
 }
 
 .directry p:hover {
@@ -741,6 +1087,37 @@ body {
     transition: transform 0.6s ease, visibility 0s 0s; 
 }
 
+
+@media (max-width: 768px) {  
+    #contact-block .content {
+        left: -400px;
+        width: 350px; 
+        z-index: 20;  /* Ensure it's above .direc */
+    }
+}
+
+.closel-btn {
+    position: absolute;
+    bottom: 50px;  
+    left: 15%;  /* Align it to the bottom-left */
+    padding: 12px;
+    background-color: transparent;
+    color: blue;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    display: none; /* Hide by default on desktop */
+}
+
+@media (max-width: 768px) {
+    .closel-btn {
+        display: block; /* Make it visible on mobile */
+    }
+}
+
 .styled-pp {
     margin: 0px 0;  /* Space between paragraphs */
     color: #000;
@@ -800,6 +1177,13 @@ body {
     transition: transform 0.6s ease, visibility 0s 0s; 
 }
 
+@media (max-width: 768px) {  
+    #company-block .content {
+        left: -400px;
+        width: 350px; 
+        z-index: 20;  /* Ensure it's above .direc */
+    }
+}
 
 .directrya {
     width: 30%;  /* Adjust width as needed */
@@ -808,6 +1192,12 @@ body {
     padding-left: 40px;
     z-index: 2;
 }
+
+@media (max-width: 768px) {  
+    .directrya {
+          width: 100%; 
+      }
+  }
 
 .showdtrya {
     width: 70%;  
@@ -819,6 +1209,13 @@ body {
     flex-direction: row;
 }
 
+@media (max-width: 768px) {  
+    .showdtrya {
+          width: 0%; 
+      }
+  }
+
+
 .directrya p {
     margin: 35px 0;  /* Space between paragraphs */
     color: #000;
@@ -826,6 +1223,35 @@ body {
     transition: background-color 0.6s ease, box-shadow 0.3s ease;  
     width: 300px;
     border-radius: 5px;
+}
+
+@media (max-width: 768px) {  
+    .directrya p{
+          width: 150px; 
+      }
+  }
+
+  .closec-btn {
+    position: absolute; /* Absolute positioning inside .content */
+    bottom: 50px;  /* Position it at the bottom */
+    left: 15%;
+    padding: 12px;
+    background-color: transparent;
+    color: blue;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    display: none; /* Hide by default */
+}
+
+/* Show button only on mobile screens */
+@media (max-width: 768px) {
+    .closec-btn {
+        display: block; /* Make it visible on small screens */
+    }
 }
 
 .directrya p:hover {
@@ -890,6 +1316,12 @@ body {
     color: blue;
 }
 
+@media (max-width: 768px) {
+    .search-container {
+        display: none;
+    }
+}
+
 .search-input {
     padding: 5px 10px;
     font-size: 1rem;
@@ -918,10 +1350,18 @@ body {
 .display {
     background-color: rgb(2, 1, 57);
     width: 100%;
-    height: 300px;
+    height: 400px;
     margin-top: 72px;
     position: relative; 
     z-index: 1; 
+}
+
+@media (max-width: 768px) {
+    .display {
+        width: 100%;
+        z-index: 5;
+        height: 600px;
+    }
 }
 
 .mchez {
@@ -1059,6 +1499,20 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+@media (max-width: 768px) {
+    .text-overlay {
+        left: 17%; /* Center on mobile */
+        font-size: 25px;
+        top: 60%;
+    }
+}
+
+
+@media (max-width: 376px) {
+    .text-overlay {
+        left: 20%; 
+    }
+}
 
 .rotating-container {
     position: absolute;
@@ -1084,10 +1538,6 @@ body {
 }
 
 
-
-
-
-
 .ezra {
     position: absolute;
     top: 70px;
@@ -1101,6 +1551,12 @@ body {
     padding-top: 20px;
 }
 
+@media (max-width:768px) {
+    .ezra {
+        height: 30px;
+    }
+}
+
 .reh {
     position: absolute;
     top: 100px;
@@ -1108,7 +1564,7 @@ body {
     z-index: 200;
     background-color: blue; /* Example background for visibility */
     width: 100%;
-    height: 200px;
+    height: 300px;
     text-align: center;
     background-image: url('download (10).jpg');
     background-size: 100% 100%; /* Adjusts image to cover the entire element */
@@ -1116,13 +1572,28 @@ body {
     background-position: center; /* Centers the image */
 }
 
+@media (max-width:768px) {
+    .reh {
+        top: 50px;
+        height: 560px;
+    }
+}
+
 .breadcrumb {
-    font-family: Arial, sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     font-size: 18px;
     margin: 10px;
     text-align: left;
     margin-left: 65px;
     cursor: pointer;
+}
+
+@media (max-width:768px) {
+    .breadcrumb {
+        margin-left: 30px;
+        margin: 0px;
+        padding-left: 10px;
+    }
 }
 
 .breadcrumb a {
@@ -1153,6 +1624,14 @@ body {
     padding-left: 140px;
 }
 
+@media (max-width: 768px) {
+    .reh-title {
+        padding-left: 25px;
+        font-size: 25px;
+        margin-top: 200px;
+    }
+}
+
 .reh-title .space {
     display: inline-block;
     width: 50px; 
@@ -1178,6 +1657,12 @@ body {
     gap: 30px;
     margin-top: 65px;
     transition: display 0.3s ease; /* Optional transition for smooth visibility toggle */
+}
+
+@media (max-width: 768px) {
+    .button-container {
+        flex-direction: column;
+    }
 }
 
 /* Hide the button container when it's not needed */
@@ -1262,6 +1747,12 @@ body {
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
+@media (max-width: 768px) {
+    .content-block {
+        width: 90%;
+    }
+}
+
 /* Active State for Block */
 .content-block.active {
     opacity: 1;
@@ -1315,6 +1806,12 @@ body {
     text-align: center;
     transform: translateY(100%);
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, visibility 0s linear 0.5s; 
+}
+
+@media (max-width: 768px) {
+    .region-block {
+        width: 90%;
+    }
 }
 
 .region-block.active {
@@ -1399,6 +1896,12 @@ body {
     text-align: left;
 }
 
+@media (max-width: 768px) {
+    .sosa {
+        padding-left: 0px;
+    }
+}
+
 .card {
     background-color: #e9e7e7;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -1407,6 +1910,14 @@ body {
     max-width: 480px;
     width: 100%;
 }
+
+@media (max-width: 768px) {
+    .card {
+        width: 75%;
+        max-width: 300px;
+    }
+}
+
 .card .badge {
     display: inline-block;
     background-color: #001f60;
@@ -1416,6 +1927,7 @@ body {
     border-radius: 4px;
     margin-bottom: 10px;
 }
+
 .card h1 {
     font-size: 28px;
     color: #001f60;
@@ -1448,6 +1960,12 @@ body {
     align-items: center;
     margin: 20px;
     padding-left: 200px;
+}
+
+@media (max-width: 768px) {
+    .info-container {
+        padding-left: 0px;
+    }
 }
 
 .info-icon {
@@ -1501,6 +2019,7 @@ body {
 }
 
 
+
 .footer {
     display: flex;
     justify-content: space-between;
@@ -1509,9 +2028,23 @@ body {
     height: 310px;
 }
 
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+}
+
 .footer-section {
     flex: 1;
     margin: 0 20px;
+}
+
+@media (max-width: 768px) {
+    .footer-section {
+        width: 100%;
+    }
 }
 
 .footer-section h3 {
@@ -1534,6 +2067,12 @@ body {
     color: #333;
 }
 
+@media (max-width: 768px) {
+    .footer-section ul li a {
+        font-size: 20px;
+    }
+}
+
 .footer-section ul li a:hover {
     text-decoration: underline;
 }
@@ -1543,8 +2082,20 @@ body {
     margin: 0 20px;
 }
 
+@media (max-width: 768px) {
+    .contact {
+        width: 100%;
+    }
+}
+
 .contact p {
     margin: 0 0 20px;
+}
+
+@media (max-width: 768px) {
+    .contact p {
+        font-size: 20px;
+    }
 }
 
 .contact p a {
@@ -1600,6 +2151,13 @@ body {
     background-color: #eaeaea;
     height: 20%;
     width: 100%;
+}
+
+@media (max-width: 768px) {
+    .social-icons {
+       gap: 6px;
+       height: 10%;
+    }
 }
 
 .social-icons img {
