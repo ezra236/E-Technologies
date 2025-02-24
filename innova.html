@@ -8,7 +8,29 @@
     <link rel="icon" href="ee.png">
 </head>
 <body>
+
+    <div class="mobile-menu">
+        <div class="mobil">
+         <ul class="nav-links">
+             <li><a href="#home" class="nav-item">Solutions <span class="arrow">&#9660;</span></a></li>
+             <li><a href="#services" class="nav-item">Partners <span class="arrow">&#9660;</span></a></li>
+             <li><a href="#about" class="nav-item">Resources <span class="arrow">&#9660;</span></a></li>
+             <li><a href="#contact" class="nav-item">Support <span class="arrow">&#9660;</span></a></li>
+             <li><a href="#company" class="nav-item">Company <span class="arrow">&#9660;</span></a></li>
+         </ul>
+        </div>
+     </div>
+
+
     <nav class="navbar">
+
+        <div class="hamburger" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+
+        <div class="logod">E-WADM Technologies</div>
         <div class="logo">E-WADM Technologies</div>
         <ul class="nav-links">
             <li><a href="#home" class="nav-item">Solutions <span class="arrow">&#9660;</span></a></li>
@@ -53,23 +75,35 @@
                             and business impact.</p>
                         <a href="#">Learn More</a>
                     </div>
-
+        
                     <div class="websites content">
                         <a href="websites.html" target="_blank">
                             <p class="styled-p" data-target="websites-detail">E-WADM for Websites →</p>
                         </a>
                         <p class="styled-p" data-target="products-detail">Products →</p>
+
+                        <p class="styled-pn"  onclick="window.location.href='webproduct.html'">Products →</p>
+
+                        <button class="closez-btn">Go Back</button>
                     </div>
                     <div class="mobile-app content">
                         <a href="mobile.html" target="_blank">
                             <p class="styled-p" data-target="mobileA-detail">E-WADM for Mobile →</p>
                         </a>
                         <p class="styled-p" data-target="mobile-detail">Products →</p>
+
+                        <p class="styled-pn"  onclick="window.location.href='mobileproducts.html'">Products →</p>
+
+                        <button class="closez-btn">Go Back</button>
                     </div>
                     <div class="desktop-sol content">
                         <p class="styled-p" data-target="desktop-detail">Products →</p>
-                    </div>
 
+                        <p class="styled-pn"  onclick="window.location.href='desktop.html'">Products →</p>
+
+                        <button class="closez-btn">Go Back</button>
+                    </div>
+        
                     <!-- Detail sections -->
                     <div class="detail products-detail">
                         <h2 class="detail-title">Our Web Development Products</h2>
@@ -80,6 +114,8 @@
                             <li><a href="#blogs-content-platforms">Blogs and Content Platforms →</a></li>
                             <li><a href="#landing-pages">Landing Pages →</a></li>
                         </ul>
+
+                        <button class="closep-btn">Go Back</button>
                     </div>
                     <div class="detail mobile-detail">
                         <ul class="mobile-products-list">
@@ -93,6 +129,8 @@
                             <li><a href="#ecommerce-apps">E-Commerce Mobile Apps →</a></li>
                             <li><a href="#social-media-apps">Social Media Apps →</a></li>
                         </ul>
+
+                        <button class="closep-btn">Go Back</button>
                     </div>
                     <div class="detail desktop-detail">
                         <h2 class="detail-title">Desktop Products</h2>
@@ -105,6 +143,8 @@
                             <li><a href="#productivity-tools">Productivity Tools</a></li>
                             <li><a href="#graphics-applications">Graphics and Design Applications</a></li>
                         </ul>
+
+                        <button class="closep-btn">Go Back</button>
                     </div>
                 </div>
             </div>
@@ -119,7 +159,8 @@
                     <a href="starups.html" target="_blank">
                         <p class="linkt">E-WADM for startUps ↗</p>
                     </a>
-                                            
+                        
+                    <button class="closed-btn">Go Back</button>
                 </div>
                 <div class="showdt">
                         <img src="cop.jpg" alt="E-WADM Solutions" class="showdt-image">
@@ -136,7 +177,9 @@
                     </a>
                     <a href="events.html" target="_blank">
                         <p class="linktr">Events →</p>
-                    </a>                      
+                    </a>         
+                    
+                    <button class="closet-btn">Go Back</button>
                 </div>
                 <div class="showdtr">
                     <div>
@@ -177,6 +220,8 @@
                       <a href="s-overview.html" target="_blank">
                         <p class="styled-pp">Overview →</p>
                       </a>
+
+                      <button class="closel-btn">Go Back</button>
                     </div>
                     <div class="training content">
                       <a href="t-overview.html" target="_blank">
@@ -185,6 +230,8 @@
                       <a href="l-partners.html" target="_blank">
                         <p class="styled-pp">E-WADM Learning Partners →</p>
                       </a>
+
+                      <button class="closel-btn">Go Back</button>
                     </div>
                         
                 </div>
@@ -225,6 +272,8 @@
                         <a href="location.html" target="_blank">
                             <p class="styled-ppp">Location ↗</p>
                         </a>
+
+                        <button class="closec-btn">Go Back</button>
                     </div>
                     <div class="career content">
                         <a href="career.html" target="_blank">
@@ -236,6 +285,8 @@
                         <a href="life.html" target="_blank">
                             <p class="styled-ppp">Life At E-WADM →</p>
                         </a>
+
+                        <button class="closec-btn">Go Back</button>
                     </div>
                     <div class="innova content">
                         <a href="innova.html" target="_blank">
@@ -247,6 +298,8 @@
                         <a href="ventures.html" target="_blank">
                             <p class="styled-ppp">Ventures →</p>
                         </a>
+
+                        <button class="closec-btn">Go Back</button>
                     </div>
                     <div class="sustain content">
                         <a href="sustain.html" target="_blank">
@@ -261,6 +314,8 @@
                         <a href="environ.html" target="_blank">
                             <p class="styled-ppp">Environmental →</p>
                         </a>
+
+                        <button class="closec-btn">Go Back</button>
                     </div>
                 </div>
 
@@ -335,6 +390,7 @@
           </div>
         </div>
         <div class="right">
+            <h1>Join E-WADM enterprenual ecosystem</h1>
           <div class="scroll-container" id="scroll-container">
             <div>
                 <div class="contentf">
@@ -390,6 +446,7 @@
             </div>
         </div>
         <div class="right-alt">
+            <h1>Discover Opportunities with E-WADM</h1>
             <div class="scroll-container-alt" id="scroll-container-alt">
                 <div>
                     <div class="content-alt">
@@ -428,7 +485,7 @@
     
 <div class="saw">
     <div class="containerj">
-        <div class="heading">Discover why Amadeus is your partner for innovative web solutions, app development, and AI-driven technology</div>
+        <div class="heading">Discover why E-Wadm is your partner for innovative web solutions, app development, and AI-driven technology</div>
         <div class="blog-grid">
             <!-- Blog Post 1 -->
             <div class="blog-card">
@@ -494,84 +551,77 @@
 
 
 
-    <div class="footer">
-        <div class="contact">
-            <img src="E.webp" alt="SAP Logo" style="width: 80px;">
-            <p>Kenya<br><strong>+254 703039000</strong></p>
-            <p class="p">
-                <img src="ec.jpg">
-                <a href="#">Contact us</a> 
-            </p>
-            <p class="pp">
-                <img src="ch.jpg">
-                <a href="#">Chat now</a>
-            </p>
-        </div>
-
-        <div class="footer-section">
-            <h3>Quick links</h3>
-            <ul>
-                <li><a href="#">About WADM</a></li>
-                <li><a href="#">Find a solution</a></li>
-                <li><a href="#">Industries</a></li>
-                <li><a href="#">Offices</a></li>
-                <li><a href="#">Customer support</a></li>
-                <li><a href="#">Find services</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-section">
-            <h3>Trending</h3>
-            <ul>
-                <li><a href="#">SAP TechEd</a></li>
-                <li><a href="#">What is GROW with WADM?</a></li>
-                <li><a href="#">What is RISE with WADM?</a></li>
-                <li><a href="#">Sustainability</a></li>
-                <li><a href="#">Partner ecosystem</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-section">
-            <h3>About e-WADM</h3>
-            <ul>
-                <li><a href="#">Company information</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">News and press</a></li>
-                <li><a href="#">Events</a></li>
-                <li><a href="#">Customer stories</a></li>
-                <li><a href="#">Newsletter</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-section">
-            <h3>Site information</h3>
-            <ul>
-                <li><a href="#">Privacy</a></li>
-                <li><a href="#">Terms of Use</a></li>
-                <li><a href="#">Legal disclosure</a></li>
-                <li><a href="#">Copyright</a></li>
-                <li><a href="#">Trademark</a></li>
-                <li><a href="#">Cookie statement</a></li>
-                <li><a href="#">Cookie preferences</a></li>
-            </ul>
-        </div>
+<div class="footer">
+    <div class="contact">
+        <img src="E.webp" alt="SAP Logo" style="width: 80px;">
+        <p>Kenya<br><strong>+254 703039000</strong></p>
+        <p class="p">
+            <img src="ec.jpg">
+            <a href="#">Contact us</a> 
+        </p>
+        <p class="pp">
+            <img src="ch.jpg">
+            <a href="#">Chat now</a>
+        </p>
     </div>
 
-    <div class="social-icons">
-        <img src="ig.jpg" alt="Icon 1" class="u">
-        <img src="fac.jpg" alt="Icon 2">
-        <img src="in.jpg" alt="Icon 3">
-        <img src="ytb.jpg" alt="Icon 4">
-        <img src="Gmai.jpg" alt="Icon 5">
-        <img src="xt.jpg" alt="Icon 4">
-        <img src="tik.jpg" alt="Icon 5">
+    <div class="footer-section">
+        <h3>Quick links</h3>
+        <ul>
+            <li><a href="about.html">About WADM</a></li>
+            <li><a href="services.html">Find a solution</a></li>
+            <li><a href="location.html">Offices</a></li>
+            <li><a href="s-overview.html">Customer support</a></li>
+            <li><a href="services.html">Find services</a></li>
+        </ul>
     </div>
-    
 
+    <div class="footer-section">
+        <h3>Trending</h3>
+        <ul>
+            <li><a href="grow.html">What is GROW with WADM?</a></li>
+            <li><a href="rise.html">What is RISE with WADM?</a></li>
+            <li><a href="sustain.html">Sustainability</a></li>
+            <li><a href="patner.html">Partner ecosystem</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-section">
+        <h3>About E-WADM</h3>
+        <ul>
+            <li><a href="career.html">Careers</a></li>
+            <li><a href="news.html">News and press</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="blog.html">Blog</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-section">
+        <h3>Site information</h3>
+        <ul>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="TOU.html">Terms of Use</a></li>
+            <li><a href="copyright.html">Copyright</a></li>
+            <li><a href="cookie.html">Cookie statement</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="social-icons">
+    <img src="ig.jpg" alt="Icon 1" class="u">
+    <img src="fac.jpg" alt="Icon 2">
+    <img src="in.jpg" alt="Icon 3">
+    <img src="ytb.jpg" alt="Icon 4">
+    <img src="Gmai.jpg" alt="Icon 5">
+    <img src="xt.jpg" alt="Icon 4">
+    <img src="tik.jpg" alt="Icon 5">
+</div>
 
 
     <script src="innova.js"></script>
+
     <!-- GSAP for Floating Effect -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    
 </body>
 </html>

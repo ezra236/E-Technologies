@@ -8,7 +8,29 @@
     <link rel="icon" href="ee.png">
 </head>
 <body>
+    
+    <div class="mobile-menu">
+        <div class="mobil">
+         <ul class="nav-links">
+             <li><a href="#home" class="nav-item">Solutions <span class="arrow">&#9660;</span></a></li>
+             <li><a href="#services" class="nav-item">Partners <span class="arrow">&#9660;</span></a></li>
+             <li><a href="#about" class="nav-item">Resources <span class="arrow">&#9660;</span></a></li>
+             <li><a href="#contact" class="nav-item">Support <span class="arrow">&#9660;</span></a></li>
+             <li><a href="#company" class="nav-item">Company <span class="arrow">&#9660;</span></a></li>
+         </ul>
+        </div>
+     </div>
+
+
     <nav class="navbar">
+
+        <div class="hamburger" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+
+        <div class="logod">E-WADM Technologies</div>
         <div class="logo">E-WADM Technologies</div>
         <ul class="nav-links">
             <li><a href="#home" class="nav-item">Solutions <span class="arrow">&#9660;</span></a></li>
@@ -53,23 +75,35 @@
                             and business impact.</p>
                         <a href="#">Learn More</a>
                     </div>
-
+        
                     <div class="websites content">
                         <a href="websites.html" target="_blank">
                             <p class="styled-p" data-target="websites-detail">E-WADM for Websites →</p>
                         </a>
                         <p class="styled-p" data-target="products-detail">Products →</p>
+
+                        <p class="styled-pn"  onclick="window.location.href='webproduct.html'">Products →</p>
+
+                        <button class="closez-btn">Go Back</button>
                     </div>
                     <div class="mobile-app content">
                         <a href="mobile.html" target="_blank">
                             <p class="styled-p" data-target="mobileA-detail">E-WADM for Mobile →</p>
                         </a>
                         <p class="styled-p" data-target="mobile-detail">Products →</p>
+
+                        <p class="styled-pn"  onclick="window.location.href='mobileproducts.html'">Products →</p>
+
+                        <button class="closez-btn">Go Back</button>
                     </div>
                     <div class="desktop-sol content">
                         <p class="styled-p" data-target="desktop-detail">Products →</p>
-                    </div>
 
+                        <p class="styled-pn"  onclick="window.location.href='desktop.html'">Products →</p>
+
+                        <button class="closez-btn">Go Back</button>
+                    </div>
+        
                     <!-- Detail sections -->
                     <div class="detail products-detail">
                         <h2 class="detail-title">Our Web Development Products</h2>
@@ -80,6 +114,8 @@
                             <li><a href="#blogs-content-platforms">Blogs and Content Platforms →</a></li>
                             <li><a href="#landing-pages">Landing Pages →</a></li>
                         </ul>
+
+                        <button class="closep-btn">Go Back</button>
                     </div>
                     <div class="detail mobile-detail">
                         <ul class="mobile-products-list">
@@ -93,6 +129,8 @@
                             <li><a href="#ecommerce-apps">E-Commerce Mobile Apps →</a></li>
                             <li><a href="#social-media-apps">Social Media Apps →</a></li>
                         </ul>
+
+                        <button class="closep-btn">Go Back</button>
                     </div>
                     <div class="detail desktop-detail">
                         <h2 class="detail-title">Desktop Products</h2>
@@ -105,6 +143,8 @@
                             <li><a href="#productivity-tools">Productivity Tools</a></li>
                             <li><a href="#graphics-applications">Graphics and Design Applications</a></li>
                         </ul>
+
+                        <button class="closep-btn">Go Back</button>
                     </div>
                 </div>
             </div>
@@ -119,7 +159,8 @@
                     <a href="starups.html" target="_blank">
                         <p class="linkt">E-WADM for startUps ↗</p>
                     </a>
-                                            
+                        
+                    <button class="closed-btn">Go Back</button>
                 </div>
                 <div class="showdt">
                         <img src="cop.jpg" alt="E-WADM Solutions" class="showdt-image">
@@ -136,7 +177,9 @@
                     </a>
                     <a href="events.html" target="_blank">
                         <p class="linktr">Events →</p>
-                    </a>                      
+                    </a>         
+                    
+                    <button class="closet-btn">Go Back</button>
                 </div>
                 <div class="showdtr">
                     <div>
@@ -177,6 +220,8 @@
                       <a href="s-overview.html" target="_blank">
                         <p class="styled-pp">Overview →</p>
                       </a>
+
+                      <button class="closel-btn">Go Back</button>
                     </div>
                     <div class="training content">
                       <a href="t-overview.html" target="_blank">
@@ -185,6 +230,8 @@
                       <a href="l-partners.html" target="_blank">
                         <p class="styled-pp">E-WADM Learning Partners →</p>
                       </a>
+
+                      <button class="closel-btn">Go Back</button>
                     </div>
                         
                 </div>
@@ -225,6 +272,8 @@
                         <a href="location.html" target="_blank">
                             <p class="styled-ppp">Location ↗</p>
                         </a>
+
+                        <button class="closec-btn">Go Back</button>
                     </div>
                     <div class="career content">
                         <a href="career.html" target="_blank">
@@ -236,6 +285,8 @@
                         <a href="life.html" target="_blank">
                             <p class="styled-ppp">Life At E-WADM →</p>
                         </a>
+
+                        <button class="closec-btn">Go Back</button>
                     </div>
                     <div class="innova content">
                         <a href="innova.html" target="_blank">
@@ -247,6 +298,8 @@
                         <a href="ventures.html" target="_blank">
                             <p class="styled-ppp">Ventures →</p>
                         </a>
+
+                        <button class="closec-btn">Go Back</button>
                     </div>
                     <div class="sustain content">
                         <a href="sustain.html" target="_blank">
@@ -261,6 +314,8 @@
                         <a href="environ.html" target="_blank">
                             <p class="styled-ppp">Environmental →</p>
                         </a>
+
+                        <button class="closec-btn">Go Back</button>
                     </div>
                 </div>
 
@@ -269,6 +324,7 @@
         <div class="rotating-container">
             <h4 id="rotating-text" class="rotating-overlay"></h4>
         </div>
+    
         
         <div class="reh">
             <h1 class="reh-title">Ezra Muthomi</h1>
@@ -291,11 +347,11 @@
     <div class="ezra">
         <nav class="breadcrumb">
             <a href="Home.html">Home</a>
-            <span>/</span>
+            <span>></span>
             <a href="about.html">About</a>
-            <span>/</span>
+            <span>></span>
             <a href="leadership.html">Leadership</a>
-            <span>/</span>
+            <span>></span>
             <a href="ceo.html">Ezra Muthomi</a>
         </nav>
     </div>
